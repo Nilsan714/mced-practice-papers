@@ -19,9 +19,8 @@ function accuracyAll() { const a = papersOf(S.attempts); return pct(a.reduce((s,
 V.home = function () {
     const d = planDay(), q = D.extras.quotes[new Date().getDate() % D.extras.quotes.length].replace('{name}', S.name), nt = nextTask(), lv = lvlOf(S.xp), nl = nextLvl(S.xp);
     const done = D.extras.plan.reduce((s, x) => s + x.tasks.filter(t => S.tasks[t[0]]).length, 0), tot = D.extras.plan.reduce((s, x) => s + x.tasks.length, 0);
-    render(langToggle() + '<div class="hero"><div class="mu" style="color:#fff;opacity:.85">नमस्कार 👋</div><h1>' + esc(S.name) + '</h1><div class="q">' + esc(q) + '</div>'
-        + '<div class="cd" id="cd"></div></div>'
-        + '<div class="card" style="background:linear-gradient(135deg,#ff6fa5,#ff9966);color:#fff;border:0"><div style="opacity:.9;font-size:13px">💌 ' + tt(esc(D.extras.personal.sender) + ' कडून', 'Message from ' + esc(D.extras.personal.sender)) + '</div><div class="b" style="margin-top:4px">' + esc(dailyNote()) + '</div></div>'
+    render(langToggle() + '<div class="hero"><div class="mu" style="color:#fff;opacity:.85">नमस्कार 👋</div><h1>' + esc(S.name) + ' 💖</h1><div class="q">' + esc(q) + '</div>'
+        + '<div class="cd" id="cd"></div><div class="bubble"><small>💌 ' + tt(esc(D.extras.personal.sender) + ' कडून', 'From ' + esc(D.extras.personal.sender)) + '</small><b>' + esc(dailyNote()) + '</b></div></div>'
         + (nt ? '<div class="card"><div class="mu">👉 पुढचे काम</div><div class="b" style="margin:4px 0 10px">' + ICON[nt[1]] + ' ' + esc(nt[3]) + '</div><button class="p w" data-a="go" data-v="' + nt[0] + '">आत्ता सुरू करा</button></div>'
             : '<div class="card c"><div class="big">🎉</div><b>आजचे सर्व काम पूर्ण!</b><p class="mu">सराव किंवा Flashcards करत रहा.</p><a class="btn p" href="#/papers">आणखी सराव</a></div>')
         + '<div class="card"><div class="row"><div>' + ring(dayPct(d)) + '</div><div style="flex:1"><div class="b">' + esc(d.title) + '</div><div class="mu sm">' + esc(d.goal) + '</div><a href="#/plan" class="sm">पूर्ण प्लॅन पाहा →</a></div></div></div>'
