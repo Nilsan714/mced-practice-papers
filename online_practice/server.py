@@ -10,7 +10,7 @@ D = os.path.dirname(os.path.abspath(__file__))
 WEB = os.path.join(os.path.dirname(D), 'docs')
 PROG = os.path.join(D, 'progress')
 os.makedirs(PROG, exist_ok=True)
-EXT = {'.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.svg': 'image/svg+xml', '.ico': 'image/x-icon'}
+EXT = {'.webmanifest': 'application/manifest+json', '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.svg': 'image/svg+xml', '.ico': 'image/x-icon'}
 
 
 def safe(name):

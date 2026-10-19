@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d63f7a"/><stop offset="0.55" stop-color="#a23a92"/><stop offset="1" stop-color="#5f3aa6"/></linearGradient></defs>
+<rect width="512" height="512" fill="#a23a92"/>
+<polygon points="0,0 512,0 0,512" fill="#c93a72" opacity="0.9"/>
+<polygon points="512,512 512,0 0,512" fill="#6a3aa6" opacity="0.75"/>
+<g fill="#fff">
+<path d="M256 150c-40-26-92-34-150-26v214c58-8 110 0 150 26z" opacity="0.96"/>
+<path d="M256 150c40-26 92-34 150-26v214c-58-8-110 0-150 26z" opacity="0.82"/>
+</g>
+<g fill="none" stroke="#a23a92" stroke-width="10" stroke-linecap="round" opacity="0.55">
+<path d="M140 190c34-4 66 2 96 18"/><path d="M140 232c34-4 66 2 96 18"/><path d="M140 274c34-4 66 2 96 18"/>
+<path d="M372 190c-34-4-66 2-96 18"/><path d="M372 232c-34-4-66 2-96 18"/>
+</g>
+<circle cx="372" cy="296" r="38" fill="#ffd66b"/>
+<path d="M354 296l13 14 24-30" fill="none" stroke="#a23a92" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
