@@ -11,7 +11,7 @@ const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
 const pick = a => a[Math.floor(Math.random() * a.length)];
 const cls = p => p >= 75 ? 'ok' : p >= 50 ? 'wn' : 'bad';
 
-function defState() { return { tutor: { name: 'Nilshi', phone: '' }, dayDone: {}, rev: {}, lang: 'mr', name: 'Aishwarya', named: false, xp: 0, streak: { last: '', n: 0 }, tasks: {}, lessons: {}, cards: {}, attempts: [], wrong: {}, badges: [], checks: {}, created: Date.now() } }
+function defState() { return { theme: 'auto', tutor: { name: 'Nilshi', phone: '' }, dayDone: {}, rev: {}, lang: 'mr', name: 'Aishwarya', named: false, xp: 0, streak: { last: '', n: 0 }, tasks: {}, lessons: {}, cards: {}, attempts: [], wrong: {}, badges: [], checks: {}, created: Date.now() } }
 function loadState() { S = defState(); try { const x = JSON.parse(localStorage[KEY] || 'null'); if (x) Object.assign(S, x) } catch (e) { } }
 function save() { try { localStorage[KEY] = JSON.stringify(S) } catch (e) { } }
 const J = n => fetch('data/' + n + '.json').then(r => r.json());
@@ -99,7 +99,7 @@ async function boot() {
     const names = ['papers', 'answers', 'explain', 'lessons', 'extras'];
     try { const r = await Promise.all(names.map(J)); D = { papers: r[0], answers: r[1], explain: r[2], lessons: r[3], extras: r[4] }; BASE = { papers: D.papers, explain: D.explain, lessons: D.lessons, extras: D.extras }; if (S.lang === 'en') await loadEn() }
     catch (e) { render('<div class="card">Data load झाला नाही. Internet तपासा आणि पान refresh करा.</div>'); return }
-    navLabels();
+    navLabels(); applyTheme();
     if (!S.named) return V.welcome();
     touchStreak(); checkBadges(); sync(); route();
     if ([3, 5, 7].includes(S.streak.n) && S.streak.shown !== today()) { S.streak.shown = today(); save(); setTimeout(() => say('streak', { n: S.streak.n }), 2500) }
@@ -126,3 +126,5 @@ const fillT = (t, v) => String(t).replace(/\{(\w+)\}/g, (a, k) => k === 'name' ?
 function say(kind, v) { const P = D.extras.personal; if (!P || !P[kind]) return; toast('✉️ ' + P.sender + ': ' + fillT(P[kind], v), 6500); burst(['✨', '🌟', '🎉']) }
 function dailyNote() { const P = D.extras.personal, t = today(); if (t === '2026-10-26') return fillT(P.eve); if (t === '2026-10-27') return fillT(P.exam); return fillT(P.daily[new Date().getDate() % P.daily.length]) }
 const waNum = () => { const d = ((S.tutor && S.tutor.phone) || '').replace(/\D/g, ''); return d.length === 10 ? '91' + d : d };
+
+ACT.theme = v => { S.theme = v; save(); applyTheme(); if (S.named) route(); else V.welcome() };
