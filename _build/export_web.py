@@ -5,8 +5,9 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, 'content'))
 from build_docs import load_papers, OUT
 from common import LEVELS
+import extras as X
 
-WEB = os.path.join(OUT, 'online_practice')
+WEB = os.path.join(OUT, 'docs')
 DATA = os.path.join(WEB, 'data')
 BASE_DIR = os.path.dirname(OUT)  # Accounting Paper
 os.makedirs(DATA, exist_ok=True)
@@ -43,6 +44,11 @@ def main():
         papers.append(dict(id=p['no'], title='Paper %d: %s' % (p['no'], p['title']), duration=p['duration'], subtopics=p['subtopics'], lessons=p['lessons'], questions=qs))
         answers[str(p['no'])] = {str(i): q['ans'] for i, q in enumerate(p['questions'], 1)}
         explain[str(p['no'])] = {str(i): dict(exp=q['exp'], concept=q['concept']) for i, q in enumerate(p['questions'], 1)}
+    lessons = {str(p['no']): [list(b) for b in p['remediation']] for p in load_papers()}
+    json.dump(lessons, open(os.path.join(DATA, 'lessons.json'), 'w', encoding='utf8'), ensure_ascii=False)
+    ex = dict(exam=X.EXAM, plan=[dict(d, tasks=[list(t) for t in d['tasks']]) for d in X.PLAN], flash=[list(f) for f in X.FLASH], cheat=X.CHEAT,
+              mnemonics={str(k): v for k, v in X.MNEMONICS.items()}, quotes=X.QUOTES, praise=X.PRAISE, levels=[list(l) for l in X.LEVELS], personal=X.PERSONAL)
+    json.dump(ex, open(os.path.join(DATA, 'extras.json'), 'w', encoding='utf8'), ensure_ascii=False)
     json.dump(papers, open(os.path.join(DATA, 'papers.json'), 'w', encoding='utf8'), ensure_ascii=False)
     json.dump(answers, open(os.path.join(DATA, 'answers.json'), 'w', encoding='utf8'))
     json.dump(explain, open(os.path.join(DATA, 'explain.json'), 'w', encoding='utf8'), ensure_ascii=False)
