@@ -1,0 +1,1000 @@
+{
+ "generated": "2026-10-19 10:52",
+ "note": "Practice papers only; not official MCED papers/pattern/marks.",
+ "validation": {
+  "errors": [],
+  "warnings": [
+   "P04 Q9: calculated value also appears in distractor(s) [1] (ok only if intentional e.g. Dr vs Cr)",
+   "P04 Q21: calculated value also appears in distractor(s) [1] (ok only if intentional e.g. Dr vs Cr)",
+   "P05 Q24: calculated value also appears in distractor(s) [0] (ok only if intentional e.g. Dr vs Cr)",
+   "P07 Q17: calculated value also appears in distractor(s) [1] (ok only if intentional e.g. Dr vs Cr)",
+   "P07 Q21: calculated value also appears in distractor(s) [2] (ok only if intentional e.g. Dr vs Cr)",
+   "P11 Q27: calculated value also appears in distractor(s) [0] (ok only if intentional e.g. Dr vs Cr)"
+  ],
+  "papers": 11,
+  "questions": 262
+ },
+ "papers": [
+  {
+   "no": 1,
+   "title": "Baseline Test Analysis and Remediation",
+   "folder": "01_Baseline_Analysis_Remediation",
+   "questions": 25,
+   "minutes": 35,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 10,
+    "Application": 7
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 6,
+    "C": 6,
+    "D": 7
+   },
+   "subtopics": {
+    "A Bookkeeping & Basic Accounting": 7,
+    "B Taxation": 4,
+    "C Budget & Financial Discipline": 3,
+    "D Banking": 4,
+    "E Computer & Modern Tools": 4,
+    "F Current Affairs / General Awareness": 3
+   },
+   "numeric_questions_auto_checked": 14,
+   "sourced_questions": 4,
+   "worked_examples": 6,
+   "sources": [
+    {
+     "key": "PRS-UB",
+     "label": "PRS Legislative Research: Union Budget Analysis 2026-27",
+     "url": "https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (PDF text read directly)"
+    },
+    {
+     "key": "TAXGURU",
+     "label": "TaxGuru: TDS/TCS restructuring FY 2026-27 under Income-tax Act 2025",
+     "url": "https://taxguru.in/income-tax/guide-tds-tcs-restructuring-fy-2026-27-income-tax-act-2025.html",
+     "accessed": "2026-10-19",
+     "status": "secondary-unconfirmed (blog; verify on incometax.gov.in)"
+    },
+    {
+     "key": "STATIC",
+     "label": "Parliament structure — static knowledge",
+     "url": "https://www.india.gov.in/",
+     "accessed": "2026-10-19",
+     "status": "static-knowledge"
+    }
+   ],
+   "files": {
+    "student": "01_Baseline_Analysis_Remediation_Student_Question_Paper",
+    "key": "01_Baseline_Analysis_Remediation_Teacher_Answer_Key",
+    "rem": "01_Baseline_Analysis_Remediation_Remediation_Notes"
+   }
+  },
+  {
+   "no": 2,
+   "title": "Accounting Fundamentals and Accounting Equation",
+   "folder": "02_Accounting_Fundamentals",
+   "questions": 23,
+   "minutes": 30,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 9,
+    "Application": 6
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 6,
+    "C": 7,
+    "D": 4
+   },
+   "subtopics": {
+    "Book-keeping, Accounting आणि Users": 2,
+    "Accounts चे प्रकार (Classification)": 5,
+    "Accounting Concepts": 4,
+    "Accounting Equation": 6,
+    "Transactions चा Equation वर परिणाम": 6
+   },
+   "numeric_questions_auto_checked": 7,
+   "sourced_questions": 0,
+   "worked_examples": 6,
+   "sources": [],
+   "files": {
+    "student": "02_Accounting_Fundamentals_Student_Question_Paper",
+    "key": "02_Accounting_Fundamentals_Teacher_Answer_Key",
+    "rem": "02_Accounting_Fundamentals_Remediation_Notes"
+   }
+  },
+  {
+   "no": 3,
+   "title": "Debit, Credit and Journal Entries",
+   "folder": "03_Debit_Credit_Journal_Entries",
+   "questions": 24,
+   "minutes": 35,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 8,
+    "Application": 8
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 6,
+    "C": 6,
+    "D": 6
+   },
+   "subtopics": {
+    "Golden Rules (Personal/Real/Nominal)": 3,
+    "Debit-Credit चा परिणाम": 4,
+    "Basic Journal Entries (cash)": 4,
+    "Credit व्यवहार, Returns, Discount": 7,
+    "Adjustment/Special Entries": 4,
+    "Journal Format आणि Terminology": 2
+   },
+   "numeric_questions_auto_checked": 5,
+   "sourced_questions": 0,
+   "worked_examples": 6,
+   "sources": [],
+   "files": {
+    "student": "03_Debit_Credit_Journal_Entries_Student_Question_Paper",
+    "key": "03_Debit_Credit_Journal_Entries_Teacher_Answer_Key",
+    "rem": "03_Debit_Credit_Journal_Entries_Remediation_Notes"
+   }
+  },
+  {
+   "no": 4,
+   "title": "Ledger, Cash Book and Trial Balance",
+   "folder": "04_Ledger_CashBook_TrialBalance",
+   "questions": 24,
+   "minutes": 35,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 9,
+    "Application": 7
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 6,
+    "C": 6,
+    "D": 6
+   },
+   "subtopics": {
+    "Ledger posting आणि balancing": 6,
+    "Cash Book (single/three column, contra)": 6,
+    "Petty Cash / Imprest": 2,
+    "Trial Balance आणि errors": 7,
+    "Subsidiary Books (Purchases/Sales/Returns)": 3
+   },
+   "numeric_questions_auto_checked": 9,
+   "sourced_questions": 0,
+   "worked_examples": 6,
+   "sources": [],
+   "files": {
+    "student": "04_Ledger_CashBook_TrialBalance_Student_Question_Paper",
+    "key": "04_Ledger_CashBook_TrialBalance_Teacher_Answer_Key",
+    "rem": "04_Ledger_CashBook_TrialBalance_Remediation_Notes"
+   }
+  },
+  {
+   "no": 5,
+   "title": "Bank Reconciliation, Depreciation and Final Accounts",
+   "folder": "05_BankRecon_Depreciation_FinalAccounts",
+   "questions": 24,
+   "minutes": 40,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 9,
+    "Application": 7
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 6,
+    "C": 6,
+    "D": 6
+   },
+   "subtopics": {
+    "Bank Reconciliation Statement (BRS)": 5,
+    "Depreciation (SLM / WDV)": 6,
+    "Trading Account": 4,
+    "Profit & Loss Account": 3,
+    "Balance Sheet": 3,
+    "Adjustments (Outstanding, Prepaid, Bad debts)": 3
+   },
+   "numeric_questions_auto_checked": 15,
+   "sourced_questions": 0,
+   "worked_examples": 8,
+   "sources": [],
+   "files": {
+    "student": "05_BankRecon_Depreciation_FinalAccounts_Student_Question_Paper",
+    "key": "05_BankRecon_Depreciation_FinalAccounts_Teacher_Answer_Key",
+    "rem": "05_BankRecon_Depreciation_FinalAccounts_Remediation_Notes"
+   }
+  },
+  {
+   "no": 6,
+   "title": "Taxation: GST, Input Tax Credit, TDS and Income Tax Basics",
+   "folder": "06_Taxation_GST_ITC_TDS",
+   "questions": 24,
+   "minutes": 35,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 9,
+    "Application": 7
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 6,
+    "C": 6,
+    "D": 6
+   },
+   "subtopics": {
+    "GST रचना आणि दर": 5,
+    "GST गणना आणि ITC": 9,
+    "GST documents/returns": 2,
+    "TDS": 4,
+    "Income Tax basics": 4
+   },
+   "numeric_questions_auto_checked": 11,
+   "sourced_questions": 12,
+   "worked_examples": 8,
+   "sources": [
+    {
+     "key": "PIB-GST",
+     "label": "PIB: Recommendations of the 56th GST Council (3 Sep 2025); rates 5/18/40, effective 22 Sep 2025",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555&reg=48&lang=2",
+     "accessed": "2026-10-19",
+     "status": "verified-secondary (PIB page returned HTTP 403 to my fetch tool; PIB listing + multiple news/tax sites agree)"
+    },
+    {
+     "key": "TAXGURU",
+     "label": "TaxGuru: TDS/TCS restructuring FY 2026-27 under Income-tax Act 2025 (rates/thresholds)",
+     "url": "https://taxguru.in/income-tax/guide-tds-tcs-restructuring-fy-2026-27-income-tax-act-2025.html",
+     "accessed": "2026-10-19",
+     "status": "secondary-unconfirmed (blog; verify on incometax.gov.in)"
+    },
+    {
+     "key": "CLEARTAX",
+     "label": "ClearTax: Income tax changes from 1 April 2026 (Act 2025, Tax Year, slabs)",
+     "url": "https://cleartax.in/c/changes-from-income-tax-april-2026",
+     "accessed": "2026-10-19",
+     "status": "secondary-unconfirmed (blog; verify on incometax.gov.in)"
+    },
+    {
+     "key": "STATIC",
+     "label": "Long-standing GST/Income-tax concepts (GSTIN format, GSTR names, zero-rating, ITC conditions) — not re-checked online",
+     "url": "https://www.cbic-gst.gov.in/",
+     "accessed": "2026-10-19",
+     "status": "static-knowledge"
+    }
+   ],
+   "files": {
+    "student": "06_Taxation_GST_ITC_TDS_Student_Question_Paper",
+    "key": "06_Taxation_GST_ITC_TDS_Teacher_Answer_Key",
+    "rem": "06_Taxation_GST_ITC_TDS_Remediation_Notes"
+   }
+  },
+  {
+   "no": 7,
+   "title": "Budget and Financial Discipline",
+   "folder": "07_Budget_Financial_Discipline",
+   "questions": 22,
+   "minutes": 30,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 8,
+    "Application": 6
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 6,
+    "C": 5,
+    "D": 5
+   },
+   "subtopics": {
+    "Budget basics": 2,
+    "Capital vs Revenue (expenditure/receipts)": 4,
+    "Budget variance आणि utilisation": 4,
+    "Government Budget concepts (deficits, Articles)": 8,
+    "Financial discipline आणि internal control": 4
+   },
+   "numeric_questions_auto_checked": 8,
+   "sourced_questions": 5,
+   "worked_examples": 6,
+   "sources": [
+    {
+     "key": "PRS-UB",
+     "label": "PRS Legislative Research: Union Budget Analysis 2026-27 (1 Feb 2026) — expenditure, receipts, deficits",
+     "url": "https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (PDF text read directly)"
+    },
+    {
+     "key": "STATIC",
+     "label": "Constitution of India Articles 112, 114, 266, 267; Indian financial year — static knowledge, not re-checked online",
+     "url": "https://legislative.gov.in/constitution-of-india/",
+     "accessed": "2026-10-19",
+     "status": "static-knowledge"
+    }
+   ],
+   "files": {
+    "student": "07_Budget_Financial_Discipline_Student_Question_Paper",
+    "key": "07_Budget_Financial_Discipline_Teacher_Answer_Key",
+    "rem": "07_Budget_Financial_Discipline_Remediation_Notes"
+   }
+  },
+  {
+   "no": 8,
+   "title": "Banking and Digital Payment Systems",
+   "folder": "08_Banking_Digital_Payments",
+   "questions": 22,
+   "minutes": 30,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 8,
+    "Application": 6
+   },
+   "answer_distribution": {
+    "A": 5,
+    "B": 6,
+    "C": 6,
+    "D": 5
+   },
+   "subtopics": {
+    "RBI आणि Banking structure": 4,
+    "Bank accounts आणि KYC": 3,
+    "Cheque आणि Negotiable instruments": 3,
+    "NEFT/RTGS/IMPS/UPI": 6,
+    "Digital safety आणि fraud": 2,
+    "Interest आणि bank calculations": 4
+   },
+   "numeric_questions_auto_checked": 4,
+   "sourced_questions": 10,
+   "worked_examples": 5,
+   "sources": [
+    {
+     "key": "RBI-FAQ",
+     "label": "RBI FAQ: Real Time Gross Settlement (RTGS) System (min ₹2,00,000, no max; 24x7 from 14 Dec 2020); NEFT batch/24x7 per RBI FAQ excerpts",
+     "url": "https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=275",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (RTGS lines read from page; NEFT 24x7 from search excerpt of RBI FAQ)"
+    },
+    {
+     "key": "NPCI-IMPS",
+     "label": "NPCI: IMPS overview (₹5 lakh per transaction, excl. SMS/IVR)",
+     "url": "https://www.npci.org.in/product/imps/about-imps",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (search excerpt; page not opened)"
+    },
+    {
+     "key": "STATIC",
+     "label": "RBI establishment/HQ, IFSC format, cheque validity, NI Act s.138 — static knowledge, not re-checked online",
+     "url": "https://www.rbi.org.in/",
+     "accessed": "2026-10-19",
+     "status": "static-knowledge"
+    }
+   ],
+   "files": {
+    "student": "08_Banking_Digital_Payments_Student_Question_Paper",
+    "key": "08_Banking_Digital_Payments_Teacher_Answer_Key",
+    "rem": "08_Banking_Digital_Payments_Remediation_Notes"
+   }
+  },
+  {
+   "no": 9,
+   "title": "Computer Knowledge, Excel and Modern Office Tools",
+   "folder": "09_Computer_Excel_Office_Tools",
+   "questions": 22,
+   "minutes": 30,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 8,
+    "Application": 6
+   },
+   "answer_distribution": {
+    "A": 5,
+    "B": 5,
+    "C": 6,
+    "D": 6
+   },
+   "subtopics": {
+    "Computer basics (hardware/software)": 2,
+    "Windows, files आणि shortcuts": 3,
+    "Word, Email आणि PDF": 2,
+    "Excel basics आणि functions": 6,
+    "Excel application (SUMIF, VLOOKUP, %)": 5,
+    "Internet, cloud, cyber safety आणि modern tools": 4
+   },
+   "numeric_questions_auto_checked": 6,
+   "sourced_questions": 0,
+   "worked_examples": 5,
+   "sources": [],
+   "files": {
+    "student": "09_Computer_Excel_Office_Tools_Student_Question_Paper",
+    "key": "09_Computer_Excel_Office_Tools_Teacher_Answer_Key",
+    "rem": "09_Computer_Excel_Office_Tools_Remediation_Notes"
+   }
+  },
+  {
+   "no": 10,
+   "title": "Current Affairs and General Awareness",
+   "folder": "10_Current_Affairs_General_Awareness",
+   "questions": 22,
+   "minutes": 30,
+   "levels": {
+    "Foundational": 8,
+    "Intermediate": 8,
+    "Application": 6
+   },
+   "answer_distribution": {
+    "A": 6,
+    "B": 4,
+    "C": 7,
+    "D": 5
+   },
+   "subtopics": {
+    "स्थिर General Knowledge (संविधान, संस्था)": 5,
+    "Union Budget 2026-27": 6,
+    "Maharashtra Budget 2026-27 आणि राज्य": 4,
+    "Taxation/Banking updates": 4,
+    "Census 2027 आणि इतर घडामोडी": 3
+   },
+   "numeric_questions_auto_checked": 1,
+   "sourced_questions": 22,
+   "worked_examples": 3,
+   "sources": [
+    {
+     "key": "PRS-UB",
+     "label": "PRS Legislative Research: Union Budget Analysis 2026-27 (1 Feb 2026)",
+     "url": "https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (PDF text read directly)"
+    },
+    {
+     "key": "PRS-MH",
+     "label": "PRS Legislative Research: Maharashtra Budget Analysis 2026-27",
+     "url": "https://prsindia.org/budgets/states/maharashtra-budget-analysis-2026-27",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (first ~100,000 characters of page read)"
+    },
+    {
+     "key": "SCROLL",
+     "label": "Scroll.in: Budget 2026 key takeaways (no income tax rate changes; capex)",
+     "url": "https://scroll.in/latest/1090413/scroll_in",
+     "accessed": "2026-10-19",
+     "status": "verified-secondary (search excerpt)"
+    },
+    {
+     "key": "CENSUS",
+     "label": "Drishti IAS / PIB note on India's first fully digital Census (Census 2027 phases, dates)",
+     "url": "https://www.drishtiias.com/state-pcs-current-affairs/india-begins-first-fully-digital-census/print_manually",
+     "accessed": "2026-10-19",
+     "status": "verified-secondary (search excerpt; verify on censusindia.gov.in)"
+    },
+    {
+     "key": "PIB-GST",
+     "label": "PIB: Recommendations of the 56th GST Council (rates 5/18/40; effective 22 Sep 2025)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555&reg=48&lang=2",
+     "accessed": "2026-10-19",
+     "status": "verified-secondary (PIB page HTTP 403 to my fetch tool; multiple sources agree)"
+    },
+    {
+     "key": "CLEARTAX",
+     "label": "ClearTax: Income tax changes from 1 April 2026 (Income-tax Act 2025; Tax Year)",
+     "url": "https://cleartax.in/c/changes-from-income-tax-april-2026",
+     "accessed": "2026-10-19",
+     "status": "secondary-unconfirmed (blog)"
+    },
+    {
+     "key": "RBI-GOV",
+     "label": "Outlook Money: RBI MPC October 2026 (names Governor Sanjay Malhotra)",
+     "url": "https://www.outlookmoney.com/banking/rbi-mpc-meeting-october-2026-where-to-watch-governor-sanjay-malhotras-policy-announcement-live",
+     "accessed": "2026-10-19",
+     "status": "verified-secondary (page read; check rbi.org.in)"
+    },
+    {
+     "key": "STATIC",
+     "label": "Static GK (Maharashtra formation, Constitution dates/Articles, GST launch date, NITI Aayog, UPI/NPCI) — not re-checked online",
+     "url": "https://www.india.gov.in/",
+     "accessed": "2026-10-19",
+     "status": "static-knowledge"
+    }
+   ],
+   "files": {
+    "student": "10_Current_Affairs_General_Awareness_Student_Question_Paper",
+    "key": "10_Current_Affairs_General_Awareness_Teacher_Answer_Key",
+    "rem": "10_Current_Affairs_General_Awareness_Remediation_Notes"
+   }
+  },
+  {
+   "no": 11,
+   "title": "Comprehensive Mixed Mock Test",
+   "folder": "11_Comprehensive_Mixed_Mock",
+   "questions": 30,
+   "minutes": 40,
+   "levels": {
+    "Foundational": 10,
+    "Intermediate": 12,
+    "Application": 8
+   },
+   "answer_distribution": {
+    "A": 8,
+    "B": 8,
+    "C": 6,
+    "D": 8
+   },
+   "subtopics": {
+    "A Bookkeeping & Accounting": 10,
+    "B Taxation": 4,
+    "C Budget & Financial Discipline": 4,
+    "D Banking": 5,
+    "E Computer & Excel": 4,
+    "F Current Affairs / General Awareness": 3
+   },
+   "numeric_questions_auto_checked": 10,
+   "sourced_questions": 6,
+   "worked_examples": 6,
+   "sources": [
+    {
+     "key": "PRS-UB",
+     "label": "PRS Legislative Research: Union Budget Analysis 2026-27",
+     "url": "https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (PDF text read directly)"
+    },
+    {
+     "key": "PRS-MH",
+     "label": "PRS Legislative Research: Maharashtra Budget Analysis 2026-27",
+     "url": "https://prsindia.org/budgets/states/maharashtra-budget-analysis-2026-27",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (first ~100,000 characters read)"
+    },
+    {
+     "key": "STATIC",
+     "label": "Static concepts (HSN/SAC, tax invoice contents, NACH, Maharashtra sub-capital) — not re-checked online",
+     "url": "https://www.india.gov.in/",
+     "accessed": "2026-10-19",
+     "status": "static-knowledge"
+    }
+   ],
+   "files": {
+    "student": "11_Comprehensive_Mixed_Mock_Student_Question_Paper",
+    "key": "11_Comprehensive_Mixed_Mock_Teacher_Answer_Key",
+    "rem": "11_Comprehensive_Mixed_Mock_Remediation_Notes"
+   }
+  }
+ ],
+ "files": [
+  {
+   "path": "MCED_Practice_Performance_Tracker.xlsx",
+   "bytes": 250885,
+   "sha256": "7faeeea02a32b091fe4ea4a46c4c8381b8142a9ae0ae54e3dee43be0f382366a",
+   "description": "Excel performance tracker (formulas; tutor-only, contains key)"
+  },
+  {
+   "path": "README.md",
+   "bytes": 5354,
+   "sha256": "70791208ab508962b6f4763b3ed62599343ea979659cd0d787ea3b0f14faa609",
+   "description": "Order of use, file guide, limitations"
+  },
+  {
+   "path": "01_Baseline_Analysis_Remediation/01_Baseline_Analysis_Remediation_Remediation_Notes.docx",
+   "bytes": 5857,
+   "sha256": "7900972d3ec22ce89fddc85794d38a2f3f49109300eb95ba21b2f3fc01bf77ec",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "01_Baseline_Analysis_Remediation/01_Baseline_Analysis_Remediation_Student_Question_Paper.docx",
+   "bytes": 6179,
+   "sha256": "7ac7adaa9a7496289a226905c21e163207639ee0778e31e66307daaa35636908",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "01_Baseline_Analysis_Remediation/01_Baseline_Analysis_Remediation_Student_Question_Paper.pdf",
+   "bytes": 110314,
+   "sha256": "42d5397fd7d8844067fa6a3ffa2bd5dd15f76396e1e5d1586e6de83d667077c0",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "01_Baseline_Analysis_Remediation/01_Baseline_Analysis_Remediation_Teacher_Answer_Key.docx",
+   "bytes": 9690,
+   "sha256": "b8ce51441c9973b6d669d6dfbc7d717fb6b442a76dca348963a7316584710a4e",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "02_Accounting_Fundamentals/02_Accounting_Fundamentals_Remediation_Notes.docx",
+   "bytes": 5709,
+   "sha256": "2ed2deb8c6c6a24e4e2822faab3ccabd79b398f59d93a9d2c6a4fb547a053c0e",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "02_Accounting_Fundamentals/02_Accounting_Fundamentals_Student_Question_Paper.docx",
+   "bytes": 5866,
+   "sha256": "1a02f049ea66380f1ec29c23636ebb5d752a8f5b8cf5d393cc8f4e6a395f9af0",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "02_Accounting_Fundamentals/02_Accounting_Fundamentals_Student_Question_Paper.pdf",
+   "bytes": 101868,
+   "sha256": "00d65459a3fe55a0d12b87eb3351441c100377e7d17967f1b7aef5d27c8ef84a",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "02_Accounting_Fundamentals/02_Accounting_Fundamentals_Teacher_Answer_Key.docx",
+   "bytes": 8934,
+   "sha256": "40101219886e16d1e2c3ed0184770b172614c7c5b98c2e93431e1f48eac89b3c",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "03_Debit_Credit_Journal_Entries/03_Debit_Credit_Journal_Entries_Remediation_Notes.docx",
+   "bytes": 5358,
+   "sha256": "c204e902ff6d3adf6ebaad330cb9fd638ae2318fcf31fcdf7a44c9b7514a5c12",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "03_Debit_Credit_Journal_Entries/03_Debit_Credit_Journal_Entries_Student_Question_Paper.docx",
+   "bytes": 5668,
+   "sha256": "d93e13aced97ee67b25e17a7121d1495a17240b03fbe7e1092e47aefdfbb1273",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "03_Debit_Credit_Journal_Entries/03_Debit_Credit_Journal_Entries_Student_Question_Paper.pdf",
+   "bytes": 95154,
+   "sha256": "d6ce4391caadfb75aaf801363a953f955dd29230dadee1cd8ea19ada8bb2b6dd",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "03_Debit_Credit_Journal_Entries/03_Debit_Credit_Journal_Entries_Teacher_Answer_Key.docx",
+   "bytes": 8803,
+   "sha256": "b8fb012266b3d2f49d281474e2d0458f9bdfdfc0c135ecfdcbc12fe91241da54",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "04_Ledger_CashBook_TrialBalance/04_Ledger_CashBook_TrialBalance_Remediation_Notes.docx",
+   "bytes": 5485,
+   "sha256": "64016795e23fc565d786655a85c5558394cae6661346b5514536fb26cf0e54c8",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "04_Ledger_CashBook_TrialBalance/04_Ledger_CashBook_TrialBalance_Student_Question_Paper.docx",
+   "bytes": 6119,
+   "sha256": "d255839347399ac536db12c1bfbeada8ff3682734723d1d8249e20698a934f51",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "04_Ledger_CashBook_TrialBalance/04_Ledger_CashBook_TrialBalance_Student_Question_Paper.pdf",
+   "bytes": 100958,
+   "sha256": "8562ebe436a64d8f987e9b41d8f2c15a9eb126fd05a30b43583dad0828eb3180",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "04_Ledger_CashBook_TrialBalance/04_Ledger_CashBook_TrialBalance_Teacher_Answer_Key.docx",
+   "bytes": 9240,
+   "sha256": "881951fe4dfbd13d18694f10d2f84c5ec7514258a2cd190cdbd5852533143d35",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "05_BankRecon_Depreciation_FinalAccounts/05_BankRecon_Depreciation_FinalAccounts_Remediation_Notes.docx",
+   "bytes": 5515,
+   "sha256": "41e2d14304dfb57ac712e2b90591efe248a3a12b1d9e93bafa7ca9f39ad7bfa3",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "05_BankRecon_Depreciation_FinalAccounts/05_BankRecon_Depreciation_FinalAccounts_Student_Question_Paper.docx",
+   "bytes": 6023,
+   "sha256": "02f49e52dc6196e87663b01015c67b7d12d4ba4789ab80048bf5a54e93508d21",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "05_BankRecon_Depreciation_FinalAccounts/05_BankRecon_Depreciation_FinalAccounts_Student_Question_Paper.pdf",
+   "bytes": 102019,
+   "sha256": "55a22b545c189a8ec8a99d2071ebc51a668a868691c2623d02c52183816ebc15",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "05_BankRecon_Depreciation_FinalAccounts/05_BankRecon_Depreciation_FinalAccounts_Teacher_Answer_Key.docx",
+   "bytes": 9033,
+   "sha256": "96334a06873da9c5d81b0fe7be1c6297a04289e0316cd0a8da1e369f988d845a",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "06_Taxation_GST_ITC_TDS/06_Taxation_GST_ITC_TDS_Remediation_Notes.docx",
+   "bytes": 5345,
+   "sha256": "6d133750d4a5d89cdcd7a54c9ccd06e1287f6ccc2d52707f88221dd739b367aa",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "06_Taxation_GST_ITC_TDS/06_Taxation_GST_ITC_TDS_Student_Question_Paper.docx",
+   "bytes": 6026,
+   "sha256": "68dde88662ba2073f3041d0baa12917a301354b5380c606cc5ae9d07a83583a4",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "06_Taxation_GST_ITC_TDS/06_Taxation_GST_ITC_TDS_Student_Question_Paper.pdf",
+   "bytes": 102694,
+   "sha256": "4e705f3e7bd917f7b959a87f94c6b86d27da756210f4c2b351db9293502849bd",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "06_Taxation_GST_ITC_TDS/06_Taxation_GST_ITC_TDS_Teacher_Answer_Key.docx",
+   "bytes": 10015,
+   "sha256": "bc4dc00857d35954f29cb708d1921e45961d384d065a5cd830810352fb46e0ab",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "07_Budget_Financial_Discipline/07_Budget_Financial_Discipline_Remediation_Notes.docx",
+   "bytes": 5167,
+   "sha256": "b2e54921b733b4cca96bfe37c0974ebcaef4883f15e09ab91d5bb4873191b73d",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "07_Budget_Financial_Discipline/07_Budget_Financial_Discipline_Student_Question_Paper.docx",
+   "bytes": 5981,
+   "sha256": "c9e7f989b653d86c1be1d26c65beafdadfd67b7c06754e828535046924c2000a",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "07_Budget_Financial_Discipline/07_Budget_Financial_Discipline_Student_Question_Paper.pdf",
+   "bytes": 103814,
+   "sha256": "a884c24e28c2843ba744b163c3276d03a4cccbfbbb2eb298d5831e0d5f64cce3",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "07_Budget_Financial_Discipline/07_Budget_Financial_Discipline_Teacher_Answer_Key.docx",
+   "bytes": 9250,
+   "sha256": "515674ef25936417fdd60b465825f6325c6012b210c3142d5ff24aa98cec3e9d",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "08_Banking_Digital_Payments/08_Banking_Digital_Payments_Remediation_Notes.docx",
+   "bytes": 5190,
+   "sha256": "911f34965796256bb9fd93c6caaee865993b54ff76b7078657271a1c7fefed2f",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "08_Banking_Digital_Payments/08_Banking_Digital_Payments_Student_Question_Paper.docx",
+   "bytes": 6150,
+   "sha256": "8b8dafbae6c94ccc03d7c4cd44e8d97239027e45cc1438039fb46c63225f461b",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "08_Banking_Digital_Payments/08_Banking_Digital_Payments_Student_Question_Paper.pdf",
+   "bytes": 107823,
+   "sha256": "e6014c1be42638a4197ae1fe6a23bbf886951ef7a9d2c875175a237ce95965a4",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "08_Banking_Digital_Payments/08_Banking_Digital_Payments_Teacher_Answer_Key.docx",
+   "bytes": 9854,
+   "sha256": "3406bb8621aaea46706657438cfc2f22551e8da2b4fea75b38e7fe69618638c7",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "09_Computer_Excel_Office_Tools/09_Computer_Excel_Office_Tools_Remediation_Notes.docx",
+   "bytes": 5428,
+   "sha256": "c00b416146c14e848a4c3991c7455aaf930b89551fe61846e03a435422f540ce",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "09_Computer_Excel_Office_Tools/09_Computer_Excel_Office_Tools_Student_Question_Paper.docx",
+   "bytes": 5888,
+   "sha256": "4be3b4df4a6f977ea7fe190c55386efcfdbe7fd70097c8fd4cbc7535a2d4b1eb",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "09_Computer_Excel_Office_Tools/09_Computer_Excel_Office_Tools_Student_Question_Paper.pdf",
+   "bytes": 118629,
+   "sha256": "29e6c04337882391d93f3085d550bf593b8648810b8a441f27b16b79fc57010f",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "09_Computer_Excel_Office_Tools/09_Computer_Excel_Office_Tools_Teacher_Answer_Key.docx",
+   "bytes": 8640,
+   "sha256": "e65655ef35f4f5a664abead7380956d1f9015478f1566c3ab9024e1f9298f1f0",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "10_Current_Affairs_General_Awareness/10_Current_Affairs_General_Awareness_Remediation_Notes.docx",
+   "bytes": 5547,
+   "sha256": "7f839ed5fa9f39cc9a7f3149e35b840371930b3621e8add226f5017de3e1e8fe",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "10_Current_Affairs_General_Awareness/10_Current_Affairs_General_Awareness_Student_Question_Paper.docx",
+   "bytes": 5853,
+   "sha256": "27083e2a47b4472c7b8b88660bbd7e49eb0c264dbd81415902c3f2cc146f1bcd",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "10_Current_Affairs_General_Awareness/10_Current_Affairs_General_Awareness_Student_Question_Paper.pdf",
+   "bytes": 105682,
+   "sha256": "5d147ade1f5e12366fbbf483abd3d098bb09b027907232fbc0a91a8d1a4302de",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "10_Current_Affairs_General_Awareness/10_Current_Affairs_General_Awareness_Teacher_Answer_Key.docx",
+   "bytes": 10347,
+   "sha256": "b33e3ebca4054e3be93338d576f09bb2ae345181a65a738f3ad4d6dc5e41d687",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "11_Comprehensive_Mixed_Mock/11_Comprehensive_Mixed_Mock_Remediation_Notes.docx",
+   "bytes": 4928,
+   "sha256": "5743e8de6e98a4235802279584518a18fe7544300d735800fbbb371b957b69ee",
+   "description": "Teaching notes: concepts, worked examples, practice + answers"
+  },
+  {
+   "path": "11_Comprehensive_Mixed_Mock/11_Comprehensive_Mixed_Mock_Student_Question_Paper.docx",
+   "bytes": 6803,
+   "sha256": "2f869fd5100dbc8d94fe39f41a1bac0920bc358329c108a4c505794580cb67cf",
+   "description": "Student paper (questions + options + answer table only)"
+  },
+  {
+   "path": "11_Comprehensive_Mixed_Mock/11_Comprehensive_Mixed_Mock_Student_Question_Paper.pdf",
+   "bytes": 113724,
+   "sha256": "fde26ef88cd6b2134fb27eadcdf4a4678ca5d29075854f0f1d3165c380f924a7",
+   "description": "Print-ready PDF of the student paper"
+  },
+  {
+   "path": "11_Comprehensive_Mixed_Mock/11_Comprehensive_Mixed_Mock_Teacher_Answer_Key.docx",
+   "bytes": 10417,
+   "sha256": "3393b6f7467280a685d7bffd4e71f52985cd7dd72ade37e37d042a2582fc25fa",
+   "description": "Tutor-only key: answers, explanations, concepts, sources"
+  },
+  {
+   "path": "online_practice/index.html",
+   "bytes": 9166,
+   "sha256": "62ce6fc1a5108bf9d2a94ce20906ceb79a83852c9c3293af2e00fe7650596abb",
+   "description": "Online practice server (LAN) file"
+  },
+  {
+   "path": "online_practice/server.py",
+   "bytes": 5631,
+   "sha256": "9d8d683b3023f68df7fea3580f544bc4b842428ed3c86d56c5a76e2cb7967c53",
+   "description": "Online practice server (LAN) file"
+  },
+  {
+   "path": "online_practice/data/answers.json",
+   "bytes": 3300,
+   "sha256": "043bf8f5b9b8d242a6e542d26fc75715c656359d1a91695562f32f9fd6702c3c",
+   "description": "Online practice server (LAN) file"
+  },
+  {
+   "path": "online_practice/data/explain.json",
+   "bytes": 61658,
+   "sha256": "7ac907bf59ee01d917b5b62a2ec0200621e5329b8d927b7a8efff65e8879b780",
+   "description": "Online practice server (LAN) file"
+  },
+  {
+   "path": "online_practice/data/papers.json",
+   "bytes": 90826,
+   "sha256": "a9724f013e775cca23ebc8b26fa8f3e98b440cb6f241528dcc3392bef70f970c",
+   "description": "Online practice server (LAN) file"
+  },
+  {
+   "path": "_build/build_docs.py",
+   "bytes": 9743,
+   "sha256": "0a10dbae198a1765171d931d3737deef06d7cfc13f24dd462a2192fd1e44a20b",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/build_manifest.py",
+   "bytes": 4780,
+   "sha256": "652c1cac6b09dd0edaed19f8962ea760e69c64fb976203896c890c4edada4377",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/build_tracker.py",
+   "bytes": 14694,
+   "sha256": "4a493430498444b441cea8e84122a74accca50d50be9dd559272f65a42f6445b",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/convert.ps1",
+   "bytes": 502,
+   "sha256": "f561d5edf7af82495aaa4e6bb9ff0fd60b99660ad40b1a3f9a9cfa27a425c854",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/excel_check.ps1",
+   "bytes": 1359,
+   "sha256": "5b62398e20fc5919ba6a60f85d095db3aff0813ace77b9c752d438de040c9823",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/export_web.py",
+   "bytes": 2990,
+   "sha256": "3d67294f4095d5e0905761d1792768f23d0bcc50f00dfb43a0e3665d6b1f143b",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/lib_docx.py",
+   "bytes": 8598,
+   "sha256": "7052c56169a7373d860fb6569af0be9d13bb84f6d3b6f1db4f169a752cfb3d0b",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/validate.py",
+   "bytes": 7180,
+   "sha256": "28dde425177deb4b8aaa52f86c51ce3151473316cab6cb7eeda5f4a96cefea5b",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/validation_report.json",
+   "bytes": 704,
+   "sha256": "d10c5c8f4070870bf4e829fff0a393a6ef41e67b30671892595f76015d2e9d4a",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/common.py",
+   "bytes": 2033,
+   "sha256": "af8dbb06c32dd13c4ba75a1254cf87bc4c59ac414574f0767750890cc24bf07b",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p01.py",
+   "bytes": 16811,
+   "sha256": "d59350d74c2e952fb339432036e82e370694cb1a0778477b4b9198406e15a86e",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p02.py",
+   "bytes": 18562,
+   "sha256": "9c8ccc811615fb42f78d92182e694436ed603e780f4bb8106e1501e00060c89e",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p03.py",
+   "bytes": 16638,
+   "sha256": "87f3f277d3366e9ec242423996c4745cbcb72e730c9260e4562004536fc963a5",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p04.py",
+   "bytes": 19293,
+   "sha256": "5289ecde52797517960e93d632b6aab3ddd6c48de42c12a4059c4165927f29f0",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p05.py",
+   "bytes": 16866,
+   "sha256": "3799c688e25d9a07aa99c69bd7d67ab556f8ae48e0e6931d1f883bac1cff8c3e",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p06.py",
+   "bytes": 17790,
+   "sha256": "effc65418abc96b0bead81f7a97fce3e9cfc5ed1f7e69ca07cc02e19bdc7851e",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p07.py",
+   "bytes": 16155,
+   "sha256": "70ff157ce53f0b6d59828f70ab98b0f1847f196eca32694bfbd7beed0cd11458",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p08.py",
+   "bytes": 17170,
+   "sha256": "422a2c6078adbaa36f1713a136fc9f864163edf1cdd6572f00b2e67e0179251d",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p09.py",
+   "bytes": 13150,
+   "sha256": "30084179737d8d888760e2a60a6097db41bcd36315a7cfec29cd747b3f424426",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p10.py",
+   "bytes": 19789,
+   "sha256": "b829e63cbba772c13afe4b3f965d2f582476deb08378c347e484474c9a94ee2b",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/p11.py",
+   "bytes": 17121,
+   "sha256": "f70a46b003b1fbf6f9060c1a45c245a4292b4cfb475c0414eff03e3c5def9d2a",
+   "description": "Build/validation tooling or content source"
+  }
+ ]
+}
