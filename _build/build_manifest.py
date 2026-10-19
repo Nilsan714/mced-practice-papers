@@ -20,7 +20,7 @@ def main():
     papers = load_papers()
     files = []
     for root, dirs, fs in os.walk(OUT):
-        dirs[:] = [d for d in dirs if d not in ('__pycache__',)]
+        dirs[:] = [d for d in dirs if d not in ('__pycache__', '.git')]
         for f in sorted(fs):
             if f in ('Question_Paper_Manifest.md', 'Question_Paper_Manifest.json') or f.endswith('.pyc') or f in ('results.jsonl', 'server.log', 'server.err'):
                 continue
