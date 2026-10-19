@@ -9,27 +9,27 @@ PLAN = [
     dict(date='2026-10-19', title='Day 1 — सुरुवात: Basics ओळख', goal='Accounting का गरजेचे ते समजून घ्या: A = L + C', tasks=[
         ('d1a', 'quiz', 0, 'Baseline test (40 प्रश्न) — आत्ता कुठे आहात ते पाहा (अंदाज लावला तरी चालेल)'),
         ('d1b', 'lesson', 2, 'Lesson 2: Accounting Fundamentals वाचा + Concept check पास करा'), ('d1c', 'cards', 'Accounting', 'Flashcards: Accounting (10 मिनिटे)'),
-        ('d1d', 'practice', 2, 'Paper 2 Practice mode सोडवा')]),
+        ('d1d', 'practice', 2, 'Paper 2 Practice mode सोडवा'), ('d1e', 'quiz', 2, 'Paper 2 Exam (वेळेसह) — किमान 80% मिळवा')]),
     dict(date='2026-10-20', title='Day 2 — Debit/Credit आणि Journal', goal='3 Golden Rules पक्के करा', tasks=[
         ('d2a', 'lesson', 3, 'Lesson 3: Debit, Credit, Journal वाचा + Concept check पास करा'), ('d2b', 'cards', 'Accounting', 'Flashcards: Accounting'),
-        ('d2c', 'practice', 3, 'Paper 3 Practice mode'), ('d2d', 'weak', 0, 'Weak-topic quiz (चुकलेल्या प्रश्नांची उजळणी)')]),
+        ('d2c', 'practice', 3, 'Paper 3 Practice mode'), ('d2d', 'weak', 0, 'Weak-topic quiz (चुकलेल्या प्रश्नांची उजळणी)'), ('d2e', 'quiz', 3, 'Paper 3 Exam (वेळेसह) — किमान 80% मिळवा')]),
     dict(date='2026-10-21', title='Day 3 — Ledger, Cash Book, Trial Balance', goal='Posting, balancing आणि TB समजून घ्या', tasks=[
         ('d3a', 'lesson', 4, 'Lesson 4: Ledger/Cash Book/TB वाचा + Concept check पास करा'), ('d3b', 'practice', 4, 'Paper 4 Practice mode'),
-        ('d3c', 'cards', 'Accounting', 'Flashcards: Accounting'), ('d3d', 'weak', 0, 'Weak-topic quiz'), ('d3e', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)')]),
+        ('d3c', 'cards', 'Accounting', 'Flashcards: Accounting'), ('d3d', 'weak', 0, 'Weak-topic quiz'), ('d3e', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)'), ('d3f', 'quiz', 4, 'Paper 4 Exam (वेळेसह) — किमान 80% मिळवा')]),
     dict(date='2026-10-22', title='Day 4 — BRS, Depreciation, Final Accounts', goal='Gross/Net Profit आणि Balance Sheet जमवा', tasks=[
         ('d4a', 'lesson', 5, 'Lesson 5: BRS/Depreciation/Final Accounts वाचा + Concept check पास करा'), ('d4b', 'practice', 5, 'Paper 5 Practice mode'),
-        ('d4c', 'cheat', 0, 'Cheat sheet वाचा (सूत्रे)'), ('d4d', 'weak', 0, 'Weak-topic quiz'), ('d4e', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)')]),
+        ('d4c', 'cheat', 0, 'Cheat sheet वाचा (सूत्रे)'), ('d4d', 'weak', 0, 'Weak-topic quiz'), ('d4e', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)'), ('d4f', 'quiz', 5, 'Paper 5 Exam (वेळेसह) — किमान 80% मिळवा')]),
     dict(date='2026-10-23', title='Day 5 — Taxation आणि Budget', goal='GST, ITC, TDS आणि Deficits', tasks=[
         ('d5a', 'lesson', 6, 'Lesson 6: Taxation वाचा + Concept check पास करा'), ('d5b', 'practice', 6, 'Paper 6 Practice'),
-        ('d5c', 'lesson', 7, 'Lesson 7: Budget वाचा + Concept check पास करा'), ('d5d', 'practice', 7, 'Paper 7 Practice'), ('d5e', 'cards', 'Taxation', 'Flashcards: Taxation + Budget'), ('d5f', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)')]),
+        ('d5c', 'lesson', 7, 'Lesson 7: Budget वाचा + Concept check पास करा'), ('d5d', 'practice', 7, 'Paper 7 Practice'), ('d5e', 'cards', 'Taxation', 'Flashcards: Taxation + Budget'), ('d5f', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)'), ('d5g', 'quiz', 6, 'Paper 6 Exam (वेळेसह) — किमान 80% मिळवा'), ('d5h', 'quiz', 7, 'Paper 7 Exam (वेळेसह) — किमान 80% मिळवा')]),
     dict(date='2026-10-24', title='Day 6 — Banking आणि Computer', goal='Full forms, NEFT/RTGS/UPI आणि Excel formulas', tasks=[
         ('d6a', 'lesson', 8, 'Lesson 8: Banking वाचा + Concept check पास करा'), ('d6b', 'practice', 8, 'Paper 8 Practice'),
-        ('d6c', 'lesson', 9, 'Lesson 9: Computer/Excel वाचा + Concept check पास करा'), ('d6d', 'practice', 9, 'Paper 9 Practice'), ('d6e', 'cards', 'Banking', 'Flashcards: Banking + Computer'), ('d6f', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)')]),
+        ('d6c', 'lesson', 9, 'Lesson 9: Computer/Excel वाचा + Concept check पास करा'), ('d6d', 'practice', 9, 'Paper 9 Practice'), ('d6e', 'cards', 'Banking', 'Flashcards: Banking + Computer'), ('d6f', 'revise', 0, 'उजळणी: आधी शिकलेले (Revision quiz)'), ('d6g', 'quiz', 8, 'Paper 8 Exam (वेळेसह) — किमान 80% मिळवा'), ('d6h', 'quiz', 9, 'Paper 9 Exam (वेळेसह) — किमान 80% मिळवा')]),
     dict(date='2026-10-25', title='Day 7 — Current Affairs + कमकुवत भाग', goal='Budget 2026-27 चे आकडे आणि कमी गुणांचे topics', tasks=[
         ('d7a', 'lesson', 10, 'Lesson 10: Current Affairs वाचा + Concept check पास करा'), ('d7b', 'practice', 10, 'Paper 10 Practice'),
-        ('d7c', 'quiz', 1, 'Paper 1 Re-test (Exam mode) — सुधारणा पाहा'), ('d7d', 'weak', 0, 'Weak-topic quiz'), ('d7e', 'cards', 'Current Affairs', 'Flashcards: Current Affairs'), ('d7f', 'revise', 0, 'उजळणी: सर्व शिकलेले (Revision quiz)')]),
+        ('d7c', 'quiz', 1, 'Paper 1 Re-test (Exam mode) — किमान 80% मिळवा'), ('d7d', 'weak', 0, 'Weak-topic quiz'), ('d7e', 'cards', 'Current Affairs', 'Flashcards: Current Affairs'), ('d7f', 'revise', 0, 'उजळणी: सर्व शिकलेले (Revision quiz)'), ('d7g', 'quiz', 10, 'Paper 10 Exam (वेळेसह) — किमान 80% मिळवा')]),
     dict(date='2026-10-26', title='Day 8 — Mock आणि विश्रांती', goal='Paper 11 वेळ लावून; नवीन काही शिकू नका', tasks=[
-        ('d8a', 'quiz', 11, 'Paper 11 Mock (Exam mode, 40 मिनिटे)'), ('d8b', 'weak', 0, 'चुकलेल्या प्रश्नांची उजळणी'),
+        ('d8a', 'quiz', 11, 'Paper 11 Mock (Exam mode, 40 मिनिटे) — किमान 80% मिळवा'), ('d8b', 'weak', 0, 'चुकलेल्या प्रश्नांची उजळणी'),
         ('d8c', 'cheat', 0, 'Cheat sheet शेवटचे वाचन'), ('d8d', 'exam', 0, 'उद्याची तयारी (ID, photo, venue) तपासा'), ('d8e', 'revise', 0, 'शेवटची उजळणी (Revision quiz)')]),
     dict(date='2026-10-27', title='परीक्षेचा दिवस — 11:00 AM', goal='शांत रहा. सोपे प्रश्न आधी. तुम्ही तयार आहात.', tasks=[
         ('d9a', 'exam', 0, 'Checklist: ID, 2 photo, pen, 10:30 पर्यंत पोहोचा'), ('d9b', 'cheat', 0, 'निघण्यापूर्वी Cheat sheet 5 मिनिटे')]),

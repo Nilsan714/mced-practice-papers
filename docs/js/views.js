@@ -11,9 +11,10 @@ function taskGo(t) {
     location.hash = ty === 'lesson' ? '#/lesson/' + ref : ty === 'practice' ? '#/practice/' + ref : ty === 'quiz' ? '#/exam/' + ref : ty === 'weak' ? '#/weak' : ty === 'revise' ? '#/revise' : ty === 'cards' ? '#/cards/' + encodeURIComponent(ref) : ty === 'cheat' ? '#/cheat' : '#/examday'
 }
 const ICON = { revise: '🔁', lesson: '📖', practice: '✍️', quiz: '📝', weak: '🎯', cards: '🃏', cheat: '📄', exam: '🎒' };
-const planDay = () => { const t = today(); return D.extras.plan.find(d => d.date === t) || D.extras.plan.find(d => d.date > t) || D.extras.plan[D.extras.plan.length - 1] };
+const planDay = () => { const g = myGate(), p = D.extras.plan; let k = 0; for (let i = 0; i < p.length; i++) { if (g[i].unlocked) k = i; if (g[i].unlocked && !g[i].passed) return p[i] } return p[k] };
 const dayPct = d => pct(d.tasks.filter(t => S.tasks[t[0]]).length, d.tasks.length);
-function nextTask() { const t = today(); for (const d of D.extras.plan) { if (d.date > t) break; for (const k of d.tasks) if (!S.tasks[k[0]]) return k } const d = planDay(); return d.tasks.find(k => !S.tasks[k[0]]) || null }
+function nextTask() { const g = myGate(), p = D.extras.plan; for (let i = 0; i < p.length; i++) { if (!g[i].unlocked) break; for (const k of p[i].tasks) if (!S.tasks[k[0]]) return k } return null }
+function nextLockMsg() { const g = myGate(), i = g.findIndex(x => !x.unlocked); return i < 0 ? '' : lockReason(g, i) }
 function accuracyAll() { const a = papersOf(S.attempts); return pct(a.reduce((s, x) => s + x.t, 0), a.reduce((s, x) => s + x.o, 0)) }
 
 V.home = function () {
@@ -22,7 +23,7 @@ V.home = function () {
     render(langToggle() + '<div class="hero"><div class="mu" style="color:#fff;opacity:.85">नमस्कार 👋</div><h1>' + esc(S.name) + '</h1><div class="q">' + esc(q) + '</div>'
         + '<div class="cd" id="cd"></div><div class="bubble"><small>✉️ ' + tt(esc(D.extras.personal.sender) + ' कडून', 'From ' + esc(D.extras.personal.sender)) + '</small><b>' + esc(dailyNote()) + '</b></div></div>'
         + (nt ? '<div class="card"><div class="mu">👉 पुढचे काम</div><div class="b" style="margin:4px 0 10px">' + ICON[nt[1]] + ' ' + esc(nt[3]) + '</div><button class="p w" data-a="go" data-v="' + nt[0] + '">आत्ता सुरू करा</button></div>'
-            : '<div class="card c"><div class="big">🎉</div><b>आजचे सर्व काम पूर्ण!</b><p class="mu">सराव किंवा Flashcards करत रहा.</p><a class="btn p" href="#/papers">आणखी सराव</a></div>')
+            : '<div class="card c"><div class="big">🎉</div><b>आजचे सर्व काम पूर्ण!</b><p class="mu">' + (nextLockMsg() || tt('सराव किंवा Flashcards करत रहा.', 'Keep practising or doing Flashcards.')) + '</p><a class="btn p" href="#/papers">' + tt('आणखी सराव', 'More practice') + '</a></div>')
         + '<div class="card"><div class="row"><div>' + ring(dayPct(d)) + '</div><div style="flex:1"><div class="b">' + esc(d.title) + '</div><div class="mu sm">' + esc(d.goal) + '</div><a href="#/plan" class="sm">पूर्ण प्लॅन पाहा →</a></div></div></div>'
         + (dueIds().length ? '<div class="card row sp"><div><div class="b">🔁 उजळणीची वेळ</div><div class="mu sm">' + dueIds().length + ' topic(s) — जे शिकले ते पक्के करा</div></div><a class="btn p" href="#/revise">सुरू</a></div>' : '')
         + '<div class="grid3"><div class="card c"><div class="big">🔥' + S.streak.n + '</div><div class="mu">दिवस सलग</div></div><div class="card c"><div class="big">⭐' + S.xp + '</div><div class="mu">XP</div></div><div class="card c"><div class="big">' + (S.attempts.length ? accuracyAll() + '%' : '—') + '</div><div class="mu">अचूकता</div></div></div>'
@@ -33,17 +34,18 @@ V.home = function () {
         + '<div class="card row sp"><div class="sm">Tutor ला प्रगती पाठवा</div><a class="btn p" href="#/report">📤 Report</a></div>');
     const tick = () => { const ms = Math.max(0, examTime() - Date.now()), el = $('#cd'); if (!el) return; el.innerHTML = trs('<div><b>' + Math.floor(ms / 864e5) + '</b><span>दिवस</span></div><div><b>' + Math.floor(ms % 864e5 / 36e5) + '</b><span>तास</span></div><div><b>' + Math.floor(ms % 36e5 / 6e4) + '</b><span>मिनिटे</span></div><div style="flex:1;text-align:left"><span>परीक्षा</span><br><b style="font-size:15px">27 Oct, 11:00</b></div>') }; tick(); curTimer = setInterval(tick, 30000)
 };
-ACT.go = id => { for (const d of D.extras.plan) for (const t of d.tasks) if (t[0] === id) return taskGo(t) };
 
 V.plan = function () {
-    const t = today();
-    render('<h1>📅 8 दिवसांचा प्लॅन</h1><p class="mu">रोज task करा, आपोआप tick होईल. थोडे चुकले तरी चालेल, पुढे चालत रहा!</p>' + D.extras.plan.map(d => {
-        const dt = new Date(d.date + 'T00:00:00'), isT = d.date === t, late = d.date < t && dayPct(d) < 100;
-        return '<div class="card day ' + (isT ? 'today' : '') + '"><div class="row sp"><div><span class="chip ' + (isT ? '' : late ? 'bad' : 'ok') + '">' + dt.getDate() + ' Oct, ' + WD[dt.getDay()] + (isT ? ' · आज' : late ? ' · बाकी' : '') + '</span><div class="b" style="margin-top:6px">' + esc(d.title) + '</div><div class="mu sm">' + esc(d.goal) + '</div></div>' + ring(dayPct(d), dayPct(d) === 100 ? 'var(--ok)' : 'var(--pr)') + '</div>'
-            + d.tasks.map(k => '<div class="task ' + (S.tasks[k[0]] ? 'done' : '') + '"><button class="ck" data-a="tog" data-v="' + k[0] + '">' + (S.tasks[k[0]] ? '✓' : '') + '</button><div style="flex:1" class="t sm">' + ICON[k[1]] + ' ' + esc(k[3]) + '</div><button class="sm" data-a="go" data-v="' + k[0] + '">›</button></div>').join('') + '</div>'
+    const t = today(), g = myGate();
+    render('<h1>📅 8 दिवसांचा प्लॅन</h1><div class="tip">🔐 ' + tt('<b>नियम:</b> एका वेळी फक्त <b>3 दिवसांचे</b> काम उघडे. पुढचा दिवस तेव्हाच उघडतो जेव्हा आधीच्या दिवसाचे <b>सर्व tasks 100%</b> पूर्ण आणि प्रत्येक paper च्या <b>Exam मध्ये किमान ' + PASS + '%</b> असतील. Tasks आपोआप tick होतात.', '<b>Rule:</b> only <b>3 days</b> of work are open at a time. The next day opens only when <b>all tasks of the earlier day are 100%</b> done and every paper has an <b>Exam score of at least ' + PASS + '%</b>. Tasks tick automatically.') + '</div>' + D.extras.plan.map((d, i) => {
+        const dt = new Date(d.date + 'T00:00:00'), x = g[i], isT = d.date === t, st = x.passed ? '✅' : x.unlocked ? '🔓' : '🔒', why = x.unlocked ? '' : lockReason(g, i);
+        const req = x.req.length ? '<div class="sm" style="margin:8px 0;padding:8px 10px;border-radius:12px;background:color-mix(in srgb,var(--pr) 7%,var(--card))"><b>' + tt('पास होण्याची अट:', 'To pass this day:') + '</b><br>' + tt('• सर्व tasks 100% ', '• All tasks 100% ') + (x.done === x.total ? '✅' : '⬜ (' + x.done + '/' + x.total + ')') + x.req.map(r => '<br>• Paper ' + r.p + ' Exam ≥' + PASS + '%: ' + (r.best ? r.best + '% ' : '') + (r.best >= PASS ? '✅' : '⬜')).join('') + '</div>' : '';
+        return '<div class="card day ' + (isT ? 'today' : '') + '" style="' + (x.unlocked ? '' : 'opacity:.72') + '"><div class="row sp"><div><span class="chip ' + (x.passed ? 'ok' : x.unlocked ? '' : 'wn') + '">' + st + ' ' + dt.getDate() + ' Oct, ' + WD[dt.getDay()] + (isT ? ' · आज' : '') + '</span><div class="b" style="margin-top:6px">' + esc(d.title) + '</div><div class="mu sm">' + esc(d.goal) + '</div></div>' + ring(pct(x.done, x.total), x.passed ? 'var(--ok)' : 'var(--pr)') + '</div>'
+            + (why ? '<div class="sm" style="margin:6px 0;color:var(--bad)">' + why + '</div>' : '') + req
+            + d.tasks.map(k => '<div class="task ' + (S.tasks[k[0]] ? 'done' : '') + '"><span class="ck">' + (S.tasks[k[0]] ? '✓' : (x.unlocked ? '' : '🔒')) + '</span><div style="flex:1" class="t sm">' + ICON[k[1]] + ' ' + esc(k[3]) + '</div>' + (x.unlocked ? '<button class="sm" data-a="go" data-v="' + k[0] + '">›</button>' : '') + '</div>').join('') + '</div>'
     }).join(''))
 };
-ACT.tog = id => { if (S.tasks[id]) delete S.tasks[id]; else { S.tasks[id] = Date.now(); addXP(20, ''); toast(pick(D.extras.praise)); checkBadges() } save(); V.plan() };
+ACT.go = id => { const g = myGate(); for (let i = 0; i < D.extras.plan.length; i++) for (const t of D.extras.plan[i].tasks) if (t[0] === id) { if (!g[i].unlocked) return toast(lockReason(g, i), 4000); return taskGo(t) } };
 
 V.more = function () {
     const it = (h, i, t, s) => '<a class="card row" href="' + h + '" style="text-decoration:none;color:inherit"><span style="font-size:28px">' + i + '</span><div style="flex:1"><div class="b">' + t + '</div><div class="mu sm">' + s + '</div></div>›</a>';

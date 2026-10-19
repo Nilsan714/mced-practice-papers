@@ -10,7 +10,7 @@ Live links: student **https://nilsan714.github.io/mced-practice-papers/** · tut
 | Section | What it does |
 |---|---|
 | Home | Countdown to the exam, personal message from Nilesh, next task, XP / level / streak, topic progress, badges |
-| Plan | 8-day plan (19–27 Oct); tasks tick automatically when the work is done |
+| Plan | 8-day plan (19–27 Oct); tasks tick automatically. **Locks:** only 3 days are open at a time; a day opens only after the previous day is 100% done and every paper of that day has a timed Exam score ≥80% (`PASS` in `docs/js/gate.js`) |
 | Learn | 11 lessons (concepts → worked examples → interactive practice). A lesson is "understood" only after a **Concept Check** (5 questions, ≥4 right) |
 | Practice | Practice mode (instant explanation), Exam mode (timed), Weak-questions quiz, **Revision** (re-tests earlier topics after ~20 hours) |
 | More | Flashcards (74), Cheat sheet, Exam-day checklist, My progress (topic-wise Mastered/Learning/Weak), Report to Tutor, Tutor Dashboard, language switch (मराठी / English) |

@@ -57,9 +57,15 @@ function improvement() { let best = 0; const by = {}; S.attempts.filter(isMain).
 function checkBadges() { BADGES.forEach(b => { if (!S.badges.includes(b[0]) && b[3]()) { S.badges.push(b[0]); save(); toast('🏆 नवीन Badge: ' + b[2]); burst() } }) }
 
 function autoMark(type, ref) {
-    let n = 0;
-    D.extras.plan.forEach(d => d.tasks.forEach(t => { if (t[1] === type && String(t[2]) === String(ref) && !S.tasks[t[0]]) { S.tasks[t[0]] = Date.now(); n++ } }));
-    if (n) { save(); addXP(20 * n, '(प्लॅन task पूर्ण)'); checkBadges(); D.extras.plan.forEach(d => { if (!S.dayDone[d.date] && d.tasks.every(t => S.tasks[t[0]])) { S.dayDone[d.date] = 1; save(); setTimeout(() => say('day'), 1800) } }) }
+    const g = gate(S.tasks, S.attempts); let n = 0;
+    outer: for (let i = 0; i < D.extras.plan.length; i++) {
+        if (!g[i].unlocked) continue;
+        for (const t of D.extras.plan[i].tasks) if (t[1] === type && String(t[2]) === String(ref) && !S.tasks[t[0]]) { S.tasks[t[0]] = Date.now(); n++; break outer }
+    }
+    if (n) {
+        save(); addXP(20, '(प्लॅन task पूर्ण)'); checkBadges();
+        gate(S.tasks, S.attempts).forEach((x, i) => { const d = D.extras.plan[i]; if (x.passed && !S.dayDone[d.date]) { S.dayDone[d.date] = 1; save(); setTimeout(() => say('day'), 1800) } })
+    }
 }
 
 function recordAttempt(a) {
@@ -74,7 +80,7 @@ function recordAttempt(a) {
 function snapshot() {
     const cards = D.extras.flash.length;
     return {
-        v: 1, name: S.name, ts: Date.now(), xp: S.xp, streak: S.streak.n, tasks: Object.keys(S.tasks), lessons: Object.keys(S.lessons),
+        v: 1, name: S.name, ts: Date.now(), xp: S.xp, streak: S.streak.n, tasks: Object.keys(S.tasks), eb: Object.fromEntries(D.papers.map(p => [p.id, examBest(S.attempts, p.id)]).filter(x => x[1] > 0)), lessons: Object.keys(S.lessons),
         cards: { known: Object.values(S.cards).filter(c => c >= 3).length, total: cards }, wrong: Object.keys(S.wrong).length,
         attempts: S.attempts.slice(-40).map(a => ({ p: a.p, m: a.m, ts: a.ts, t: a.t, o: a.o, s: a.subs, d: a.d, f: a.f, bl: a.bl }))
     }
@@ -87,6 +93,7 @@ function route() {
     clearInterval(curTimer);
     const h = location.hash.replace(/^#\/?/, '') || 'home', [n, ...a] = h.split('/');
     setNav(n); window.scrollTo(0, 0);
+    if (!TUTOR_MODE && ['lesson', 'check', 'practice', 'exam'].includes(n) && a[0] !== undefined && !paperAllowed(a[0])) { toast(tt('🔒 हा भाग अजून बंद आहे — आधी प्लॅनमधील आधीचा दिवस पूर्ण करा.', '🔒 This part is still locked — complete the earlier day in the plan first.'), 4200); location.hash = '#/plan'; return }
     try { (V[n] || V.home)(...a) } catch (e) { render('<div class="card">काहीतरी चुकले: ' + esc(e.message) + '<br><a href="#/home">होमवर जा</a></div>'); console.error(e) }
 }
 document.addEventListener('click', e => {

@@ -16,14 +16,15 @@ PLAN_TXT = {
     '2026-10-27': ('Exam day — 11:00 AM', 'Stay calm. Easy questions first. You are ready.'),
 }
 TASK_TXT = {
+    'd1e': 'Paper 2 Exam (timed) — score at least 80%', 'd2e': 'Paper 3 Exam (timed) — score at least 80%', 'd3f': 'Paper 4 Exam (timed) — score at least 80%', 'd4f': 'Paper 5 Exam (timed) — score at least 80%', 'd5g': 'Paper 6 Exam (timed) — score at least 80%', 'd5h': 'Paper 7 Exam (timed) — score at least 80%', 'd6g': 'Paper 8 Exam (timed) — score at least 80%', 'd6h': 'Paper 9 Exam (timed) — score at least 80%', 'd7g': 'Paper 10 Exam (timed) — score at least 80%',
     'd1a': 'Baseline test (40 questions) — see where you stand (guessing is fine)', 'd1b': 'Read Lesson 2: Accounting Fundamentals + pass the Concept check', 'd1c': 'Flashcards: Accounting (10 minutes)', 'd1d': 'Solve Paper 2 in Practice mode',
     'd2a': 'Read Lesson 3: Debit, Credit, Journal + pass the Concept check', 'd2b': 'Flashcards: Accounting', 'd2c': 'Paper 3 Practice mode', 'd2d': 'Weak-topic quiz (revise the questions you got wrong)',
     'd3a': 'Read Lesson 4: Ledger/Cash Book/TB + pass the Concept check', 'd3b': 'Paper 4 Practice mode', 'd3c': 'Flashcards: Accounting', 'd3d': 'Weak-topic quiz', 'd3e': 'Revision: what you learned earlier (Revision quiz)',
     'd4a': 'Read Lesson 5: BRS/Depreciation/Final Accounts + pass the Concept check', 'd4b': 'Paper 5 Practice mode', 'd4c': 'Read the Cheat sheet (formulas)', 'd4d': 'Weak-topic quiz', 'd4e': 'Revision: what you learned earlier (Revision quiz)',
     'd5a': 'Read Lesson 6: Taxation + pass the Concept check', 'd5b': 'Paper 6 Practice', 'd5c': 'Read Lesson 7: Budget + pass the Concept check', 'd5d': 'Paper 7 Practice', 'd5e': 'Flashcards: Taxation + Budget', 'd5f': 'Revision: what you learned earlier (Revision quiz)',
     'd6a': 'Read Lesson 8: Banking + pass the Concept check', 'd6b': 'Paper 8 Practice', 'd6c': 'Read Lesson 9: Computer/Excel + pass the Concept check', 'd6d': 'Paper 9 Practice', 'd6e': 'Flashcards: Banking + Computer', 'd6f': 'Revision: what you learned earlier (Revision quiz)',
-    'd7a': 'Read Lesson 10: Current Affairs + pass the Concept check', 'd7b': 'Paper 10 Practice', 'd7c': 'Paper 1 Re-test (Exam mode) — see the improvement', 'd7d': 'Weak-topic quiz', 'd7e': 'Flashcards: Current Affairs', 'd7f': 'Revision: everything learned (Revision quiz)',
-    'd8a': 'Paper 11 Mock (Exam mode, 40 minutes)', 'd8b': 'Revise the questions you got wrong', 'd8c': 'Last read of the Cheat sheet', 'd8d': 'Check tomorrow\'s preparation (ID, photos, venue)', 'd8e': 'Final revision (Revision quiz)',
+    'd7a': 'Read Lesson 10: Current Affairs + pass the Concept check', 'd7b': 'Paper 10 Practice', 'd7c': 'Paper 1 Re-test (Exam mode) — score at least 80%', 'd7d': 'Weak-topic quiz', 'd7e': 'Flashcards: Current Affairs', 'd7f': 'Revision: everything learned (Revision quiz)',
+    'd8a': 'Paper 11 Mock (Exam mode, 40 minutes) — score at least 80%', 'd8b': 'Revise the questions you got wrong', 'd8c': 'Last read of the Cheat sheet', 'd8d': 'Check tomorrow\'s preparation (ID, photos, venue)', 'd8e': 'Final revision (Revision quiz)',
     'd9a': 'Checklist: ID, 2 photos, pen, reach by 10:30', 'd9b': 'Read the Cheat sheet for 5 minutes before leaving',
 }
 

@@ -16,7 +16,7 @@ V.exam = function (id) {
     render('<div class="hero"><h1>📝 ' + esc(p.title) + '</h1><div class="q">' + p.questions.length + ' प्रश्न · ' + p.duration + ' मिनिटे · 1 mark each · no negative marking (practice rule)</div></div>'
         + '<div class="card"><p>परीक्षेसारखे वेळेत सोडवा. आधी सोपे प्रश्न, मग गणित. निकाल व explanation शेवटी दिसेल.</p><button class="p w" data-a="exstart" data-v="' + id + '">▶ सुरू करा</button><a class="btn w" style="margin-top:8px;text-align:center" href="#/practice/' + id + '">आधी Practice mode करा</a></div>')
 };
-ACT.exstart = id => { const p = paper(id); RUN = S.run = { mode: 'exam', pid: id, dur: p.duration, qs: p.questions.map(q => ({ pid: id, q })), i: 0, ans: {}, start: Date.now() }; save(); drawExam() };
+ACT.exstart = id => { const p = paper(id); RUN = S.run = { mode: 'exam', pid: id, dur: p.duration, qs: p.questions.map(q => ({ pid: id, q })).sort(() => Math.random() - .5), i: 0, ans: {}, start: Date.now() }; save(); drawExam() };
 function drawExam() {
     shown();
     const p = paper(RUN.pid), N = RUN.qs.length, it = qOf(RUN.i), q = it.q, n = Object.keys(RUN.ans).length;
@@ -49,7 +49,7 @@ V.check = function (id) {
 };
 V.weak = function () {
     const keys = Object.keys(S.wrong).sort(() => Math.random() - .5).slice(0, 10);
-    if (!keys.length) return render('<h1>🎯 कमकुवत प्रश्न</h1><div class="card c"><div class="big">🌟</div><b>सध्या चुकलेला एकही प्रश्न बाकी नाही!</b><p class="mu">आधी काही Practice/Exam करा. चुकलेले प्रश्न इथे येतील आणि बरोबर केल्यावर निघून जातील.</p><a class="btn p" href="#/papers">सराव सुरू करा</a></div>');
+    if (!keys.length) { autoMark('weak', 0); return render('<h1>🎯 कमकुवत प्रश्न</h1><div class="card c"><div class="big">🌟</div><b>सध्या चुकलेला एकही प्रश्न बाकी नाही!</b><p class="mu">आधी काही Practice/Exam करा. चुकलेले प्रश्न इथे येतील आणि बरोबर केल्यावर निघून जातील.</p><a class="btn p" href="#/papers">सराव सुरू करा</a></div>') }
     RUN = { mode: 'weak', pid: 'W', qs: keys.map(k => { const [pid, qid] = k.split(':'); return { pid, q: paper(pid).questions.find(x => String(x.id) === qid) } }), i: 0, ans: {}, fb: {} }; drawPractice()
 };
 const lastSeen = id => S.rev[id] || S.lessons[id] || 0;
@@ -97,7 +97,8 @@ function finish(auto) {
         if (RES.passed) { const first = !S.lessons[pid]; S.lessons[pid] = S.lessons[pid] || Date.now(); S.rev[pid] = Date.now(); save(); if (first) addXP(50, '(Concept समजला)'); autoMark('lesson', pid); checkBadges(); burst(['✅', '⭐', '🎉']) }
     }
     if (mode === 'revise') { new Set(R.qs.map(x => x.pid)).forEach(id => { S.rev[id] = Date.now() }); save(); addXP(t * 3, '(उजळणी)') }
-    if (mode !== 'check') autoMark(mode === 'exam' ? 'quiz' : mode, multi ? 0 : pid);
+    if (mode === 'exam') { if (String(pid) === '0' || pct(t, o) >= PASS) autoMark('quiz', pid); else toast(tt('Exam मध्ये किमान ' + PASS + '% हवे — Lesson पुन्हा वाचून पुन्हा Exam द्या.', 'You need at least ' + PASS + '% in the Exam — revisit the Lesson and retake the Exam.'), 5000) }
+    else if (mode !== 'check') autoMark(mode, multi ? 0 : pid);
     if (mode === 'exam' || mode === 'practice') say(pct(t, o) >= 75 ? 'high' : pct(t, o) >= 50 ? 'mid' : 'low', { pct: pct(t, o) }); else if (pct(t, o) >= 75) burst();
     RUN = null; location.hash = '#/result'; route()
 }
