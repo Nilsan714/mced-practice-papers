@@ -75,7 +75,7 @@ function snapshot() {
     return {
         v: 1, name: S.name, ts: Date.now(), xp: S.xp, streak: S.streak.n, tasks: Object.keys(S.tasks), lessons: Object.keys(S.lessons),
         cards: { known: Object.values(S.cards).filter(c => c >= 3).length, total: cards }, wrong: Object.keys(S.wrong).length,
-        attempts: S.attempts.slice(-40).map(a => ({ p: a.p, m: a.m, ts: a.ts, t: a.t, o: a.o, s: a.subs }))
+        attempts: S.attempts.slice(-40).map(a => ({ p: a.p, m: a.m, ts: a.ts, t: a.t, o: a.o, s: a.subs, d: a.d, f: a.f, bl: a.bl }))
     }
 }
 function sync() { try { fetch('api/progress', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(snapshot()) }).catch(() => { }) } catch (e) { } }
@@ -123,6 +123,6 @@ ACT.lang = async v => { S.lang = v; save(); if (v === 'en') await loadEn(); else
 /* personal messages from the tutor (Nilesh) */
 const tt = (mr, en) => isEn() ? en : mr;
 const fillT = (t, v) => String(t).replace(/\{(\w+)\}/g, (a, k) => k === 'name' ? ((v && v.name) || S.name) : k === 'from' ? D.extras.personal.sender : (v && v[k] != null ? v[k] : ''));
-function say(kind, v) { const P = D.extras.personal; if (!P || !P[kind]) return; toast('💌 ' + P.sender + ': ' + fillT(P[kind], v), 6500); burst(['💖', '✨', '🌟']) }
+function say(kind, v) { const P = D.extras.personal; if (!P || !P[kind]) return; toast('✉️ ' + P.sender + ': ' + fillT(P[kind], v), 6500); burst(['✨', '🌟', '🎉']) }
 function dailyNote() { const P = D.extras.personal, t = today(); if (t === '2026-10-26') return fillT(P.eve); if (t === '2026-10-27') return fillT(P.exam); return fillT(P.daily[new Date().getDate() % P.daily.length]) }
 const waNum = () => { const d = ((S.tutor && S.tutor.phone) || '').replace(/\D/g, ''); return d.length === 10 ? '91' + d : d };

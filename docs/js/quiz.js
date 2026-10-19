@@ -1,5 +1,8 @@
 /* quiz engine: exam mode (timed), practice mode (instant feedback), weak-topic quiz, results */
 let RUN = null, RES = null;
+document.addEventListener('visibilitychange', () => { if (document.hidden && RUN) RUN.bl = (RUN.bl || 0) + 1 });
+const shown = () => { if (RUN && RUN.sk !== RUN.i) { RUN.sk = RUN.i; RUN.qt = Date.now(); RUN.t0 = RUN.t0 || Date.now() } };
+const quick = () => { if (RUN && RUN.qt && Date.now() - RUN.qt < 3000) RUN.fast = (RUN.fast || 0) + 1 };
 const ans = (pid, q) => D.answers[pid][q.id];
 const expl = (pid, q) => D.explain[pid][q.id] || {};
 const fmtT = s => String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
@@ -15,13 +18,14 @@ V.exam = function (id) {
 };
 ACT.exstart = id => { const p = paper(id); RUN = S.run = { mode: 'exam', pid: id, dur: p.duration, qs: p.questions.map(q => ({ pid: id, q })), i: 0, ans: {}, start: Date.now() }; save(); drawExam() };
 function drawExam() {
+    shown();
     const p = paper(RUN.pid), N = RUN.qs.length, it = qOf(RUN.i), q = it.q, n = Object.keys(RUN.ans).length;
     render('<div class="top"><b>Q ' + (RUN.i + 1) + '/' + N + '</b><span class="mu sm">उत्तरे ' + n + '/' + N + '</span><b id="tm">' + fmtT(leftS()) + '</b></div>' + bar(pct(RUN.i + 1, N))
         + '<div class="card"><div class="mu sm">' + esc(p.subtopics[q.sub]) + '</div><p><b>' + esc(q.q) + '</b></p>' + q.opts.map((o, k) => '<button class="opt ' + (RUN.ans[q.id] === 'ABCD'[k] ? 's' : '') + '" data-a="exopt" data-v="' + 'ABCD'[k] + '"><b>' + 'ABCD'[k] + '.</b> ' + esc(o) + '</button>').join('') + '</div>'
         + '<div class="row sp"><button data-a="exnav" data-v="-1" ' + (RUN.i ? '' : 'disabled') + '>← मागे</button><button data-a="exov">सर्व प्रश्न</button><button class="p" data-a="exnav" data-v="1">' + (RUN.i < N - 1 ? 'पुढे →' : 'संपवा') + '</button></div>');
     clearInterval(curTimer); curTimer = setInterval(() => { const t = $('#tm'); if (t) t.textContent = fmtT(leftS()); if (leftS() <= 0) { clearInterval(curTimer); finish(true) } }, 1000)
 }
-ACT.exopt = L => { RUN.ans[qOf(RUN.i).q.id] = L; save(); drawExam() };
+ACT.exopt = L => { if (RUN.ans[qOf(RUN.i).q.id] === undefined) quick(); RUN.ans[qOf(RUN.i).q.id] = L; save(); drawExam() };
 ACT.exnav = d => { d = +d; if (RUN.i + d >= RUN.qs.length) return ACT.exov(); RUN.i = Math.max(0, RUN.i + d); save(); drawExam() };
 ACT.exov = () => {
     const N = RUN.qs.length, n = Object.keys(RUN.ans).length;
@@ -58,6 +62,7 @@ V.revise = function () {
 };
 const qk = it => it.pid + ':' + it.q.id;
 function drawPractice() {
+    shown();
     const N = RUN.qs.length, it = qOf(RUN.i), q = it.q, p = paper(it.pid), a = RUN.ans[qk(it)], fb = a !== undefined, right = ans(it.pid, q);
     render('<div class="top"><b>' + MODE_LABEL[RUN.mode] + ' · ' + (RUN.i + 1) + '/' + N + '</b><a href="#/papers" class="sm">बाहेर</a></div>' + bar(pct(RUN.i + (fb ? 1 : 0), N))
         + (RUN.mode === 'check' ? '<div class="tip">५ पैकी किमान ४ बरोबर आले की concept पक्का समजला असे मानू.</div>' : '')
@@ -66,7 +71,7 @@ function drawPractice() {
         + (fb ? '<div class="sm" style="margin-top:8px">' + (a === right ? '<b style="color:var(--ok)">✓ बरोबर! ' + pick(D.extras.praise) + '</b>' : '<b style="color:var(--bad)">✗ बरोबर उत्तर: ' + right + '</b>') + '<p>' + rich(expl(it.pid, q).exp || '') + '</p><div class="tip">📌 ' + rich(expl(it.pid, q).concept || '') + '</div></div>' : '') + '</div>'
         + (fb ? '<button class="p w" data-a="pnext">' + (RUN.i < N - 1 ? 'पुढचा प्रश्न →' : 'निकाल पाहा 🏁') + '</button>' : ''))
 }
-ACT.pans = L => { const it = qOf(RUN.i); RUN.ans[qk(it)] = L; if (L === ans(it.pid, it.q)) addXP(8); drawPractice() };
+ACT.pans = L => { const it = qOf(RUN.i); quick(); RUN.ans[qk(it)] = L; if (L === ans(it.pid, it.q)) addXP(8); drawPractice() };
 ACT.pnext = () => { if (RUN.i < RUN.qs.length - 1) { RUN.i++; drawPractice() } else finish(false) };
 
 /* ---------- FINISH + RESULT ---------- */
@@ -81,7 +86,7 @@ function finish(auto) {
         if (ok) { t++; rightIds.push(it.q.id); if (multi) delete S.wrong[qk(it)] } else { wrongIds.push(it.q.id); if (multi) S.wrong[qk(it)] = 1 }
         review.push({ it, a, ok })
     });
-    const o = R.qs.length, at = { p: multi ? (mode === 'weak' ? 'W' : 'R') : pid, m: mode, t, o, subs };
+    const o = R.qs.length, at = { p: multi ? (mode === 'weak' ? 'W' : 'R') : pid, m: mode, t, o, subs, d: Math.round((Date.now() - (R.start || R.t0 || Date.now())) / 1000), f: R.fast || 0, bl: R.bl || 0 };
     if (!multi) { at.wrongIds = wrongIds; at.rightIds = rightIds }
     RES = { mode, pid, t, o, subs, review, prev: prev ? pct(prev.t, prev.o) : null, auto, passed: null };
     recordAttempt(at);

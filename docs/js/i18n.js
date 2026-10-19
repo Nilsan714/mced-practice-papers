@@ -194,7 +194,7 @@ const DICT = [
     ['जे शिकले ते पक्के करा', 'make what you learned stick'], ['🔁 उजळणीची वेळ', '🔁 Time to revise'], ['आधी शिकलेले topics पुन्हा तपासा', 'Re-check topics you learned before'], ['उजळणी (Revision)', 'Revision'],
     ['🧠 Concept स्थिती (topic-wise)', '🧠 Concept status (topic-wise)'], ['पक्के = ≥80% (किमान 3 प्रश्नांवर) · शिकत आहे = 50–79% · कमकुवत &lt;50% · नवीन = अजून पुरेसा सराव नाही', 'Mastered = ≥80% (on at least 3 questions) · Learning = 50–79% · Weak &lt;50% · New = not enough practice yet'],
     ['आधी एक Lesson पूर्ण करा', 'Complete a Lesson first'], ['🔁 उजळणी', '🔁 Revision'], ['Check बाकी', 'Check pending'], ['समजला ✓', 'Understood ✓'], ['Lesson पुन्हा वाचा', 'Re-read Lesson'], ['पुन्हा Check', 'Check again'], ['(उजळणी)', '(revision)'], ['🧠 Check', '🧠 Check'],
-    ['💌', '💌'],
+    ['✉️', '✉️'],
 ].sort((a, b) => b[0].length - a[0].length);
 const NAVEN = { home: 'Home', plan: 'Plan', learn: 'Learn', papers: 'Practice', more: 'More' }, NAVMR = { home: 'होम', plan: 'प्लॅन', learn: 'शिका', papers: 'सराव', more: 'अधिक' };
 const isEn = () => typeof S !== 'undefined' && S && S.lang === 'en';
