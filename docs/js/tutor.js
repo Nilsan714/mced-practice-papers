@@ -46,7 +46,7 @@ V.tutor = async function (name) {
     live.forEach(s => { const a = T.students[s.name] = T.students[s.name] || []; if (!a.some(x => x.ts === s.ts)) a.push(s) });
     Object.values(T.students).forEach(a => a.sort((x, y) => x.ts - y.ts)); saveT(T);
     const names = Object.keys(T.students);
-    let h = '<h1>👩‍🏫 Tutor Dashboard</h1><div class="card"><b>विद्यार्थ्याचा Report paste करा</b><textarea id="tin" rows="3" placeholder="WhatsApp मधला संदेश (MCEDP2:… कोडसह) येथे paste करा" style="margin:8px 0"></textarea><button class="p w" data-a="timport">Import ✓</button>' + (live.length ? '<p class="mu sm">🟢 Local server वरून ' + live.length + ' विद्यार्थ्यांचा live data मिळाला.</p>' : '<p class="mu sm">Local server (same Wi-Fi) वरून उघडल्यास data आपोआप येतो.</p>') + '</div>';
+    let h = langToggle() + '<h1>👩‍🏫 Tutor Dashboard</h1><div class="card"><b>विद्यार्थ्याचा Report paste करा</b><textarea id="tin" rows="3" placeholder="WhatsApp मधला संदेश (MCEDP2:… कोडसह) येथे paste करा" style="margin:8px 0"></textarea><button class="p w" data-a="timport">Import ✓</button>' + (live.length ? '<p class="mu sm">🟢 Local server वरून ' + live.length + ' विद्यार्थ्यांचा live data मिळाला.</p>' : '<p class="mu sm">Local server (same Wi-Fi) वरून उघडल्यास data आपोआप येतो.</p>') + '</div>';
     if (!names.length) return render(h + '<div class="card c mu">अजून कोणताही विद्यार्थी नाही.</div>');
     if (!TSEL || !T.students[TSEL]) TSEL = names[0];
     h += '<div class="row wrap g">' + names.map(n => '<a class="chip ' + (n === TSEL ? '' : 'wn') + '" href="#/tutor/' + encodeURIComponent(n) + '">' + esc(n) + '</a>').join('') + '</div>';

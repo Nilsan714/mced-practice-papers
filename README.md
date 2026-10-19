@@ -5,7 +5,7 @@ For the written exam on **27 October 2026, 11:00 AM** (venue and documents in th
 
 ## 1. The Study App (what Aishwarya uses on the phone)
 
-Live link: **https://nilsan714.github.io/mced-practice-papers/** (works on any network). Local copy: `online_practice\server.py` (same app + auto-sync of progress on the same Wi-Fi).
+Live links: student **https://nilsan714.github.io/mced-practice-papers/** · tutor dashboard **https://nilsan714.github.io/mced-practice-papers/tutor.html** (separate page, separate saved data; works on any network). Local copy: `online_practice\server.py` (same app + auto-sync of progress on the same Wi-Fi).
 
 | Section | What it does |
 |---|---|
@@ -16,7 +16,7 @@ Live link: **https://nilsan714.github.io/mced-practice-papers/** (works on any n
 | More | Flashcards (74), Cheat sheet, Exam-day checklist, My progress (topic-wise Mastered/Learning/Weak), Report to Tutor, Tutor Dashboard, language switch (मराठी / English) |
 
 ### Tracking (for Nilesh)
-* **Anywhere:** Aishwarya taps *More → Report to Tutor* → WhatsApp (or Copy). The message contains a readable summary + a code. Nilesh opens the app → *More → Tutor Dashboard* → pastes it. The dashboard shows plan %, streak, XP, per-paper scores, weak subtopics with the lesson to re-teach, recent attempts, idle warning, notes, CSV export, and one-tap WhatsApp messages (praise / nudge / weak-topic). Set Nilesh's WhatsApp number in *More* so reports go straight to him.
+* **Anywhere:** Aishwarya taps *More → Report to Tutor* → WhatsApp (or Copy). The message contains a readable summary + a code. Nilesh opens the tutor page (`tutor.html`) and pastes it. The dashboard shows plan %, streak, XP, per-paper scores, weak subtopics with the lesson to re-teach, recent attempts, idle warning, notes, CSV export, and one-tap WhatsApp messages (praise / nudge / weak-topic). Set Nilesh's WhatsApp number in *More* so reports go straight to him.
 * **Same Wi-Fi:** run the local server; progress is saved automatically in `online_practice\progress\` and appears in the Tutor Dashboard (`/progress.csv` on the PC too).
 * Progress is stored on her phone's browser; clearing browser data erases it (use *Report* regularly).
 

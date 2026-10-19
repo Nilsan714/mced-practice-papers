@@ -196,14 +196,14 @@ const DICT = [
     ['आधी एक Lesson पूर्ण करा', 'Complete a Lesson first'], ['🔁 उजळणी', '🔁 Revision'], ['Check बाकी', 'Check pending'], ['समजला ✓', 'Understood ✓'], ['Lesson पुन्हा वाचा', 'Re-read Lesson'], ['पुन्हा Check', 'Check again'], ['(उजळणी)', '(revision)'], ['🧠 Check', '🧠 Check'],
     ['✉️', '✉️'],
 ].sort((a, b) => b[0].length - a[0].length);
-const NAVEN = { home: 'Home', plan: 'Plan', learn: 'Learn', papers: 'Practice', more: 'More' }, NAVMR = { home: 'होम', plan: 'प्लॅन', learn: 'शिका', papers: 'सराव', more: 'अधिक' };
+const NAVEN = { tutor: 'Dashboard', student: 'Student app', home: 'Home', plan: 'Plan', learn: 'Learn', papers: 'Practice', more: 'More' }, NAVMR = { tutor: 'Dashboard', student: 'Student app', home: 'होम', plan: 'प्लॅन', learn: 'शिका', papers: 'सराव', more: 'अधिक' };
 const isEn = () => typeof S !== 'undefined' && S && S.lang === 'en';
 function trs(s) { if (!isEn()) return s; for (const [a, b] of DICT) if (s.includes(a)) s = s.split(a).join(b); return s }
 function trHTML(h) {
     const parts = h.split(/(⁠[\s\S]*?⁡)/);
     return parts.map(p => p.charAt(0) === SENT_A ? p.slice(1, -1) : (isEn() ? trs(p) : p)).join('')
 }
-function navLabels() { $$('#nav a').forEach(a => { const s = a.querySelector('span'); a.innerHTML = s.outerHTML + (isEn() ? NAVEN : NAVMR)[a.dataset.n] }); document.title = isEn() ? 'MCED Prep' : 'MCED तयारी'; document.documentElement.lang = isEn() ? 'en' : 'mr' }
+function navLabels() { $$('#nav a').forEach(a => { const s = a.querySelector('span'), t = (isEn() ? NAVEN : NAVMR)[a.dataset.n]; if (t !== undefined) a.innerHTML = s.outerHTML + t }); if (!window.TUTOR_MODE) document.title = isEn() ? 'MCED Prep' : 'MCED तयारी'; document.documentElement.lang = isEn() ? 'en' : 'mr' }
 const langToggle = () => '<div class="row g" style="justify-content:flex-end;margin-bottom:6px;flex-wrap:wrap"><button class="sm" data-a="theme" data-v="auto" ' + (curTheme() === 'auto' ? 'disabled' : '') + '>🌓 Auto</button><button class="sm" data-a="theme" data-v="light" ' + (curTheme() === 'light' ? 'disabled' : '') + '>☀️ Light</button><button class="sm" data-a="theme" data-v="dark" ' + (curTheme() === 'dark' ? 'disabled' : '') + '>🌙 Dark</button><button class="sm" data-a="lang" data-v="mr" ' + (isEn() ? '' : 'disabled') + '>मराठी</button><button class="sm" data-a="lang" data-v="en" ' + (isEn() ? 'disabled' : '') + '>English</button></div>';
 const curTheme = () => (typeof S !== 'undefined' && S && S.theme) || 'auto';
 function applyTheme() { const t = curTheme(); if (t === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', t) }

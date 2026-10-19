@@ -3,7 +3,8 @@ const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [..
 const esc = s => SENT_A + String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + SENT_B;
 const V = {}, ACT = {};
 let D = {}, S = null, BASE = null;
-const KEY = 'mced_app_v2';
+const TUTOR_MODE = !!window.TUTOR_MODE;
+const KEY = TUTOR_MODE ? 'mced_app_tutor' : 'mced_app_v2';
 const dstr = d => { const x = d || new Date(); return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0') };
 const today = () => dstr();
 const isMain = a => a.m === 'exam' || a.m === 'practice';
@@ -78,9 +79,9 @@ function snapshot() {
         attempts: S.attempts.slice(-40).map(a => ({ p: a.p, m: a.m, ts: a.ts, t: a.t, o: a.o, s: a.subs, d: a.d, f: a.f, bl: a.bl }))
     }
 }
-function sync() { try { fetch('api/progress', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(snapshot()) }).catch(() => { }) } catch (e) { } }
+function sync() { if (TUTOR_MODE) return; try { fetch('api/progress', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(snapshot()) }).catch(() => { }) } catch (e) { } }
 
-function setNav(n) { const map = { home: 'home', plan: 'plan', learn: 'learn', lesson: 'learn', check: 'learn', papers: 'papers', exam: 'papers', practice: 'papers', weak: 'papers', result: 'papers' }; const k = map[n] || 'more'; $$('#nav a').forEach(a => a.classList.toggle('on', a.dataset.n === k)) }
+function setNav(n) { const map = { home: 'home', plan: 'plan', learn: 'learn', lesson: 'learn', check: 'learn', papers: 'papers', exam: 'papers', practice: 'papers', weak: 'papers', result: 'papers' }; const k = TUTOR_MODE ? 'tutor' : (map[n] || 'more'); $$('#nav a').forEach(a => a.classList.toggle('on', a.dataset.n === k)) }
 let curTimer = null;
 function route() {
     clearInterval(curTimer);
@@ -100,6 +101,7 @@ async function boot() {
     try { const r = await Promise.all(names.map(J)); D = { papers: r[0], answers: r[1], explain: r[2], lessons: r[3], extras: r[4] }; BASE = { papers: D.papers, explain: D.explain, lessons: D.lessons, extras: D.extras }; if (S.lang === 'en') await loadEn() }
     catch (e) { render('<div class="card">Data load झाला नाही. Internet तपासा आणि पान refresh करा.</div>'); return }
     navLabels(); applyTheme();
+    if (TUTOR_MODE) { S.named = true; if (!location.hash) location.hash = '#/tutor'; return route() }
     if (!S.named) return V.welcome();
     touchStreak(); checkBadges(); sync(); route();
     if ([3, 5, 7].includes(S.streak.n) && S.streak.shown !== today()) { S.streak.shown = today(); save(); setTimeout(() => say('streak', { n: S.streak.n }), 2500) }
