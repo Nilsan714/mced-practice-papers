@@ -158,7 +158,7 @@ LEVELS = [(0, 'Beginner 🌱'), (100, 'Learner 📘'), (300, 'Achiever ⭐'), (6
 
 # personal messages from the tutor/partner (editable). {name}=student, {from}=sender, {pct}=score
 PERSONAL = dict(
-    sender='Nilesh',
+    sender='Nilshi',
     daily=[
         'गुड मॉर्निंग {name} ☀️ आज थोडं थोडं शिकूया. मी तुझ्यासोबत आहे.',
         '{name}, माझा तुझ्यावर पूर्ण विश्वास आहे. आज जमेल तेवढं कर, बाकी आपण बघू 💪',

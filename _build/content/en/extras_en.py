@@ -145,7 +145,7 @@ QUOTES = [
 ]
 PRAISE = ['Well done!', 'Excellent!', 'Great work!', 'Superb!', 'Keep it up!']
 PERSONAL = dict(
-    sender='Nilesh',
+    sender='Nilshi',
     daily=[
         'Good morning {name} ☀️ Let us learn a little today. I am with you.',
         '{name}, I fully believe in you. Do what you can today, we will handle the rest 💪',

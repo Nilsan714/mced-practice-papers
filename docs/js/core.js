@@ -11,7 +11,7 @@ const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
 const pick = a => a[Math.floor(Math.random() * a.length)];
 const cls = p => p >= 75 ? 'ok' : p >= 50 ? 'wn' : 'bad';
 
-function defState() { return { tutor: { name: 'Nilesh', phone: '' }, dayDone: {}, rev: {}, lang: 'mr', name: 'Aishwarya', named: false, xp: 0, streak: { last: '', n: 0 }, tasks: {}, lessons: {}, cards: {}, attempts: [], wrong: {}, badges: [], checks: {}, created: Date.now() } }
+function defState() { return { tutor: { name: 'Nilshi', phone: '' }, dayDone: {}, rev: {}, lang: 'mr', name: 'Aishwarya', named: false, xp: 0, streak: { last: '', n: 0 }, tasks: {}, lessons: {}, cards: {}, attempts: [], wrong: {}, badges: [], checks: {}, created: Date.now() } }
 function loadState() { S = defState(); try { const x = JSON.parse(localStorage[KEY] || 'null'); if (x) Object.assign(S, x) } catch (e) { } }
 function save() { try { localStorage[KEY] = JSON.stringify(S) } catch (e) { } }
 const J = n => fetch('data/' + n + '.json').then(r => r.json());
