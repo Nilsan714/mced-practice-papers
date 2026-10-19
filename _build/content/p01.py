@@ -65,6 +65,7 @@ PAPER = dict(
     sources=[
         S('PRS-UB', 'PRS Legislative Research: Union Budget Analysis 2026-27', 'https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf', 'verified-primary (PDF text read directly)'),
         S('TAXGURU', 'TaxGuru: TDS/TCS restructuring FY 2026-27 under Income-tax Act 2025', 'https://taxguru.in/income-tax/guide-tds-tcs-restructuring-fy-2026-27-income-tax-act-2025.html', 'secondary-unconfirmed (blog; verify on incometax.gov.in)'),
+        S('CENSUS', 'Drishti IAS / PIB note on Census 2027 phases and dates', 'https://www.drishtiias.com/state-pcs-current-affairs/india-begins-first-fully-digital-census/print_manually', 'verified-secondary (search excerpt; verify on censusindia.gov.in)'),
         S('STATIC', 'Parliament structure — static knowledge', 'https://www.india.gov.in/', 'static-knowledge'),
     ],
 )

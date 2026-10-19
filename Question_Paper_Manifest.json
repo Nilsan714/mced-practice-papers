@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19 18:48",
+ "generated": "2026-10-19 23:14",
  "note": "Practice papers only; not official MCED papers/pattern/marks.",
  "validation": {
   "errors": [],
@@ -9,10 +9,12 @@
    "P05 Q24: calculated value also appears in distractor(s) [0] (ok only if intentional e.g. Dr vs Cr)",
    "P07 Q17: calculated value also appears in distractor(s) [1] (ok only if intentional e.g. Dr vs Cr)",
    "P07 Q21: calculated value also appears in distractor(s) [2] (ok only if intentional e.g. Dr vs Cr)",
+   "P07 B13: explanation does not show 500",
    "P11 Q27: calculated value also appears in distractor(s) [0] (ok only if intentional e.g. Dr vs Cr)"
   ],
   "papers": 11,
-  "questions": 262
+  "questions": 262,
+  "bank_questions": 135
  },
  "papers": [
   {
@@ -57,6 +59,13 @@
      "url": "https://taxguru.in/income-tax/guide-tds-tcs-restructuring-fy-2026-27-income-tax-act-2025.html",
      "accessed": "2026-10-19",
      "status": "secondary-unconfirmed (blog; verify on incometax.gov.in)"
+    },
+    {
+     "key": "CENSUS",
+     "label": "Drishti IAS / PIB note on Census 2027 phases and dates",
+     "url": "https://www.drishtiias.com/state-pcs-current-affairs/india-begins-first-fully-digital-census/print_manually",
+     "accessed": "2026-10-19",
+     "status": "verified-secondary (search excerpt; verify on censusindia.gov.in)"
     },
     {
      "key": "STATIC",
@@ -492,6 +501,13 @@
      "status": "verified-secondary (page read; check rbi.org.in)"
     },
     {
+     "key": "RBI-FAQ",
+     "label": "RBI FAQ: Real Time Gross Settlement (RTGS) System (24x7x365 from 14 Dec 2020; minimum ₹2,00,000)",
+     "url": "https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=275",
+     "accessed": "2026-10-19",
+     "status": "verified-primary (RTGS lines read from page)"
+    },
+    {
      "key": "STATIC",
      "label": "Static GK (Maharashtra formation, Constitution dates/Articles, GST launch date, NITI Aayog, UPI/NPCI) — not re-checked online",
      "url": "https://www.india.gov.in/",
@@ -578,8 +594,8 @@
   },
   {
    "path": "README.md",
-   "bytes": 6335,
-   "sha256": "eda080fef6a97376441a7cd218e077c0a5dc28cdce099059e82d267fe6a2c3bc",
+   "bytes": 6735,
+   "sha256": "ee960a7c59ba7e94eb7a2e83388a33ebe6c80d184a50182ec2b1bdd28a9e3b55",
    "description": "Order of use, file guide, limitations"
   },
   {
@@ -884,20 +900,20 @@
   },
   {
    "path": "docs/css/style.css",
-   "bytes": 8287,
-   "sha256": "b256ec55e404e62b1361bfc3efd72b0e33b355ee1e8a49e79ec563c6d4955ad1",
+   "bytes": 9309,
+   "sha256": "2f54eff3d127f7e2d349a374e0d38720c587e2153e40f8352416c3e7fc2a42af",
    "description": ""
   },
   {
    "path": "docs/data/answers.json",
-   "bytes": 3300,
-   "sha256": "043bf8f5b9b8d242a6e542d26fc75715c656359d1a91695562f32f9fd6702c3c",
+   "bytes": 4785,
+   "sha256": "fe510f2bfc11a097f7eac43ec79a2d7875911a59b333f28131c7e37b9bc27c7a",
    "description": ""
   },
   {
    "path": "docs/data/explain.json",
-   "bytes": 61658,
-   "sha256": "7ac907bf59ee01d917b5b62a2ec0200621e5329b8d927b7a8efff65e8879b780",
+   "bytes": 82726,
+   "sha256": "a89b06b5c6a28d8bbbc3c193da3f8274ef6bc662413ddc1e0f83247a8deb80aa",
    "description": ""
   },
   {
@@ -914,14 +930,14 @@
   },
   {
    "path": "docs/data/papers.json",
-   "bytes": 90826,
-   "sha256": "a9724f013e775cca23ebc8b26fa8f3e98b440cb6f241528dcc3392bef70f970c",
+   "bytes": 128719,
+   "sha256": "0d7586d932dede85854fdcfaa3dcbd3cbb28592b4cb31f981bcba39f5221e9f6",
    "description": ""
   },
   {
    "path": "docs/data/en/explain.json",
-   "bytes": 46629,
-   "sha256": "93a12003e7f0a5dabc299ccb8bf12531170a99236eea5d96f5c1e16b4ab89d14",
+   "bytes": 63864,
+   "sha256": "6439f0ad42ed2add63f32de430c698933001020a3b2b175fd288eb337fe5e7b3",
    "description": ""
   },
   {
@@ -938,8 +954,8 @@
   },
   {
    "path": "docs/data/en/papers.json",
-   "bytes": 68418,
-   "sha256": "d0bfee832af733bff925884470af61fa5f7e0057abf50caa977a75601273dc2d",
+   "bytes": 96626,
+   "sha256": "94eea0aa56d6aa75ce6fcda2f2ebbc6ecbf203c216bfc504f552a1d2748a9c0f",
    "description": ""
   },
   {
@@ -974,8 +990,8 @@
   },
   {
    "path": "docs/js/core.js",
-   "bytes": 11340,
-   "sha256": "8ee34d02e7783022aedcdfa773093c71fc1a072eb8fbcc49c07b157128b03cbe",
+   "bytes": 11466,
+   "sha256": "0cfac8c5371ab4d8e524540d9f1a61a03bed1d5ec054a7dac78bea986ba83a62",
    "description": ""
   },
   {
@@ -992,14 +1008,14 @@
   },
   {
    "path": "docs/js/learn.js",
-   "bytes": 6310,
-   "sha256": "f4e2da3f26c8d9952b7b53236cbcc108a3e36630bd3b502b2e2337d5736cdca8",
+   "bytes": 11314,
+   "sha256": "6782a27a8ec43285c5f91925b66b5a596acbf0ed4bb98a597aaf54decbebcd6b",
    "description": ""
   },
   {
    "path": "docs/js/quiz.js",
-   "bytes": 15466,
-   "sha256": "313d7b8de63ed7927e924329f5cbb661d5abce1f247311b1fc7380414e2c94da",
+   "bytes": 17035,
+   "sha256": "5e67a75410dbafd88b2c5a111572eca551a7971abdbbc1aa4397f4065c6ac15c",
    "description": ""
   },
   {
@@ -1022,14 +1038,14 @@
   },
   {
    "path": "_build/build_docs.py",
-   "bytes": 9743,
-   "sha256": "0a10dbae198a1765171d931d3737deef06d7cfc13f24dd462a2192fd1e44a20b",
+   "bytes": 10544,
+   "sha256": "b859deb31b26fa91679e38f275859c12c81bc9832ef68663ad32fde76b0aa232",
    "description": "Build/validation tooling or content source"
   },
   {
    "path": "_build/build_en.py",
-   "bytes": 5862,
-   "sha256": "b96da42c6e43c100f218efd79c008f3660ec63b0a60e94a590b6c265bf499ce0",
+   "bytes": 6259,
+   "sha256": "d7f93f6cc8eb2d0c62febd2607a4027ab180f480cbdb2ed1541c3c50a3d4bae8",
    "description": "Build/validation tooling or content source"
   },
   {
@@ -1064,8 +1080,8 @@
   },
   {
    "path": "_build/export_web.py",
-   "bytes": 3659,
-   "sha256": "a3626625b4dc4b57dfe4f8a238317c3281e411da0795328f42d6844a727ace5e",
+   "bytes": 3880,
+   "sha256": "da108bc023bf31d460ecfc76d9e7195e70082dc2954803a286c870a90276806c",
    "description": "Build/validation tooling or content source"
   },
   {
@@ -1082,20 +1098,20 @@
   },
   {
    "path": "_build/validate.py",
-   "bytes": 7180,
-   "sha256": "28dde425177deb4b8aaa52f86c51ce3151473316cab6cb7eeda5f4a96cefea5b",
+   "bytes": 8977,
+   "sha256": "29c8c6b2461ddb8ec43e6cd749d67db2818322c8d4919ffe1ad9284ad30aee09",
    "description": "Build/validation tooling or content source"
   },
   {
    "path": "_build/validation_report.json",
-   "bytes": 704,
-   "sha256": "d10c5c8f4070870bf4e829fff0a393a6ef41e67b30671892595f76015d2e9d4a",
+   "bytes": 774,
+   "sha256": "63fc015018aee1b44daed8208a7d4a22aeb97b998752cf3ce7e9aecff3311ea5",
    "description": "Build/validation tooling or content source"
   },
   {
    "path": "_build/content/common.py",
-   "bytes": 2033,
-   "sha256": "af8dbb06c32dd13c4ba75a1254cf87bc4c59ac414574f0767750890cc24bf07b",
+   "bytes": 2936,
+   "sha256": "4c476dc103871c22a1e356c1095089d7ad0592ad8921cfb621c266cf755deb73",
    "description": "Build/validation tooling or content source"
   },
   {
@@ -1106,8 +1122,8 @@
   },
   {
    "path": "_build/content/p01.py",
-   "bytes": 16811,
-   "sha256": "d59350d74c2e952fb339432036e82e370694cb1a0778477b4b9198406e15a86e",
+   "bytes": 17071,
+   "sha256": "d0effe5f1f16a48ab72b69733e669f3275edb99afca9f9f208037e1cf0208cb6",
    "description": "Build/validation tooling or content source"
   },
   {
@@ -1160,14 +1176,80 @@
   },
   {
    "path": "_build/content/p10.py",
-   "bytes": 19789,
-   "sha256": "b829e63cbba772c13afe4b3f965d2f582476deb08378c347e484474c9a94ee2b",
+   "bytes": 20093,
+   "sha256": "53f6aa6af7aa245c7260f08d86b95d51b82dba8ff710d6034343cde4c2f49622",
    "description": "Build/validation tooling or content source"
   },
   {
    "path": "_build/content/p11.py",
    "bytes": 17121,
    "sha256": "f70a46b003b1fbf6f9060c1a45c245a4292b4cfb475c0414eff03e3c5def9d2a",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b01.py",
+   "bytes": 6411,
+   "sha256": "275468453fb3d5c833f992d0b00dd354e026d612c87eed91c22cb4644c6c0e9a",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b02.py",
+   "bytes": 8945,
+   "sha256": "d8c2fb36c767e54423f68798868f697cbda4993d1dcdc0312ca41c820f7e7364",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b03.py",
+   "bytes": 7968,
+   "sha256": "aef8ec3ad1b0e7262565632544e7da1dca92174fd33ce58395bd9745a71ca1bf",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b04.py",
+   "bytes": 8528,
+   "sha256": "7d94c6a308c70cddf97a003adf3bea6de70b1efcce2b6da4b0e7cbc34adb14a9",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b05.py",
+   "bytes": 7781,
+   "sha256": "79b96e4f27803e5aa9510163ed4da726c09c399439557ed33d8a18151745f3ce",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b06.py",
+   "bytes": 8190,
+   "sha256": "76015dd8223c26f6bdd8ab5b22a6f51c8f2f8456384b239763e7a757d60b8799",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b07.py",
+   "bytes": 10957,
+   "sha256": "87b55082d3a7b430ce5ba21ecda78aff8674ade87274b1eaae383ccac6042571",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b08.py",
+   "bytes": 8421,
+   "sha256": "8ef96fb1ee1740ea4f626aa05a2553b8445e1f1477c5a736c2e9b58a636b36c6",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b09.py",
+   "bytes": 6532,
+   "sha256": "05cc815b14a65793a0a199e8dafa1520900c2b8cb3dcd049d4fd6427974ab6f7",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b10.py",
+   "bytes": 9920,
+   "sha256": "7c4f0fbbb67c271bce136cf1b863b53408f09780990dc4c8c79fde6051cec4b2",
+   "description": "Build/validation tooling or content source"
+  },
+  {
+   "path": "_build/content/bank/b11.py",
+   "bytes": 6951,
+   "sha256": "e75a9c68e654965b46ff3b5d2af26ebc7214ebe6dac7f1373808d66a1171ecef",
    "description": "Build/validation tooling or content source"
   },
   {

@@ -46,3 +46,22 @@ def place(qs, mapping):
         q['opts'][a], q['opts'][b] = q['opts'][b], q['opts'][a]
         q['ans'] = L
     return qs
+
+
+def BQ(s, l, q, corr, dist, e, c, qe, corr_e, dist_e, ee, ce, chk=None, src=None):
+    """Bank question (used only in timed Exams). The correct option is given first; the answer letter is assigned by position
+    later (load_bank) so letters stay balanced. corr_e/dist_e = None -> reuse Marathi options (numbers/English-only options)."""
+    return dict(sub=s, lvl=l, q=q, corr=corr, dist=dist, exp=e, concept=c, en=dict(q=qe, corr=corr_e, dist=dist_e, exp=ee, concept=ce), chk=chk, src=src)
+
+
+def arrange(item, idx, salt):
+    """Place the correct option at letter 'ABCD'[(idx*3+salt) % 4]; returns (opts_mr, opts_en, letter)."""
+    pos = (idx * 3 + salt) % 4
+    def mk(c, d):
+        o = list(d)
+        o.insert(pos, c)
+        return o
+    mr = mk(item['corr'], item['dist'])
+    en = item['en']
+    e_o = mr if en['corr'] is None else mk(en['corr'], en['dist'])
+    return mr, e_o, 'ABCD'[pos]

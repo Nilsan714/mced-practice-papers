@@ -3,17 +3,33 @@ import importlib, os, sys, glob
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, 'content'))
+sys.path.insert(0, os.path.join(HERE, 'content', 'bank'))
 from lib_docx import Doc
-from common import LEVELS
+from common import LEVELS, arrange
 
 OUT = os.path.dirname(HERE)
 NOTE = 'Practice paper (not an official MCED paper, pattern, marks scheme or prediction).'
 
 
+def load_bank(no):
+    try:
+        raw = importlib.import_module('b%02d' % no).BANK
+    except ImportError:
+        return []
+    out = []
+    for i, it in enumerate(raw):
+        mr, en_o, ans = arrange(it, i, no)
+        out.append(dict(sub=it['sub'], lvl=it['lvl'], q=it['q'], opts=mr, ans=ans, exp=it['exp'], concept=it['concept'], chk=it['chk'], src=it['src'],
+                        en=dict(q=it['en']['q'], opts=en_o, exp=it['en']['exp'], concept=it['en']['concept'])))
+    return out
+
+
 def load_papers():
     papers = []
     for f in sorted(glob.glob(os.path.join(HERE, 'content', 'p[0-9][0-9].py'))):
-        papers.append(importlib.import_module(os.path.basename(f)[:-3]).PAPER)
+        P = importlib.import_module(os.path.basename(f)[:-3]).PAPER
+        P['bank'] = load_bank(P['no'])
+        papers.append(P)
     return papers
 
 

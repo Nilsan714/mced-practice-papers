@@ -41,9 +41,13 @@ def main():
     answers['0'], explain['0'] = ba, be
     for p in load_papers():
         qs = [dict(id=i, q=q['q'], opts=q['opts'], sub=q['sub']) for i, q in enumerate(p['questions'], 1)]
+        nA = len(qs)
+        for j, bq in enumerate(p.get('bank', []), 1):
+            qs.append(dict(id=nA + j, q=bq['q'], opts=bq['opts'], sub=bq['sub'], b=1))
         papers.append(dict(id=p['no'], title='Paper %d: %s' % (p['no'], p['title']), duration=p['duration'], subtopics=p['subtopics'], lessons=p['lessons'], questions=qs))
-        answers[str(p['no'])] = {str(i): q['ans'] for i, q in enumerate(p['questions'], 1)}
-        explain[str(p['no'])] = {str(i): dict(exp=q['exp'], concept=q['concept']) for i, q in enumerate(p['questions'], 1)}
+        allq = list(p['questions']) + list(p.get('bank', []))
+        answers[str(p['no'])] = {str(i): q['ans'] for i, q in enumerate(allq, 1)}
+        explain[str(p['no'])] = {str(i): dict(exp=q['exp'], concept=q['concept']) for i, q in enumerate(allq, 1)}
     lessons = {str(p['no']): [list(b) for b in p['remediation']] for p in load_papers()}
     json.dump(lessons, open(os.path.join(DATA, 'lessons.json'), 'w', encoding='utf8'), ensure_ascii=False)
     ex = dict(exam=X.EXAM, plan=[dict(d, tasks=[list(t) for t in d['tasks']]) for d in X.PLAN], flash=[list(f) for f in X.FLASH], cheat=X.CHEAT,
@@ -52,7 +56,7 @@ def main():
     json.dump(papers, open(os.path.join(DATA, 'papers.json'), 'w', encoding='utf8'), ensure_ascii=False)
     json.dump(answers, open(os.path.join(DATA, 'answers.json'), 'w', encoding='utf8'))
     json.dump(explain, open(os.path.join(DATA, 'explain.json'), 'w', encoding='utf8'), ensure_ascii=False)
-    print('exported', len(papers), 'papers;', sum(len(p['questions']) for p in papers), 'questions; baseline explanations:', sum(1 for v in be.values() if v['exp']))
+    print('exported', len(papers), 'papers;', sum(len(p['questions']) for p in papers), 'questions (incl. bank); baseline explanations:', sum(1 for v in be.values() if v['exp']))
 
 
 if __name__ == '__main__':

@@ -13,10 +13,18 @@ function qOf(i) { return RUN.qs[i] }
 V.exam = function (id) {
     const p = paper(id);
     if (S.run && S.run.mode === 'exam' && String(S.run.pid) === String(id)) { RUN = S.run; return drawExam() }
-    render('<div class="hero"><h1>📝 ' + esc(p.title) + '</h1><div class="q">' + p.questions.length + ' प्रश्न · ' + p.duration + ' मिनिटे · 1 mark each · no negative marking (practice rule)</div></div>'
+    render('<div class="hero"><h1>📝 ' + esc(p.title) + '</h1><div class="q">' + mainQs(p).length + ' प्रश्न · ' + p.duration + ' मिनिटे · 1 mark each · no negative marking (practice rule)</div></div>'
+        + '<div class="tip">🔁 ' + tt('प्रत्येक Exam मध्ये प्रश्न बदलतात: नवीन प्रश्न + आधी चुकलेले प्रश्न. त्यामुळे पाठांतर नाही, समजून शिका.', 'Questions change in every Exam: new questions + the ones you got wrong earlier. So learn by understanding, not memorising.') + ' (' + tt('यावेळी नवीन प्रश्न', 'new this time') + ': ' + Math.min(mainQs(p).length, p.questions.filter(x => !((S.seen[id] || []).includes(x.id))).length) + ')</div>'
         + '<div class="card"><p>परीक्षेसारखे वेळेत सोडवा. आधी सोपे प्रश्न, मग गणित. निकाल व explanation शेवटी दिसेल.</p><button class="p w" data-a="exstart" data-v="' + id + '">▶ सुरू करा</button><a class="btn w" style="margin-top:8px;text-align:center" href="#/practice/' + id + '">आधी Practice mode करा</a></div>')
 };
-ACT.exstart = id => { const p = paper(id); RUN = S.run = { mode: 'exam', pid: id, dur: p.duration, qs: p.questions.map(q => ({ pid: id, q })).sort(() => Math.random() - .5), i: 0, ans: {}, start: Date.now() }; save(); drawExam() };
+function buildExam(pid) {
+    const p = paper(pid), all = p.questions, n = mainQs(p).length, seen = new Set((S.seen && S.seen[pid]) || []), sh = a => [...a].sort(() => Math.random() - .5);
+    const wrong = new Set(Object.keys(S.wrong).filter(k => k.startsWith(pid + ':')).map(k => +k.split(':')[1]));
+    const fresh = all.filter(x => !seen.has(x.id)), freshB = sh(fresh.filter(x => x.b)), freshA = sh(fresh.filter(x => !x.b));
+    const wrongSeen = sh(all.filter(x => seen.has(x.id) && wrong.has(x.id))), rest = sh(all.filter(x => seen.has(x.id) && !wrong.has(x.id)));
+    return sh([...freshB, ...freshA, ...wrongSeen, ...rest].slice(0, n))
+}
+ACT.exstart = id => { const p = paper(id); RUN = S.run = { mode: 'exam', pid: id, dur: p.duration, qs: buildExam(id).map(q => ({ pid: id, q })), i: 0, ans: {}, start: Date.now() }; save(); drawExam() };
 function drawExam() {
     shown();
     const p = paper(RUN.pid), N = RUN.qs.length, it = qOf(RUN.i), q = it.q, n = Object.keys(RUN.ans).length;
@@ -39,12 +47,12 @@ ACT.exsubmit = () => { const n = RUN.qs.length - Object.keys(RUN.ans).length; if
 const MODE_LABEL = { practice: '✍️ Practice', exam: '📝 Exam', weak: '🎯 कमकुवत Quiz', revise: '🔁 उजळणी', check: '🧠 Concept Check' };
 const isMulti = m => m === 'weak' || m === 'revise';
 V.practice = function (id) {
-    const p = paper(id); RUN = { mode: 'practice', pid: id, qs: p.questions.map(q => ({ pid: id, q })), i: 0, ans: {}, fb: {} }; drawPractice()
+    const p = paper(id); RUN = { mode: 'practice', pid: id, qs: mainQs(p).map(q => ({ pid: id, q })), i: 0, ans: {}, fb: {} }; drawPractice()
 };
 V.check = function (id) {
-    const p = paper(id), bySub = {}; p.questions.forEach(q => (bySub[q.sub] = bySub[q.sub] || []).push(q));
+    const p = paper(id), bySub = {}; mainQs(p).forEach(q => (bySub[q.sub] = bySub[q.sub] || []).push(q));
     const subs = Object.keys(bySub).sort(() => Math.random() - .5).slice(0, 5), qs = subs.map(s => pick(bySub[s]));
-    while (qs.length < 5) { const q = pick(p.questions); if (!qs.includes(q)) qs.push(q) }
+    while (qs.length < 5) { const q = pick(mainQs(p)); if (!qs.includes(q)) qs.push(q) }
     RUN = { mode: 'check', pid: id, qs: qs.map(q => ({ pid: id, q })), i: 0, ans: {}, fb: {} }; drawPractice()
 };
 V.weak = function () {
@@ -57,7 +65,7 @@ const dueIds = () => Object.keys(S.lessons).filter(id => Date.now() - lastSeen(i
 V.revise = function () {
     const ids = Object.keys(S.lessons).sort((a, b) => lastSeen(a) - lastSeen(b)).slice(0, 4);
     if (!ids.length) return render('<h1>🔁 उजळणी</h1><div class="card c"><div class="big">📘</div><b>आधी एक Lesson पूर्ण करा</b><p class="mu">Lesson वाचून Concept Check पास केल्यावर, त्या topic ची उजळणी इथे येईल. (जे शिकले ते लक्षात राहावे म्हणून)</p><a class="btn p" href="#/learn">Lessons</a></div>');
-    const qs = []; ids.forEach(id => { const p = paper(id); [...p.questions].sort(() => Math.random() - .5).slice(0, 3).forEach(q => qs.push({ pid: id, q })) });
+    const qs = []; ids.forEach(id => { const p = paper(id); mainQs(p).sort(() => Math.random() - .5).slice(0, 3).forEach(q => qs.push({ pid: id, q })) });
     RUN = { mode: 'revise', pid: 'R', qs: qs.sort(() => Math.random() - .5), i: 0, ans: {}, fb: {} }; drawPractice()
 };
 const qk = it => it.pid + ':' + it.q.id;
@@ -91,7 +99,7 @@ function finish(auto) {
     RES = { mode, pid, t, o, subs, review, prev: prev ? pct(prev.t, prev.o) : null, auto, passed: null };
     recordAttempt(at);
     S.run = null; save();
-    if (mode === 'exam') addXP(t * 5, '(Exam)');
+    if (mode === 'exam') { S.seen[pid] = [...new Set([...(S.seen[pid] || []), ...R.qs.map(x => x.q.id)])]; save(); addXP(t * 5, '(Exam)') }
     if (mode === 'check') {
         RES.need = Math.ceil(o * .8); RES.passed = t >= RES.need;
         if (RES.passed) { const first = !S.lessons[pid]; S.lessons[pid] = S.lessons[pid] || Date.now(); S.rev[pid] = Date.now(); save(); if (first) addXP(50, '(Concept समजला)'); autoMark('lesson', pid); checkBadges(); burst(['✅', '⭐', '🎉']) }
@@ -116,6 +124,6 @@ V.result = function () {
         const q = x.it.q, right = ans(x.it.pid, q), e = expl(x.it.pid, q);
         return '<div style="margin:12px 0;padding-bottom:10px;border-bottom:1px dashed var(--bd)"><div class="sm"><b>' + (i + 1) + '. ' + esc(q.q) + '</b></div><div class="sm" style="color:var(--' + (x.ok ? 'ok' : 'bad') + ')">' + (x.ok ? '✓' : '✗') + ' तुमचे: ' + (x.a ? x.a + '. ' + esc(q.opts['ABCD'.indexOf(x.a)]) : '—') + '</div>' + (x.ok ? '' : '<div class="sm" style="color:var(--ok)">बरोबर: ' + right + '. ' + esc(q.opts['ABCD'.indexOf(right)]) + '</div>') + '<div class="mu sm">' + rich(e.exp || '') + '</div></div>'
     }).join('') + '</details>'
-        + '<div class="card"><div class="row g wrap">' + (chk && !r.passed ? '<a class="btn p" href="#/lesson/' + r.pid + '">📖 Lesson पुन्हा वाचा</a><a class="btn" href="#/check/' + r.pid + '">🧠 पुन्हा Check</a>' : (!multi ? '<a class="btn p" href="#/lesson/' + r.pid + '">📖 Lesson</a>' : '')) + (chk && r.passed ? '<a class="btn p" href="#/practice/' + r.pid + '">✍️ Practice करा</a>' : '') + '<a class="btn" href="#/weak">🎯 कमकुवत Quiz</a>' + (multi || chk ? '' : '<a class="btn" href="#/practice/' + r.pid + '">पुन्हा Practice</a>') + '<a class="btn" href="#/revise">🔁 उजळणी</a><a class="btn" href="#/home">🏠 होम</a><a class="btn" href="#/report">📤 Tutor ला पाठवा</a></div></div>';
+        + '<div class="card"><div class="row g wrap">' + (chk && !r.passed ? '<a class="btn p" href="#/lesson/' + r.pid + '">📖 Lesson पुन्हा वाचा</a><a class="btn" href="#/check/' + r.pid + '">🧠 पुन्हा Check</a>' : (!multi ? '<a class="btn p" href="#/lesson/' + r.pid + '">📖 Lesson</a>' : '')) + (chk && r.passed ? '<a class="btn p" href="#/practice/' + r.pid + '">✍️ Practice करा</a>' : '') + (r.mode === 'exam' && p < PASS ? '<button class="p" data-a="exstart" data-v="' + r.pid + '">' + tt('🔁 नवीन प्रश्नांसह पुन्हा Exam', '🔁 Retake Exam with new questions') + '</button>' : '') + '<a class="btn" href="#/weak">🎯 कमकुवत Quiz</a>' + (multi || chk ? '' : '<a class="btn" href="#/practice/' + r.pid + '">पुन्हा Practice</a>') + '<a class="btn" href="#/revise">🔁 उजळणी</a><a class="btn" href="#/home">🏠 होम</a><a class="btn" href="#/report">📤 Tutor ला पाठवा</a></div></div>';
     render(h)
 };

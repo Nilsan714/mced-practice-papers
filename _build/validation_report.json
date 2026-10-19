@@ -6,8 +6,10 @@
   "P05 Q24: calculated value also appears in distractor(s) [0] (ok only if intentional e.g. Dr vs Cr)",
   "P07 Q17: calculated value also appears in distractor(s) [1] (ok only if intentional e.g. Dr vs Cr)",
   "P07 Q21: calculated value also appears in distractor(s) [2] (ok only if intentional e.g. Dr vs Cr)",
+  "P07 B13: explanation does not show 500",
   "P11 Q27: calculated value also appears in distractor(s) [0] (ok only if intentional e.g. Dr vs Cr)"
  ],
  "papers": 11,
- "questions": 262
+ "questions": 262,
+ "bank_questions": 135
 }

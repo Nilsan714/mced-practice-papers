@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, 'content'))
 sys.path.insert(0, os.path.join(HERE, 'content', 'en'))
-from build_docs import OUT
+from build_docs import OUT, load_papers
 import extras as X
 import extras_en as XE
 
@@ -18,15 +18,18 @@ errs = []
 
 def main():
     papers, explain, lessons = rd('papers'), rd('explain'), rd('lessons')
+    BANK = {q['no']: q.get('bank', []) for q in load_papers()}
     P_en, E_en, L_en = [], {}, {}
     for p in papers:
         pid = p['id']
         EN = importlib.import_module('e%02d' % pid).EN
-        if len(EN['qs']) != len(p['questions']):
-            errs.append('P%d: question count %d != %d' % (pid, len(EN['qs']), len(p['questions'])))
+        nA = len(EN['qs'])
+        bank = BANK.get(pid, [])
+        if nA + len(bank) != len(p['questions']):
+            errs.append('P%d: question count %d (+%d bank) != %d' % (pid, nA, len(bank), len(p['questions'])))
             continue
         qs, ex = [], {}
-        for q, (qt, opts, exp, concept) in zip(p['questions'], EN['qs']):
+        for q, (qt, opts, exp, concept) in zip(p['questions'][:nA], EN['qs']):
             o = opts if opts is not None else q['opts']
             if len(o) != 4:
                 errs.append('P%d Q%d: opts != 4' % (pid, q['id']))
@@ -39,6 +42,9 @@ def main():
             qs.append(dict(id=q['id'], q=qt, opts=o, sub=q['sub']))
             base = explain[str(pid)][str(q['id'])]
             ex[str(q['id'])] = dict(exp=exp, concept=concept or base.get('concept', ''))
+        for q, bq in zip(p['questions'][nA:], bank):
+            qs.append(dict(id=q['id'], q=bq['en']['q'], opts=bq['en']['opts'], sub=q['sub'], b=1))
+            ex[str(q['id'])] = dict(exp=bq['en']['exp'], concept=bq['en']['concept'])
         P_en.append(dict(id=pid, title=('Paper %d: %s' % (pid, EN['title'])) if pid else EN['title'], duration=p['duration'], subtopics=EN['subtopics'], lessons=EN['lessons'], questions=qs))
         E_en[str(pid)] = ex
         if pid:

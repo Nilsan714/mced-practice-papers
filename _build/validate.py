@@ -76,7 +76,41 @@ def main(files=True):
             n = norm(q['q'])
             for (pt, ot) in seen:
                 r = difflib.SequenceMatcher(None, n, ot).ratio()
-                if r > 0.82 and len(n) > 45:
+                if r > (0.97 if ' B' in pt else 0.82) and len(n) > 45:
+                    E('%s: near-duplicate of %s (ratio %.2f)' % (tag, pt, r))
+            seen.append((tag, n))
+        # ---- bank (extra questions used only in timed Exams)
+        for i, q in enumerate(p.get('bank', []), 1):
+            tag = '%s B%d' % (t, i)
+            if len(q['opts']) != 4 or len({norm(o) for o in q['opts']}) != 4:
+                E('%s: needs 4 distinct options' % tag)
+                continue
+            if len(q['en']['opts']) != 4 or len({norm(o) for o in q['en']['opts']}) != 4:
+                E('%s: English options need 4 distinct options' % tag)
+            if q['ans'] not in 'ABCD' or not q['exp'].strip() or not q['en']['exp'].strip():
+                E('%s: bad answer or explanation' % tag)
+            if not (0 <= q['sub'] < len(p['subtopics'])):
+                E('%s: bad subtopic' % tag)
+            ci = 'ABCD'.index(q['ans'])
+            if q['chk']:
+                val = eval(q['chk'], {'__builtins__': {}}, {})
+                f = inr(val)
+                pat = r'(?<![\d,])' + re.escape(f) + r'(?![\d,])'
+                if not re.search(pat, q['opts'][ci]):
+                    E('%s: calc %s = %s not in correct option' % (tag, q['chk'], f))
+                if not re.search(pat, q['en']['opts'][ci]):
+                    E('%s: calc value not in correct English option' % tag)
+                if f not in q['exp']:
+                    W('%s: explanation does not show %s' % (tag, f))
+            if q['src']:
+                k = q['src'].split(':')[0].strip()
+                if k not in keys:
+                    E('%s: source key %r not in sources list' % (tag, k))
+                cited.add(k)
+            n = norm(q['q'])
+            for (pt, ot) in seen:
+                r = difflib.SequenceMatcher(None, n, ot).ratio()
+                if r > (0.85 if ' B' in pt else 0.97) and len(n) > 45:
                     E('%s: near-duplicate of %s (ratio %.2f)' % (tag, pt, r))
             seen.append((tag, n))
         for s in p['sources']:
@@ -136,7 +170,7 @@ def main(files=True):
         print('ERROR  ', m)
     for m in warns:
         print('warning', m)
-    json.dump({'errors': errs, 'warnings': warns, 'papers': len(papers), 'questions': sum(len(p['questions']) for p in papers)},
+    json.dump({'errors': errs, 'warnings': warns, 'papers': len(papers), 'questions': sum(len(p['questions']) for p in papers), 'bank_questions': sum(len(p.get('bank', [])) for p in papers)},
               open(os.path.join(HERE, 'validation_report.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     return 1 if errs else 0
 

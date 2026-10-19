@@ -63,3 +63,9 @@ details{background:var(--card);border:1px solid var(--bd);border-radius:14px;pad
 h1,h2{letter-spacing:.2px}
 
 .top{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(6px)}
+
+.lesson .lbody{font-size:17px;line-height:1.75}.lesson.fs-l .lbody{font-size:19px}.lesson.fs-xl .lbody{font-size:21px}
+.lbody h2.sec{font-size:1.3em;margin:16px 0 8px;padding-bottom:6px;border-bottom:3px solid color-mix(in srgb,var(--pr) 35%,transparent)}
+.lbody p{margin:10px 0}.lbody ul.l li{margin:8px 0}.lbody table{font-size:.9em}.lbody .ex .st{padding:6px 8px 6px 8px;margin:4px 0;background:color-mix(in srgb,var(--ok) 6%,var(--card));border-radius:10px;font-size:1em}
+.lnav{position:fixed;left:0;right:0;bottom:62px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);z-index:15;max-width:680px;margin:0 auto}
+.lnav button{min-width:96px}.dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}.dots i{width:9px;height:9px;border-radius:50%;background:var(--bd)}.dots i.on{background:var(--pr);transform:scale(1.3)}.dots i.dn{background:color-mix(in srgb,var(--pr) 45%,var(--bd))}

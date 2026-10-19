@@ -7,12 +7,13 @@ const TUTOR_MODE = !!window.TUTOR_MODE;
 const KEY = TUTOR_MODE ? 'mced_app_tutor' : 'mced_app_v2';
 const dstr = d => { const x = d || new Date(); return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0') };
 const today = () => dstr();
+const mainQs = p => p.questions.filter(q => !q.b);
 const isMain = a => a.m === 'exam' || a.m === 'practice';
 const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
 const pick = a => a[Math.floor(Math.random() * a.length)];
 const cls = p => p >= 75 ? 'ok' : p >= 50 ? 'wn' : 'bad';
 
-function defState() { return { theme: 'auto', tutor: { name: 'Nilshi', phone: '' }, dayDone: {}, rev: {}, lang: 'mr', name: 'Aishwarya', named: false, xp: 0, streak: { last: '', n: 0 }, tasks: {}, lessons: {}, cards: {}, attempts: [], wrong: {}, badges: [], checks: {}, created: Date.now() } }
+function defState() { return { seen: {}, theme: 'auto', tutor: { name: 'Nilshi', phone: '' }, dayDone: {}, rev: {}, lang: 'mr', name: 'Aishwarya', named: false, xp: 0, streak: { last: '', n: 0 }, tasks: {}, lessons: {}, cards: {}, attempts: [], wrong: {}, badges: [], checks: {}, created: Date.now() } }
 function loadState() { S = defState(); try { const x = JSON.parse(localStorage[KEY] || 'null'); if (x) Object.assign(S, x) } catch (e) { } }
 function save() { try { localStorage[KEY] = JSON.stringify(S) } catch (e) { } }
 const J = n => fetch('data/' + n + '.json').then(r => r.json());
@@ -92,6 +93,7 @@ let curTimer = null;
 function route() {
     clearInterval(curTimer);
     const h = location.hash.replace(/^#\/?/, '') || 'home', [n, ...a] = h.split('/');
+    if ('speechSynthesis' in window) speechSynthesis.cancel();
     setNav(n); window.scrollTo(0, 0);
     if (!TUTOR_MODE && ['lesson', 'check', 'practice', 'exam'].includes(n) && a[0] !== undefined && !paperAllowed(a[0])) { toast(tt('🔒 हा भाग अजून बंद आहे — आधी प्लॅनमधील आधीचा दिवस पूर्ण करा.', '🔒 This part is still locked — complete the earlier day in the plan first.'), 4200); location.hash = '#/plan'; return }
     try { (V[n] || V.home)(...a) } catch (e) { render('<div class="card">काहीतरी चुकले: ' + esc(e.message) + '<br><a href="#/home">होमवर जा</a></div>'); console.error(e) }

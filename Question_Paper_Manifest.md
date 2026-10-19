@@ -1,8 +1,8 @@
 # Question Paper Manifest
 
-Generated 2026-10-19 18:48. Practice papers only — not official MCED papers, pattern, marks or predictions.
+Generated 2026-10-19 23:14. Practice papers only — not official MCED papers, pattern, marks or predictions.
 
-Automated validation at generation: **0 errors, 6 warnings** (see `_build/validation_report.json`).
+Automated validation at generation: **0 errors, 7 warnings** (see `_build/validation_report.json`).
 
 ## Papers
 
@@ -26,6 +26,7 @@ Automated validation at generation: **0 errors, 6 warnings** (see `_build/valida
 |---|---|---|---|
 | 1 | PRS-UB | [PRS Legislative Research: Union Budget Analysis 2026-27](https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf) | verified-primary (PDF text read directly) |
 | 1 | TAXGURU | [TaxGuru: TDS/TCS restructuring FY 2026-27 under Income-tax Act 2025](https://taxguru.in/income-tax/guide-tds-tcs-restructuring-fy-2026-27-income-tax-act-2025.html) | secondary-unconfirmed (blog; verify on incometax.gov.in) |
+| 1 | CENSUS | [Drishti IAS / PIB note on Census 2027 phases and dates](https://www.drishtiias.com/state-pcs-current-affairs/india-begins-first-fully-digital-census/print_manually) | verified-secondary (search excerpt; verify on censusindia.gov.in) |
 | 1 | STATIC | [Parliament structure — static knowledge](https://www.india.gov.in/) | static-knowledge |
 | 6 | PIB-GST | [PIB: Recommendations of the 56th GST Council (3 Sep 2025); rates 5/18/40, effective 22 Sep 2025](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555&reg=48&lang=2) | verified-secondary (PIB page returned HTTP 403 to my fetch tool; PIB listing + multiple news/tax sites agree) |
 | 6 | TAXGURU | [TaxGuru: TDS/TCS restructuring FY 2026-27 under Income-tax Act 2025 (rates/thresholds)](https://taxguru.in/income-tax/guide-tds-tcs-restructuring-fy-2026-27-income-tax-act-2025.html) | secondary-unconfirmed (blog; verify on incometax.gov.in) |
@@ -43,6 +44,7 @@ Automated validation at generation: **0 errors, 6 warnings** (see `_build/valida
 | 10 | PIB-GST | [PIB: Recommendations of the 56th GST Council (rates 5/18/40; effective 22 Sep 2025)](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555&reg=48&lang=2) | verified-secondary (PIB page HTTP 403 to my fetch tool; multiple sources agree) |
 | 10 | CLEARTAX | [ClearTax: Income tax changes from 1 April 2026 (Income-tax Act 2025; Tax Year)](https://cleartax.in/c/changes-from-income-tax-april-2026) | secondary-unconfirmed (blog) |
 | 10 | RBI-GOV | [Outlook Money: RBI MPC October 2026 (names Governor Sanjay Malhotra)](https://www.outlookmoney.com/banking/rbi-mpc-meeting-october-2026-where-to-watch-governor-sanjay-malhotras-policy-announcement-live) | verified-secondary (page read; check rbi.org.in) |
+| 10 | RBI-FAQ | [RBI FAQ: Real Time Gross Settlement (RTGS) System (24x7x365 from 14 Dec 2020; minimum ₹2,00,000)](https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=275) | verified-primary (RTGS lines read from page) |
 | 10 | STATIC | [Static GK (Maharashtra formation, Constitution dates/Articles, GST launch date, NITI Aayog, UPI/NPCI) — not re-checked online](https://www.india.gov.in/) | static-knowledge |
 | 11 | PRS-UB | [PRS Legislative Research: Union Budget Analysis 2026-27](https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf) | verified-primary (PDF text read directly) |
 | 11 | PRS-MH | [PRS Legislative Research: Maharashtra Budget Analysis 2026-27](https://prsindia.org/budgets/states/maharashtra-budget-analysis-2026-27) | verified-primary (first ~100,000 characters read) |
@@ -54,7 +56,7 @@ Automated validation at generation: **0 errors, 6 warnings** (see `_build/valida
 |---|---|---|---|
 | .gitignore | 82 | d001d51f59a1 |  |
 | MCED_Practice_Performance_Tracker.xlsx | 250885 | 7faeeea02a32 | Excel performance tracker (formulas; tutor-only, contains key) |
-| README.md | 6335 | eda080fef6a9 | Order of use, file guide, limitations |
+| README.md | 6735 | ee960a7c59ba | Order of use, file guide, limitations |
 | 01_Baseline_Analysis_Remediation/01_Baseline_Analysis_Remediation_Remediation_Notes.docx | 5857 | 7900972d3ec2 | Teaching notes: concepts, worked examples, practice + answers |
 | 01_Baseline_Analysis_Remediation/01_Baseline_Analysis_Remediation_Student_Question_Paper.docx | 6179 | 7ac7adaa9a74 | Student paper (questions + options + answer table only) |
 | 01_Baseline_Analysis_Remediation/01_Baseline_Analysis_Remediation_Student_Question_Paper.pdf | 110314 | 42d5397fd7d8 | Print-ready PDF of the student paper |
@@ -105,44 +107,44 @@ Automated validation at generation: **0 errors, 6 warnings** (see `_build/valida
 | docs/sw.js | 738 | 8f52385bfe0f |  |
 | docs/tutor.html | 1335 | c8c7db71ad35 |  |
 | docs/tutor.webmanifest | 428 | 76312b7a2a1d |  |
-| docs/css/style.css | 8287 | b256ec55e404 |  |
-| docs/data/answers.json | 3300 | 043bf8f5b9b8 |  |
-| docs/data/explain.json | 61658 | 7ac907bf59ee |  |
+| docs/css/style.css | 9309 | 2f54eff3d127 |  |
+| docs/data/answers.json | 4785 | fe510f2bfc11 |  |
+| docs/data/explain.json | 82726 | a89b06b5c6a2 |  |
 | docs/data/extras.json | 25693 | 43960a779d6f |  |
 | docs/data/lessons.json | 47334 | 45d424ac6534 |  |
-| docs/data/papers.json | 90826 | a9724f013e77 |  |
-| docs/data/en/explain.json | 46629 | 93a12003e7f0 |  |
+| docs/data/papers.json | 128719 | 0d7586d932de |  |
+| docs/data/en/explain.json | 63864 | 6439f0ad42ed |  |
 | docs/data/en/extras.json | 19316 | 2dc8250a7beb |  |
 | docs/data/en/lessons.json | 36755 | 5f8e61368409 |  |
-| docs/data/en/papers.json | 68418 | d0bfee832af7 |  |
+| docs/data/en/papers.json | 96626 | 94eea0aa56d6 |  |
 | docs/icons/apple-touch-icon.png | 3945 | 46adacd7eb18 |  |
 | docs/icons/favicon-32.png | 671 | 46700bbc5c8d |  |
 | docs/icons/icon-192.png | 4142 | fa9827ddeb24 |  |
 | docs/icons/icon-512.png | 12830 | 25adfe77e41b |  |
 | docs/icons/icon.svg | 1130 | 797be6c61f18 |  |
-| docs/js/core.js | 11340 | 8ee34d02e778 |  |
+| docs/js/core.js | 11466 | 0cfac8c5371a |  |
 | docs/js/gate.js | 2228 | bb038a24d6bf |  |
 | docs/js/i18n.js | 21859 | 846e5ac6e365 |  |
-| docs/js/learn.js | 6310 | f4e2da3f26c8 |  |
-| docs/js/quiz.js | 15466 | 313d7b8de63e |  |
+| docs/js/learn.js | 11314 | 6782a27a8ec4 |  |
+| docs/js/quiz.js | 17035 | 5e67a75410db |  |
 | docs/js/tutor.js | 14601 | d93674bc1c14 |  |
 | docs/js/views.js | 20758 | 37e65b9febf5 |  |
 | online_practice/server.py | 4363 | 339744ab5529 | Online practice server (LAN) file |
-| _build/build_docs.py | 9743 | 0a10dbae198a | Build/validation tooling or content source |
-| _build/build_en.py | 5862 | b96da42c6e43 | Build/validation tooling or content source |
+| _build/build_docs.py | 10544 | b859deb31b26 | Build/validation tooling or content source |
+| _build/build_en.py | 6259 | d7f93f6cc8eb | Build/validation tooling or content source |
 | _build/build_manifest.py | 4787 | c3ba430475bb | Build/validation tooling or content source |
 | _build/build_tracker.py | 14694 | 4a4934304984 | Build/validation tooling or content source |
 | _build/convert.ps1 | 502 | f561d5edf7af | Build/validation tooling or content source |
 | _build/dump.py | 360 | 84ee9e82a153 | Build/validation tooling or content source |
 | _build/excel_check.ps1 | 1359 | 5b62398e20fc | Build/validation tooling or content source |
-| _build/export_web.py | 3659 | a3626625b4dc | Build/validation tooling or content source |
+| _build/export_web.py | 3880 | da108bc023bf | Build/validation tooling or content source |
 | _build/lib_docx.py | 8598 | 7052c56169a7 | Build/validation tooling or content source |
 | _build/rebuild_app.py | 615 | 0b9096581033 | Build/validation tooling or content source |
-| _build/validate.py | 7180 | 28dde425177d | Build/validation tooling or content source |
-| _build/validation_report.json | 704 | d10c5c8f4070 | Build/validation tooling or content source |
-| _build/content/common.py | 2033 | af8dbb06c32d | Build/validation tooling or content source |
+| _build/validate.py | 8977 | 29c8c6b2461d | Build/validation tooling or content source |
+| _build/validation_report.json | 774 | 63fc015018ae | Build/validation tooling or content source |
+| _build/content/common.py | 2936 | 4c476dc10387 | Build/validation tooling or content source |
 | _build/content/extras.py | 26848 | 0f6e5974c816 | Build/validation tooling or content source |
-| _build/content/p01.py | 16811 | d59350d74c2e | Build/validation tooling or content source |
+| _build/content/p01.py | 17071 | d0effe5f1f16 | Build/validation tooling or content source |
 | _build/content/p02.py | 18562 | 9c8ccc811615 | Build/validation tooling or content source |
 | _build/content/p03.py | 16638 | 87f3f277d336 | Build/validation tooling or content source |
 | _build/content/p04.py | 19293 | 5289ecde5279 | Build/validation tooling or content source |
@@ -151,8 +153,19 @@ Automated validation at generation: **0 errors, 6 warnings** (see `_build/valida
 | _build/content/p07.py | 16155 | 70ff157ce53f | Build/validation tooling or content source |
 | _build/content/p08.py | 17170 | 422a2c6078ad | Build/validation tooling or content source |
 | _build/content/p09.py | 13150 | 30084179737d | Build/validation tooling or content source |
-| _build/content/p10.py | 19789 | b829e63cbba7 | Build/validation tooling or content source |
+| _build/content/p10.py | 20093 | 53f6aa6af7aa | Build/validation tooling or content source |
 | _build/content/p11.py | 17121 | f70a46b003b1 | Build/validation tooling or content source |
+| _build/content/bank/b01.py | 6411 | 275468453fb3 | Build/validation tooling or content source |
+| _build/content/bank/b02.py | 8945 | d8c2fb36c767 | Build/validation tooling or content source |
+| _build/content/bank/b03.py | 7968 | aef8ec3ad1b0 | Build/validation tooling or content source |
+| _build/content/bank/b04.py | 8528 | 7d94c6a308c7 | Build/validation tooling or content source |
+| _build/content/bank/b05.py | 7781 | 79b96e4f2780 | Build/validation tooling or content source |
+| _build/content/bank/b06.py | 8190 | 76015dd8223c | Build/validation tooling or content source |
+| _build/content/bank/b07.py | 10957 | 87b55082d3a7 | Build/validation tooling or content source |
+| _build/content/bank/b08.py | 8421 | 8ef96fb1ee17 | Build/validation tooling or content source |
+| _build/content/bank/b09.py | 6532 | 05cc815b14a6 | Build/validation tooling or content source |
+| _build/content/bank/b10.py | 9920 | 7c4f0fbbb67c | Build/validation tooling or content source |
+| _build/content/bank/b11.py | 6951 | e75a9c68e654 | Build/validation tooling or content source |
 | _build/content/en/e00.py | 9111 | fe5847dcbc66 | Build/validation tooling or content source |
 | _build/content/en/e01.py | 10854 | 6fda6e831d97 | Build/validation tooling or content source |
 | _build/content/en/e02.py | 12298 | f0ece9c588a8 | Build/validation tooling or content source |

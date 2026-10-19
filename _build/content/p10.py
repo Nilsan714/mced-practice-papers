@@ -57,6 +57,7 @@ PAPER = dict(
         S('PIB-GST', 'PIB: Recommendations of the 56th GST Council (rates 5/18/40; effective 22 Sep 2025)', 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555&reg=48&lang=2', 'verified-secondary (PIB page HTTP 403 to my fetch tool; multiple sources agree)'),
         S('CLEARTAX', 'ClearTax: Income tax changes from 1 April 2026 (Income-tax Act 2025; Tax Year)', 'https://cleartax.in/c/changes-from-income-tax-april-2026', 'secondary-unconfirmed (blog)'),
         S('RBI-GOV', 'Outlook Money: RBI MPC October 2026 (names Governor Sanjay Malhotra)', 'https://www.outlookmoney.com/banking/rbi-mpc-meeting-october-2026-where-to-watch-governor-sanjay-malhotras-policy-announcement-live', 'verified-secondary (page read; check rbi.org.in)'),
+        S('RBI-FAQ', 'RBI FAQ: Real Time Gross Settlement (RTGS) System (24x7x365 from 14 Dec 2020; minimum ₹2,00,000)', 'https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=275', 'verified-primary (RTGS lines read from page)'),
         S('STATIC', 'Static GK (Maharashtra formation, Constitution dates/Articles, GST launch date, NITI Aayog, UPI/NPCI) — not re-checked online', 'https://www.india.gov.in/', 'static-knowledge'),
     ],
 )
