@@ -1,52 +1,53 @@
-# MCED District Account Assistant — Practice Paper Series
+# MCED District Account Assistant — Practice Paper Series + Study App
 
-Practice papers for the written exam on **27 October 2026**. Hindi–Marathi mix with English accounting/banking/tax/computer terms.
-**These are practice papers, not official MCED papers, patterns, marks schemes or predictions.** The scoring rule (1 mark per correct answer, no negative marking) is a transparent practice rule only.
+For the written exam on **27 October 2026, 11:00 AM** (venue and documents in the app's "Exam Day" page). Syllabus (from the call letter): Book keeping & Basic Accounting & Modern tools, Taxation, Budget & Financial discipline, Banking, Current Affairs, Computer Knowledge.
+**These are practice materials, not official MCED papers, patterns, marks schemes or predictions.** Scoring (1 mark per correct answer, no negative marking) is a transparent practice rule only.
 
-## Order of use
+## 1. The Study App (what Aishwarya uses on the phone)
 
-1. **Baseline** — the original 40-question test is unchanged in `..\MCED_District_Account_Assistant_Baseline_MCQ_Test.docx`. Record the candidate's answers in the tracker sheet `Baseline_40` (or online paper "Baseline").
-2. Read `01_Baseline_Analysis_Remediation\…_Remediation_Notes.docx` to map weak sections to papers; use Paper 1 as a re-test.
-3. For each paper **2 → 11**, follow this loop:
-   1. Candidate gets **only** `…_Student_Question_Paper` (DOCX/PDF, or the online link) and solves without the key.
-   2. Tutor records answers in `MCED_Practice_Performance_Tracker.xlsx` → `Attempts`.
-   3. Open `…_Teacher_Answer_Key.docx` only **after** submission. Tracker shows total + topic-wise accuracy + weakest subtopic + suggested lesson.
-   4. Explain every wrong answer; tag the error type in `Error_Log` (Conceptual / Calculation / Terminology / Careless).
-   5. Teach from `…_Remediation_Notes.docx` (basics → worked examples → practice), then a short 5-question remedial quiz.
-   6. Move on only when the remedial quiz is ≥4/5; record the retest in `Retest`.
-4. Paper 11 is the mixed mock; finish with it. Re-check all current-affairs facts close to the exam date.
+Live link: **https://nilsan714.github.io/mced-practice-papers/** (works on any network). Local copy: `online_practice\server.py` (same app + auto-sync of progress on the same Wi-Fi).
 
-Suggested sequence: 1 → 2 → 3 → 4 → 5 (accounting core), 6 (tax), 7 (budget), 8 (banking), 9 (computer/Excel), 10 (current affairs), 11 (mock).
+| Section | What it does |
+|---|---|
+| Home | Countdown to the exam, personal message from Nilesh, next task, XP / level / streak, topic progress, badges |
+| Plan | 8-day plan (19–27 Oct); tasks tick automatically when the work is done |
+| Learn | 11 lessons (concepts → worked examples → interactive practice). A lesson is "understood" only after a **Concept Check** (5 questions, ≥4 right) |
+| Practice | Practice mode (instant explanation), Exam mode (timed), Weak-questions quiz, **Revision** (re-tests earlier topics after ~20 hours) |
+| More | Flashcards (74), Cheat sheet, Exam-day checklist, My progress (topic-wise Mastered/Learning/Weak), Report to Tutor, Tutor Dashboard, language switch (मराठी / English) |
 
-## Folder contents
+### Tracking (for Nilesh)
+* **Anywhere:** Aishwarya taps *More → Report to Tutor* → WhatsApp (or Copy). The message contains a readable summary + a code. Nilesh opens the app → *More → Tutor Dashboard* → pastes it. The dashboard shows plan %, streak, XP, per-paper scores, weak subtopics with the lesson to re-teach, recent attempts, idle warning, notes, CSV export, and one-tap WhatsApp messages (praise / nudge / weak-topic). Set Nilesh's WhatsApp number in *More* so reports go straight to him.
+* **Same Wi-Fi:** run the local server; progress is saved automatically in `online_practice\progress\` and appears in the Tutor Dashboard (`/progress.csv` on the PC too).
+* Progress is stored on her phone's browser; clearing browser data erases it (use *Report* regularly).
+
+### Editing the personal messages / plan
+Edit `_build\content\extras.py` (Marathi) and `_build\content\en\extras_en.py` (English: `PERSONAL`, `QUOTES`, `PLAN_TXT`, `TASK_TXT`, flashcards, cheat sheet), then run `python _build\rebuild_app.py`, commit and push. (`git add -A`, `git commit`, `git push`.)
+
+## 2. Printable papers (for the tutor)
+
+Order of use: Baseline (original 40-question file, untouched) → Paper 1 → Papers 2–5 (accounting core) → 6 Tax → 7 Budget → 8 Banking → 9 Computer/Excel → 10 Current Affairs → 11 Mixed mock.
+Each folder `01_…`–`11_…` has: Student Question Paper (.docx + .pdf), Teacher Answer Key (.docx, tutor only), Remediation Notes (.docx).
+Loop for each paper: question-only paper → solve without key → record answers → open key after submission → topic-wise analysis → explain mistakes → teach from Remediation Notes → short remedial quiz (≥4/5) → next topic.
+`MCED_Practice_Performance_Tracker.xlsx` (tutor only; contains the key): Attempts (auto score/%), Topic_Accuracy (weakest subtopic + lesson), Error_Log (Conceptual / Calculation / Terminology / Careless), Retest, Baseline_40.
+
+## 3. Files
 
 | Item | Notes |
 |---|---|
-| `01_…` to `11_…` | One folder per paper: Student Question Paper (.docx + .pdf), Teacher Answer Key (.docx), Remediation Notes (.docx) |
-| `MCED_Practice_Performance_Tracker.xlsx` | Tutor-only (contains the key). Sheets: Attempts, Topic_Accuracy, Error_Log, Retest, Baseline_40, Papers, Key, SubMap |
-| `online_practice\` | Local-network quiz for all papers (phone link). Run `python server.py` there |
+| `docs\` | The study app (static; served by GitHub Pages) + data in `docs\data` (Marathi) and `docs\data\en` (English) |
+| `online_practice\server.py` | Local server for the same app; stores progress snapshots |
 | `Question_Paper_Manifest.md/.json` | Every file with size + SHA-256, per-paper statistics, sources and verification status |
-| `_build\` | Generator scripts, question data (`content\p01–p11.py`), validators, `validation_report.json` |
+| `_build\` | Generators, question data (`content\p01–p11.py`, English in `content\en`), validators, `rebuild_app.py` |
 
-## Online (phone) practice
+## 4. Validation performed
+Automated (`_build\validate.py`): numbering, 4 options, duplicates, invalid letters, near-duplicate questions across all papers, progressive difficulty, arithmetic re-computation of numerical questions, key-file consistency, no answer leaks in student DOCX/PDF, source references. English data (`_build\build_en.py`): same questions/answers/numbers/structure as the Marathi data. Excel formulas were tested in desktop Excel. The app was tested end-to-end in a browser (both languages, all screens, concept check, revision, report encode/decode, tutor import, live sync).
 
-```bash
-cd "C:/Users/NILESH/Downloads/Accounting Paper/MCED_Practice_Paper_Series/online_practice" && python server.py
-```
-
-Phone and PC must be on the same Wi-Fi; open the `http://<PC-IP>:8000` address printed by the server. Results (host PC only): `http://localhost:8000/results` (+ `/results.csv`). The IP changes when the PC joins another network. Answers are scored on the server; correct answers and explanations are shown only after a candidate submits.
-
-## Validation performed
-
-Automated (`_build\validate.py`): numbering and 4 options per question, duplicate options, invalid answer letters, near-duplicate questions across all papers, progressive difficulty order, arithmetic re-computation for numerical questions (each result must match the marked option), answer/key-file consistency, student files not leaking answers or explanations (DOCX and PDF), source references resolving to a listed source. Excel formulas were tested in desktop Excel with sample responses (results matched an independent Python score; zero formula errors). The online scoring was tested end-to-end in a browser against an independent calculation.
-
-## Limitations (please read)
-
-* **No syllabus/notification was in the folder.** Topics follow the six sections of the baseline paper and the *Executive Summary* day plan. Nothing here claims an official pattern, count, weightage or cutoff.
-* Questions, answers and Hindi–Marathi explanations were written by the AI and checked by automated arithmetic and a self-review. **No independent human subject-expert or native-language review was done** — please have a commerce teacher skim the keys, especially Marathi wording.
-* **Changing facts are as of 2026-10-19.** PIB pages returned HTTP 403 to the fetch tool, so GST 2.0 (5/18/40%, 22 Sep 2025) rests on search listings plus multiple secondary sources. TDS rates/thresholds, Income-tax Act 2025 ("Tax Year", 1 Apr 2026), new-regime slabs, Union Budget capex ₹12.2 lakh crore, Census 2027 dates and the RBI Governor/CM office-holders come from **secondary sources** and are labelled so in each key. Union Budget and Maharashtra Budget figures were read from PRS documents. Static GK (Articles, dates, IFSC, cheque validity, etc.) was not re-checked online.
-* Deliberately **not** asked: current repo rate (only secondary reports found) and UPI transaction limits (no official figure confirmed).
-* The *Executive Summary* file mentions GST slabs 12%/28%; these were replaced from 22 Sep 2025. Treat that file's tax examples as outdated.
-* Baseline Q1 contains Gujarati text; this is in the original file and was left untouched.
-* PDFs were produced by Word; layout was inspected on sample pages (not every page of every PDF).
-* The online quiz has no login and stores results in `online_practice\results.jsonl` on the PC; it is meant for a trusted home/classroom network only.
+## 5. Limitations (please read)
+* **No official pattern, question count or marks distribution is known.** The call letter gives only topics.
+* Questions, answers and Marathi/English text were written by the AI and checked by automated arithmetic and self-review. **No independent subject-expert or native-language review was done** — have a commerce teacher skim the keys.
+* **Changing facts are "as of 2026-10-19".** GST 2.0 (5/18/40% from 22 Sep 2025; PIB pages returned HTTP 403 to my tool, so it rests on search listings and several secondary sources), TDS rates/thresholds, Income-tax Act 2025/Tax Year, new-regime slabs, Union Budget capex ₹12.2 lakh crore, Census 2027 dates and the RBI Governor/CM are **secondary-sourced** and labelled in each key. Union and Maharashtra Budget figures were read from PRS. Static GK was not re-checked online. Recheck current-affairs items before the exam.
+* Deliberately not asked: current repo rate and UPI limits (no official figure confirmed).
+* The *Executive Summary* file mentions GST 12%/28% slabs, which were replaced from 22 Sep 2025; treat it as outdated.
+* Baseline Q1 contains Gujarati text (original file, untouched).
+* The public GitHub Pages site exposes all answers and explanations in its data files (it is a static site). It is meant for self-practice.
+* The app has no login. Progress lives in the phone's browser; reports are shared by WhatsApp or the local network.
