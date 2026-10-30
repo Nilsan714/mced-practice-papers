@@ -63,33 +63,89 @@
     window.CANDIDATE_PROFILE = Profile;
     window.saveCoach = saveCoach;
 
-    // Speech Synthesis (TTS) Helper
-    window.speakText = function (text, lang = 'mr-IN') {
+    // Speech Synthesis (TTS) Helper with Indian Voice Detection & Separation
+    let cachedVoices = [];
+    function loadVoices() {
+        if ('speechSynthesis' in window) {
+            cachedVoices = window.speechSynthesis.getVoices() || [];
+        }
+    }
+    if ('speechSynthesis' in window) {
+        loadVoices();
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    // Helper to check if device has a Devanagari (Marathi/Hindi) voice installed
+    window.hasDevanagariVoice = function () {
+        if (!cachedVoices.length) loadVoices();
+        return cachedVoices.some(v => v.lang.startsWith('mr') || v.lang.startsWith('hi') || /marathi|hindi|swara|madhur|kalpana|hemant|aarohi|manohar/i.test(v.name));
+    };
+
+    // Indian English Speech Engine (Ideal for Panel Questions & English Model Answers)
+    window.speakIndianEnglish = function (text) {
         if (!('speechSynthesis' in window)) {
             toast('⚠️ Your browser does not support Speech Synthesis audio.');
-            return;
+            return false;
         }
         speechSynthesis.cancel();
-        // Clean markdown/html from text
+        if (!cachedVoices.length) loadVoices();
+
         const clean = text.replace(/<[^>]*>/g, '').replace(/[\*\_\[\]]/g, '').trim();
         const u = new SpeechSynthesisUtterance(clean);
-        u.rate = Coach.voiceSpeed || 0.95;
+        u.lang = 'en-IN';
+        u.rate = (Coach.voiceSpeed || 1.0) * 0.92;
         u.pitch = 1.0;
 
-        // Try to pick natural voice
-        const voices = speechSynthesis.getVoices();
-        let matchVoice = null;
-        if (lang.startsWith('mr')) {
-            matchVoice = voices.find(v => v.lang.includes('mr') || v.lang.includes('hi') || v.lang.includes('IN'));
-        } else if (lang.startsWith('hi')) {
-            matchVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('IN'));
-        } else {
-            matchVoice = voices.find(v => v.lang.includes('en-IN') || v.lang.includes('en_IN') || v.lang.includes('en-GB'));
-        }
-        if (matchVoice) u.voice = matchVoice;
+        // Try Indian English voices first (e.g. Neerja, Prabhat, Google English India, Heera, Ravi)
+        let voice = cachedVoices.find(v => (v.lang === 'en-IN' || v.lang === 'en_IN') && !/hindi|marathi/i.test(v.name));
+        if (!voice) voice = cachedVoices.find(v => /india/i.test(v.name) && v.lang.startsWith('en'));
+        if (!voice) voice = cachedVoices.find(v => v.lang.startsWith('en-GB') || v.lang.startsWith('en'));
+        if (!voice && cachedVoices.length) voice = cachedVoices[0];
 
-        u.onerror = () => { };
+        if (voice) u.voice = voice;
+        u.onerror = (e) => { console.warn('TTS Error', e); };
         speechSynthesis.speak(u);
+        return true;
+    };
+
+    // Marathi & Hindi Speech Engine (Speaks strictly in Marathi/Hindi voices)
+    window.speakMarathiHindi = function (text) {
+        if (!('speechSynthesis' in window)) {
+            toast('⚠️ Your browser does not support Speech Synthesis audio.');
+            return false;
+        }
+        speechSynthesis.cancel();
+        if (!cachedVoices.length) loadVoices();
+
+        // Find Marathi or Hindi voice
+        let voice = cachedVoices.find(v => v.lang.startsWith('mr') || /marathi|aarohi|manohar/i.test(v.name));
+        if (!voice) {
+            voice = cachedVoices.find(v => v.lang.startsWith('hi') || /hindi|swara|madhur|kalpana|hemant/i.test(v.name));
+        }
+
+        // If no Devanagari voice exists on device (common on default Windows OS)
+        if (!voice) {
+            toast('ℹ️ तुमच्या डिव्हाइसवर मराठी/हिंदी व्हॉईस इन्स्टॉल नाही. कृपया \'English\' ऑडिओ वापरा किंवा Microsoft Edge / मोबाईलवर उघडा.', 5000);
+            return false;
+        }
+
+        const clean = text.replace(/<[^>]*>/g, '').replace(/[\*\_\[\]]/g, '').trim();
+        const u = new SpeechSynthesisUtterance(clean);
+        u.lang = voice.lang || 'mr-IN';
+        u.voice = voice;
+        u.rate = (Coach.voiceSpeed || 1.0) * 0.90;
+        u.pitch = 1.0;
+        u.onerror = (e) => { console.warn('TTS Error', e); };
+        speechSynthesis.speak(u);
+        return true;
+    };
+
+    window.speakText = function (text, lang = 'en-IN') {
+        if (lang.startsWith('mr') || lang.startsWith('hi')) {
+            return window.speakMarathiHindi(text);
+        } else {
+            return window.speakIndianEnglish(text);
+        }
     };
 
     window.stopSpeech = function () {
@@ -216,6 +272,11 @@
                 .replace(/\[गाव\/शहर\]/g, Profile.hometown || 'महाराष्ट्र')
                 .replace(/\[कॉलेजचे नाव\]/g, Profile.college || 'महाविद्यालय')
                 .replace(/\[वर्ष\]/g, Profile.gradYear || '२०२५'),
+            modelAnswer_en: (q.modelAnswer_en || q.modelAnswer)
+                .replace(/\[Name\]|\[नाव\]/g, Profile.name || 'Aishwarya')
+                .replace(/\[City\/District\]|\[गाव\/शहर\]/g, Profile.hometown || 'Maharashtra')
+                .replace(/\[College Name\]|\[कॉलेजचे नाव\]/g, Profile.college || 'College')
+                .replace(/\[Year\]|\[वर्ष\]/g, Profile.gradYear || '2025'),
             followUp: q.followUp,
             followUpAnswer: q.followUpAnswer
         };

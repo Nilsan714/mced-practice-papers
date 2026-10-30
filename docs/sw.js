@@ -1,5 +1,5 @@
 /* Network-first service worker: always tries the live site, falls back to the cache when offline. */
-const CACHE = 'mced-v2-oral';
+const CACHE = 'mced-v3-indian-tts';
 self.addEventListener('install', e => { self.skipWaiting() });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== CACHE).map(x => caches.delete(x)))).then(() => self.clients.claim())) });
 self.addEventListener('fetch', e => {

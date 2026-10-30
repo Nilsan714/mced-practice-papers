@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
 """Redesigned Oral Interview Question Bank for MCED District Account Assistant
-Priorities:
-- 30% MCED Organisation & Job Role Awareness
-- 30% Real-Life Workplace & Situational Simulations
-- 20% Personal Interview, HR & Behavioural
-- 15% Practical Accounting & Financial Controls
-- 5% Computer & Office Knowledge
+Includes both Marathi-Hindi model answers and English model answers for seamless Indian audio listening!
 """
 
 QUESTIONS = [
@@ -28,6 +23,7 @@ QUESTIONS = [
             'Acts as a nodal agency for entrepreneurship training and skill development'
         ],
         'modelAnswer': 'सर, MCED चे पूर्ण रूप "Maharashtra Centre for Entrepreneurship Development" (महाराष्ट्र उद्योजकता विकास केंद्र) आहे. ही संस्था १९८८ मध्ये महाराष्ट्र शासनाच्या उद्योग विभागांतर्गत (Directorate of Industries) एक स्वायत्त संस्था (Autonomous Society) म्हणून स्थापन करण्यात आली. याचे मुख्यालय छत्रपती संभाजीनगर येथे आहे.\nसंस्थेचा मुख्य उद्देश हा आहे की राज्यातील तरुण-तरुणींमध्ये केवळ नोकरी शोधण्याची मानसिकता न राहता स्वतःचा उद्योग-व्यवसाय सुरू करण्याची उद्योजकीय वृत्ती (Entrepreneurship Mindset) निर्माण व्हावी. विशेषतः ग्रामीण आणि निमशहरी भागात उद्योग संस्कृती रुजवून स्वयंरोजगाराला चालना देणे ही MCED ची मुख्य भूमिका आहे.',
+        'modelAnswer_en': 'Sir, MCED stands for Maharashtra Centre for Entrepreneurship Development. It is an autonomous society established in 1988 under the Directorate of Industries, Government of Maharashtra, with its headquarters in Chhatrapati Sambhajinagar. The primary vision is to foster an entrepreneurship culture across Maharashtra, especially in rural and semi-urban areas, empowering youth and women to become job creators rather than job seekers through structured training and handholding support.',
         'commonMistakes': [
             'Calling it a private coaching institute or bank',
             'Not knowing headquarters location (Chhatrapati Sambhajinagar)',
@@ -53,6 +49,7 @@ QUESTIONS = [
             'Offers post-training escort services and handholding till enterprise establishment'
         ],
         'modelAnswer': 'मॅडम, MCED उद्योजकांसाठी सुरुवातीच्या कल्पनेपासून ते उद्योग सुरू होईपर्यंत संपूर्ण मार्गदर्शन (Handholding & Escort Services) पुरवते:\n१. व्यवसाय संधी शोधणे: उमेदवाराच्या आवडीनुसार स्थानिक पातळीवर कोणत्या व्यवसायाला वाव आहे हे ओळखणे.\n२. प्रशिक्षण (EDPs): व्यवसाय कसा चालवावा, फायनान्शियल मॅनेजमेंट, मार्केटिंग आणि शासकीय नियमांचे प्रशिक्षण देणे.\n३. प्रकल्प अहवाल (DPR): बँकेकडून कर्ज मंजूर होण्यासाठी आवश्यक असणारा तपशीलवार प्रकल्प अहवाल (Project Report) तयार करण्यास मदत करणे.\n४. शासकीय योजनांचा लाभ: मुख्यमंत्री रोजगार निर्मिती कार्यक्रम (CMEGP), PMEGP किंवा मुद्रा कर्जाची माहिती व अर्ज प्रक्रिया समजावणे.\n५. नेटवर्किंग: यशस्वी उद्योजक, बँक अधिकारी आणि उद्योग तज्ज्ञांशी प्रशिक्षणार्थींचा थेट संवाद घडवून आणणे.',
+        'modelAnswer_en': 'Madam, MCED provides end-to-end guidance and escort services for entrepreneurs. First, it identifies viable business opportunities based on local resources. Second, it conducts structured Entrepreneurship Development Programmes covering business management, financial literacy, and marketing. Third, it assists candidates in preparing Detailed Project Reports (DPR) for bank loan approvals. Fourth, it guides them in availing government schemes like CMEGP and PMEGP. Finally, it provides post-training mentoring until the business is successfully set up.',
         'commonMistakes': [
             'Thinking MCED directly provides bank loans (Banks provide loans, MCED provides training/guidance)',
             'Forgetting the handholding/escort service aspect'
@@ -66,7 +63,7 @@ QUESTIONS = [
         'module': 'MCED',
         'category': 'MCED Organisation Knowledge',
         'rubric': 'mced_org',
-        'q_en': 'What are Entrepreneurship Development Programmes (EDPs) and what different types of trainings does MCED conduct?',
+        'q_en': 'What are Entrepreneurship Development Programmes (EDPs) and what types of training activities does MCED conduct?',
         'q_mr': 'उद्योजकता विकास कार्यक्रम (EDP) म्हणजे काय आणि MCED कोणत्या प्रकारची विविध प्रशिक्षणे आयोजित करते?',
         'q_hi': 'EDP कार्यक्रम क्या होते हैं और MCED किस-किस तरह के प्रशिक्षण आयोजित करता है?',
         'keyPoints': [
@@ -77,6 +74,7 @@ QUESTIONS = [
             'Scheme-specific mandatory EDPs: CMEGP and PMEGP mandatory beneficiary training'
         ],
         'modelAnswer': 'सर, EDP (Entrepreneurship Development Programme) हा एक सुनियोजित अभ्यासक्रम असतो, ज्याद्वारे एखाद्या व्यक्तीमधील सुप्त उद्योजकीय गुणांना चालना देऊन तिला यशस्वी व्यवसाय मालक बनवले जाते.\nMCED द्वारे आयोजित प्रमुख प्रशिक्षण प्रकार:\n१. जनरल ईडीपी (General EDPs): नवीन व्यवसाय सुरू करू इच्छिणाऱ्या सुशिक्षित बेरोजगारांसाठी २ ते ४ आठवड्यांचे प्रशिक्षण.\n२. तांत्रिक व कौशल्य विकास प्रशिक्षण: शेतीपूरक प्रक्रिया (Agro Food Processing), सौर ऊर्जा (Solar), डिजिटल मार्केटिंग, ब्युटी अँड वेलनेस, फॅशन डिझायनिंग इत्यादी.\n३. विशेष घटकांसाठी प्रशिक्षण: महिलांसाठी विशेष उद्योजकता शिबिरे, अनुसूचित जाती/जमाती व ग्रामीण युवकांसाठी विशेष कार्यशाळा.\n४. शासकीय योजनांनुसार अनिवार्य प्रशिक्षण: CMEGP आणि PMEGP अंतर्गत कर्ज मंजूर झालेल्या उमेदवारांसाठी अनिवार्य निवासी/अनिवासी प्रशिक्षण.',
+        'modelAnswer_en': 'Sir, an EDP is a structured training course that equips prospective entrepreneurs with practical business management, financial, and operational skills. MCED conducts General EDPs for educated unemployed youth, Technical and Skill-based trainings such as agro-processing, food technology, and solar installations, Special Target Group EDPs for women and rural youth, and Mandatory EDP trainings required for loan beneficiaries under schemes like CMEGP and PMEGP.',
         'commonMistakes': [
             'Only mentioning theoretical lectures',
             'Not knowing that technical and skill trainings are also conducted'
@@ -100,6 +98,7 @@ QUESTIONS = [
             'Direct access for rural youth, women self-help groups (SHGs), and local farmers'
         ],
         'modelAnswer': 'मॅडम, महाराष्ट्र हा भौगोलिकदृष्ट्या मोठा आणि वैविध्यपूर्ण आहे. प्रत्येक जिल्ह्याची स्थानिक आर्थिक ताकद वेगळी असते (उदा. नाशिकमध्ये कृषी-प्रक्रिया, सोलापूरमध्ये टेक्सटाईल, विदर्भात कापूस/सोयाबीन). जर सर्व काम छत्रपती संभाजीनगर मुख्यालयातून चालले तर ग्रामीण तरुणांना तिथे पोहोचणे शक्य होणार नाही.\nजिल्हा केंद्रांचे महत्व:\n१. तळागाळापर्यंत पोहोच (Grassroots Outreach): ग्रामीण भागातील युवक-युवतींना त्यांच्याच जिल्ह्यात प्रशिक्षण उपलब्ध होते.\n२. जिल्हा यंत्रणेशी समन्वय: जिल्हा उद्योग केंद्र (DIC), अग्रणी बँक (Lead Bank) आणि स्थानिक प्रशासन यांच्याशी दैनंदिन समन्वय ठेवता येतो.\n३. स्थानिक बाजारपेठेनुसार प्रशिक्षण: त्या जिल्ह्यातील कच्च्या मालावर आधारित प्रक्रिया उद्योगांचे प्रशिक्षण देता येते.\nया जिल्हा कार्यालयाचा संपूर्ण आर्थिक व्यवहार आणि खर्चाचा ताळेबंद ठेवणे हे डिस्ट्रिक्ट अकाउंट असिस्टंटचे मुख्य काम असते.',
+        'modelAnswer_en': 'Madam, Maharashtra is vast and each district has unique economic strengths, like agro-processing in Nashik or textiles in Solapur. District Centres ensure decentralized grassroots outreach so rural youth do not have to travel to headquarters. They facilitate close daily coordination with the District Industries Centre (DIC), the Lead Bank, and district administration, tailoring training programmes to locally available raw materials and markets. Managing the financial integrity of these district centres is the core job of the District Account Assistant.',
         'commonMistakes': [
             'Giving a generic answer without mentioning district-level coordination with DIC or Lead Bank'
         ],
@@ -124,6 +123,7 @@ QUESTIONS = [
             'Facilitating audit inspections and maintaining voucher guard files'
         ],
         'modelAnswer': 'सर, MCED च्या जिल्हा केंद्रात "डिस्ट्रिक्ट अकाउंट असिस्टंट" हे पद जिल्हा स्तरावरील संपूर्ण आर्थिक पारदर्शकता, अचूक नोंदणी आणि नियमांचे पालन सुनिश्चित करणारे महत्त्वाचे पद आहे.\nमुख्य जबाबदाऱ्या:\n१. वह्या आणि लेजर्स ठेवणे: दैनंदिन कॅश बुक, बँक बुक आणि विविध खर्चाचे लेजर्स अद्ययावत ठेवणे.\n२. बिलांची पडताळणी व व्हाउचर्स: प्रशिक्षण शिबिरांचे हॉल भाडे, ट्रेनर मानधन, स्टेशनरी आणि रिफ्रेशमेंटची बिले तपासून पेमेंट व्हाउचर तयार करणे.\n३. बँक रिकन्सिलिएशन (BRS): दर महिन्याअखेरीस बँक स्टेटमेंट आणि कॅश बुकमधील बँक रकान्याचा ताळेबंद तयार करणे.\n४. खर्चाचे विवरण (Expenditure Statement): मंजूर बजेटनुसार खर्च झाला आहे का हे तपासून मासिक खर्चाचे विवरणपत्र तयार करून प्रादेशिक कार्यालय किंवा मुख्यालयाला वेळेवर पाठवणे.\n५. फायलिंग व ऑडिट तयारी: सर्व व्हाउचर, पावत्या आणि सँक्शन ऑर्डर्स क्रमाने फाईल करून ठेवणे, जेणेकरून अंतर्गत व वैधानिक ऑडिट सुरळीत पार पडेल.',
+        'modelAnswer_en': 'Sir, the District Account Assistant is responsible for financial discipline, accounting accuracy, and transparency at the district centre. Core duties include maintaining daily books of accounts like the Cash Book and Bank Ledger, scrutinizing training expenditure bills such as hall rent, trainer honorarium, and refreshments, preparing payment vouchers, carrying out monthly Bank Reconciliation Statements (BRS), compiling periodic expenditure statements for the Head Office, and preserving voucher guard files for statutory audits.',
         'commonMistakes': [
             'Thinking this post has independent power to approve or sanction bills',
             'Limiting the role only to data entry or typing'
@@ -148,6 +148,7 @@ QUESTIONS = [
             'Authorising / Sanctioning: Exercising administrative financial power (Senior Officer / DPO only)'
         ],
         'modelAnswer': 'मॅडम, शासकीय आणि स्वायत्त संस्थांमध्ये आर्थिक गैरव्यवहार रोखण्यासाठी अधिकारांची स्पष्ट विभागणी (Segregation of Duties) असते:\n१. Preparing (तयार करणे): बिल आल्यावर प्राथमिक आकडेमोड करून पेमेंट व्हाउचर ड्राफ्ट करणे आणि सर्व सपोर्टिंग पेपर्स जोडणे.\n२. Checking (तपासणे): खर्चाला योग्य अधिकाऱ्याची पूर्वमंजुरी (Sanction) आहे का, जीएसटी/टीडीएस बरोबर कापला आहे का, आणि दर नियमांनुसार आहेत का हे तपासणे.\n३. Recording (नोंदवणे): मंजूर व्यवहार कॅश बुक, बँक बुक किंवा अकाउंटिंग सॉफ्टवेअर/एक्सेलमध्ये रीतसर नोंदवणे.\n४. Reporting (अहवाल देणे): महिनाभरातील एकूण खर्चाचा तपशील, युटिलायझेशन आणि प्रगती अहवाल वरिष्ठांना सादर करणे.\n५. Authorising / Sanctioning (मंजूर करणे): खर्चाला प्रशासकीय मान्यता देणे आणि बँकेच्या धनादेशावर स्वाक्षरी करणे. हा अधिकार फक्त सक्षम अधिकाऱ्यांना (District In-charge / DPO) असतो, अकाउंट असिस्टंटला नसतो. अकाउंट असिस्टंट आधीच्या चार टप्प्यांचे काम करते.',
+        'modelAnswer_en': 'Madam, in public organizations, segregation of duties ensures financial integrity. Preparing involves compiling the invoice, calculating deductions, and drafting the voucher. Checking involves scrutinizing budget sanctions, arithmetic accuracy, and statutory tax deductions. Recording involves entering the approved transaction into the Cash Book and ledgers. Reporting involves compiling periodic expenditure and utilization statements. Authorising or Sanctioning is the legal financial power to approve the expense and sign cheques, which rests exclusively with the competent administrative officer (DPO), not the Account Assistant.',
         'commonMistakes': [
             'Confusing checking with authorising',
             'Thinking the person who writes the voucher can also sign and release the cheque alone'
@@ -171,6 +172,7 @@ QUESTIONS = [
             'Prevents fund diversion and ensures money reaches intended training beneficiaries'
         ],
         'modelAnswer': 'सर, MCED ही शासकीय योजना आणि जनतेचा निधी हाताळणारी संस्था आहे. कडक वित्तीय व्यवस्थापन खालील कारणांसाठी अनिवार्य आहे:\n१. पुढील हप्ते मिळणे (Next Installments): शासनाकडून किंवा प्रायोजक संस्थांकडून पुढील निधी मिळण्यासाठी आधीच्या खर्चाचे वेळेवर युटिलायझेशन सर्टिफिकेट (UC) आणि हिशेब सादर करावे लागतात. अहवाल उशिरा गेला तर जिल्हा कार्यालयाचे पुढील कार्यक्रम रखडतात.\n२. बजेटची मर्यादा (Budget Compliance): मंजूर हेडपेक्षा जास्त खर्च होणार नाही आणि निधी योग्य कारणासाठीच खर्च होईल याची खात्री होते.\n३. ऑडिट सुरक्षितता: स्थानिक निधी लेखापरीक्षण किंवा महालेखाकार (AG) ऑडिटमध्ये कोणतीही गंभीर त्रुटी (Audit Para) निघू नये म्हणून प्रत्येक व्हाउचरचा ताळेबंद वेळेवर असावा लागतो.\n४. पारदर्शकता: सार्वजनिक पैशाचा प्रत्येक रुपया योग्य व्यक्तीपर्यंत पोहोचला आहे हे सिद्ध होते.',
+        'modelAnswer_en': 'Sir, strict financial management and timely reporting are vital for four reasons. First, subsequent grant installments from the government or funding agencies are released only upon timely submission of Utilization Certificates (UCs) and audited expenditure statements. Second, it ensures strict compliance within sanctioned budget heads without unauthorized diversion. Third, it safeguards the office against statutory audit objections by the Accountant General (AG). Fourth, it maintains absolute public accountability and transparency.',
         'commonMistakes': [
             'Giving a generic answer without mentioning Utilization Certificates (UC) or next grant installments'
         ],
@@ -193,6 +195,7 @@ QUESTIONS = [
             'Maintaining professional, proactive and solution-oriented communication'
         ],
         'modelAnswer': 'मॅडम, अकाउंट्स हे वेगळे बेट नसून संपूर्ण कार्यालयाला जोडणारा दुवा आहे. मी खालीलप्रमाणे समन्वय ठेवेन:\n१. ट्रेनिंग कोऑर्डिनेटर्ससोबत: बॅच सुरू होण्यापूर्वीच त्यांना लागणारी कागदपत्रे (उदा. उपस्थिती पत्रके, मूळ जीएसटी बिले, फोटोग्राफ्स) कोणती लागतील याची स्पष्ट कल्पना देईन, जेणेकरून नंतर बिलांमध्ये त्रुटी येणार नाहीत.\n२. जिल्हा प्रकल्प अधिकाऱ्यांसोबत (DPO): रोजच्या पेमेंटची फायली मंजुरीसाठी मांडताना बजेट हेडमधील शिल्लक निधीची माहिती देईन आणि काही अडचण असल्यास त्यांच्या मार्गदर्शनाने तोडगा काढेन.\n३. मुख्यालयासोबत (Head Office): महिन्याच्या ५ तारखेच्या आत मासिक खर्चाचा अहवाल आणि BRS मुख्यालयाच्या फायनान्स विभागाला सादर करेन आणि त्यांच्याकडून आलेल्या कोणत्याही ऑडिट किंवा पडताळणी प्रश्नांची तात्काळ उत्तरे पाठवेन.',
+        'modelAnswer_en': 'Madam, accounting is an integrated support function. I will coordinate proactively with Training Coordinators by briefing them in advance on required invoice formats, participant attendance sheets, and supporting vouchers to avoid post-batch discrepancies. I will coordinate with the District Project Officer by keeping them informed on budget balances and submitting scrutinized files for approval. Finally, I will submit monthly accounts, BRS, and audit compliance replies to the Head Office promptly before statutory deadlines.',
         'commonMistakes': [
             'Sounding like an isolated record-keeper who only finds faults without guiding colleagues'
         ],
@@ -221,6 +224,7 @@ QUESTIONS = [
             'Step 6: Submit for DPO signature, make payments via NEFT/cheque, and archive in a dedicated Batch Guard File'
         ],
         'modelAnswer': 'सर, १५ दिवसांचा कार्यक्रम संपल्यावर मी खालील पायऱ्यांनुसार काम करेन:\n१. सँक्शन तपासणे: त्या बॅचसाठी मुख्यालयाने किंवा शासनाने मंजूर केलेले मूळ बजेट आणि मंजुरी आदेश (Sanction Order) आधी फाईलमध्ये पाहीन.\n२. बिले गोळा करणे: हॉल भाडे, दररोजचे अल्पोपहार (Tea/Snacks) बिल, स्टेशनरी, बॅनर, फोटोग्राफ्स आणि गेस्ट लेक्चरर्सचे मानधन बिले गोळा करेन.\n३. अनिवार्य कागदपत्रे तपासणे: प्रत्येक बिलासोबत प्रशिक्षणार्थींची दररोजची हजेरी पत्रके (Attendance Sheets), व्हेंडरचे मूळ टॅक्स इन्व्हॉईस आणि स्टॉक रजिस्टरमधील नोंद जोडेन.\n४. टॅक्स व टीडीएस: नियमानुसार ट्रेनर्सच्या मानधनातून Section 194J नुसार आणि कंत्राटदाराच्या बिलातून 194C नुसार TDS वजा करेन.\n५. बॅच खर्चाचे विवरण: एका एक्सेल शीटमध्ये एकूण खर्च आणि मंजूर मर्यादा यांची तुलना करून बॅचनिहाय खर्चाचे विवरण तयार करेन.\n६. मंजुरी व फायलिंग: जिल्हा प्रकल्प अधिकाऱ्यांची अंतिम स्वाक्षरी घेऊन बँक ट्रान्सफर करेन आणि "Batch No. / Year" अशी स्वतंत्र फाईल तयार करून कपाटात सुरक्षित ठेवेन.',
+        'modelAnswer_en': 'Sir, upon batch completion, I will follow a six-step process. First, verify the administrative budget sanction. Second, collect all invoices including hall rent, catering, stationery, kits, and guest honorarium. Third, cross-verify participant attendance sheets signed by the coordinator against the catering and kit bills. Fourth, scrutinize GSTIN numbers and deduct TDS under Section 194J for speakers and 194C for vendors. Fifth, prepare a batch expenditure statement within sanctioned limits. Sixth, obtain DPO approval, execute digital payments, and archive all vouchers in a dedicated Batch Guard File.',
         'commonMistakes': [
             'Forgetting to cross-verify participant attendance sheets with food/kit bills',
             'Missing TDS deduction on guest speaker fees'
@@ -234,7 +238,7 @@ QUESTIONS = [
         'module': 'SITUATIONAL',
         'category': 'Workplace Simulation',
         'rubric': 'situational',
-        'q_en': 'Workplace Scenario 2: A senior officer or coordinator submits a bill of ₹8,500 for vehicle hire / field visit travel, but the log book and toll receipts are missing. What will you do?',
+        'q_en': 'Workplace Scenario 2: An officer submits a travel bill of ₹8,500 for vehicle hire, but the vehicle log book and toll receipts are missing. What will you do?',
         'q_mr': 'कार्यालयीन प्रसंग २: एका अधिकाऱ्याने फिल्ड व्हिजिटसाठी ₹८,५०० चे वाहन भाड्याचे बिल सादर केले, परंतु त्यासोबत वाहनाचे लॉग बुक आणि टोल पावत्या जोडलेल्या नाहीत. तुम्ही काय पावले उचलाल?',
         'q_hi': 'वाहन किराए के बिल में लॉग बुक और टोल रसीदें न होने पर आप क्या करेंगे?',
         'keyPoints': [
@@ -245,13 +249,13 @@ QUESTIONS = [
             'Resolution: Request officer to attach the vehicle log sheet countersigned by the tour in-charge'
         ],
         'modelAnswer': 'मॅडम, अशा प्रसंगी माझी कृती खालीलप्रमाणे असेल:\n१. प्रथम काय करणार: मी बिल बाजूला ठेवून संबंधित अधिकाऱ्यांना अत्यंत आदरपूर्वक आणि नम्रपणे सांगेन की, "सर, लेखा परीक्षण (Audit) नियमांनुसार वाहन बिलासोबत वाहनाचा प्रवास तपशील (Log Book - सुरुवातीचे व शेवटचे किमी, प्रवासाचा उद्देश) आणि टोल पावत्या असणे अनिवार्य आहे, अन्यथा ऑडिटमध्ये रिकव्हरी निघू शकते."\n२. काय तपासणार: दौऱ्याची पूर्वमंजुरी (Tour Sanction) आणि लॉग बुकची पडताळणी करेन.\n३. मंजुरी: आवश्यक कागदपत्रे जोडल्याशिवाय मी हे बिल पेमेंटसाठी पुढे सादर करणार नाही.\n४. तोडगा: अधिकाऱ्यांना संबंधित गाडीचे लॉग शीट भरून स्वाक्षरीसह जोडून देण्याची विनंती करेन. कागदपत्रे पूर्ण झाल्यानंतरच व्हाउचर तयार करून वरिष्ठांच्या स्वाक्षरीसाठी मांडेन.',
+        'modelAnswer_en': 'Madam, I will politely explain audit regulations to the officer, clarifying that travel reimbursement requires an official vehicle log book recording opening/closing kilometers, route details, and toll slips. Without these, statutory auditors flag an unverified payment objection. I will request the officer to attach the signed log sheet and toll slips. Once documentation is complete, I will prepare the voucher and submit it to the DPO for approval.',
         'commonMistakes': [
             'Approving the bill blindly out of fear of senior',
             'Being rude or shouting at the officer'
         ],
         'followUp': 'What if the officer insists: "Pass it today, I will give toll slips next week"?',
-        'followUpAnswer': 'मी नम्रपणे सांगेन, "सर, एकदा चेक किंवा बँक ट्रान्सफर झाल्यावर अपूर्ण व्हाउचर ऑडिटच्या निशाण्यावर येते. कृपया कागदपत्रे जोडून द्या, मी तात्काळ एका तासात बिल प्रोसेस करतो."'
-        ,
+        'followUpAnswer': 'मी नम्रपणे सांगेन, "सर, एकदा चेक किंवा बँक ट्रान्सफर झाल्यावर अपूर्ण व्हाउचर ऑडिटच्या निशाण्यावर येते. कृपया कागदपत्रे जोडून द्या, मी तात्काळ एका तासात बिल प्रोसेस करतो."',
         'keywords': ['log book', 'toll receipts', 'travel bill', 'audit objection', 'polite explanation', 'supporting documents', 'tour sanction']
     },
     {
@@ -259,7 +263,7 @@ QUESTIONS = [
         'module': 'SITUATIONAL',
         'category': 'Workplace Simulation',
         'rubric': 'situational',
-        'q_en': 'Workplace Scenario 3: The sanctioned administrative approval for printing training booklets is ₹15,000, but the submitted printing bill is ₹17,800. How will you handle this?',
+        'q_en': 'Workplace Scenario 3: The approved sanction for printing training booklets is ₹15,000, but the printer submits a bill of ₹17,800. How will you handle this?',
         'q_mr': 'कार्यालयीन प्रसंग ३: प्रशिक्षण पुस्तके छपाईसाठी प्रशासकीय मंजुरी ₹१५,००० ची आहे, परंतु प्रिंटरने प्रत्यक्ष ₹१७,८०० चे बिल दिले आहे. तुम्ही हे कसे हाताळाल?',
         'q_hi': 'स्वीकृत राशि ₹15,000 है लेकिन बिल ₹17,800 का आया है। आप इसे कैसे संभालेंगे?',
         'keyPoints': [
@@ -270,6 +274,7 @@ QUESTIONS = [
             'Approval requirement: Revised / Ex-post facto sanction required from competent authority before paying excess amount'
         ],
         'modelAnswer': 'सर, अकाउंटिंगच्या नियमांनुसार मंजूर मर्यादेपेक्षा (Sanctioned Limit) एका रुपयाचेही जास्त पेमेंट थेट करता येत नाही.\nमाझी कृती:\n१. पडताळणी: मी बिलातील संख्या आणि दर तपासेन. छपाईची पुस्तके वाढली होती का, पाने वाढली होती की व्हेंडरने दर जास्त लावला आहे हे शोधेन.\n२. वरिष्ठांना अवगत करणे: मी जिल्हा प्रकल्प अधिकाऱ्यांच्या निदर्शनास आणून देईन की बिल मंजूर रकमेपेक्षा ₹२,८०० ने जास्त आहे.\n३. पर्याय: जर अतिरिक्त छपाई खरोखर आवश्यक होती आणि कार्यालयाच्या आदेशाने झाली असेल, तर सक्षम अधिकाऱ्यांकडून ₹२,८०० साठी अतिरिक्त प्रशासकीय मंजुरी (Revised Sanction / Ex-post facto approval) घ्यावी लागेल.\n४. जोपर्यंत सुधारित मंजुरी मिळत नाही, तोपर्यंत नियमानुसार मूळ मंजूर रकमेएवढेच (₹१५,०००) पेमेंट करता येईल किंवा संपूर्ण मंजुरी आल्यावरच पूर्ण बिल पास केले जाईल.',
+        'modelAnswer_en': 'Sir, public financial rules strictly prohibit making payments exceeding administrative sanctions. I will first examine why the bill increased—whether quantity or page count changed. Second, I will submit a note to the DPO highlighting the ₹2,800 variance. If the additional printing was officially authorized, an ex-post facto or revised sanction must be obtained from the competent authority. Payment of the excess amount will only be released after revised approval is officially recorded.',
         'commonMistakes': [
             'Processing the full ₹17,800 without revised sanction',
             'Arbitrarily cutting vendor payment without checking reasons'
@@ -295,6 +300,7 @@ QUESTIONS = [
             'Preventive measure: Mark physical bills "PAID & CANCELLED" immediately upon payment'
         ],
         'modelAnswer': 'मॅडम, हा एक गंभीर प्रकार असू शकतो. माझी तत्काळ पावले खालीलप्रमाणे असतील:\n१. तात्काळ थांबवणे: त्या बिलाची कोणतीही पुढील प्रक्रिया किंवा व्हाउचर बनवणे त्वरित थांबवेन.\n२. आधीच्या नोंदी शोधणे: गेल्या महिन्यातील लेजर, कॅश बुक आणि व्हाउचर फाईल उघडून त्या बिलाचा व्हाउचर क्रमांक, पेमेंटची तारीख आणि बँक UTR क्रमांक शोधून त्याची प्रत काढेन.\n३. वरिष्ठांना अहवाल: दोन्ही कागदपत्रे सोबत जोडून जिल्हा प्रकल्प अधिकाऱ्यांच्या (DPO) निदर्शनास लेखी स्वरूपात आणेन की हे बिल आधीच या तारखेला अदा करण्यात आले आहे.\n४. व्हेंडरशी संपर्क: व्हेंडरला अधिकृत पत्र किंवा मेलद्वारे कळवले जाईल की सदर बिलाचे पेमेंट आधीच झाले आहे. नजरचुकीने पुन्हा बिल आले आहे का याची खात्री केली जाईल.\n५. प्रतिबंधात्मक उपाय: कार्यालयात असा प्रकार पुन्हा घडू नये म्हणून प्रत्येक बिलावर पेमेंट होताच मोठ्या लाल अक्षरात "PAID & CANCELLED" असा शिक्का मारण्याची शिस्त कडक ठेवेन.',
+        'modelAnswer_en': 'Madam, duplicate payments are a major financial risk. First, I will immediately halt processing of the invoice. Second, I will trace the previous transaction from last month’s records, extracting the voucher number, date, UTR number, and bank statement copy. Third, I will submit a formal written note to the DPO with both invoices as documentary evidence. Fourth, we will return the duplicate bill to the vendor with previous payment reference. Finally, I will enforce the stamping of "PAID & CANCELLED" on all original physical bills to ensure this never recurs.',
         'commonMistakes': [
             'Quietly throwing the bill in dustbin without informing the officer',
             'Passing the bill without checking past records'
@@ -308,7 +314,7 @@ QUESTIONS = [
         'module': 'SITUATIONAL',
         'category': 'Workplace Simulation',
         'rubric': 'situational',
-        'q_en': 'Workplace Scenario 5: Head Office or the Regional Officer demands the Monthly Financial Expenditure Statement by 5:00 PM today, but two trainer bills are still pending verification. How will you manage this deadline without sacrificing accuracy?',
+        'q_en': 'Workplace Scenario 5: Head Office or the Regional Officer demands the Monthly Financial Statement by 5:00 PM today, but two trainer bills are still pending verification. How will you manage this deadline without sacrificing accuracy?',
         'q_mr': 'कार्यालयीन प्रसंग ५: मुख्यालय किंवा विभागीय कार्यालयाने आज संध्याकाळी ५ वाजेपर्यंत मासिक खर्चाचे विवरण मागितले आहे, परंतु दोन ट्रेनर्सची बिले अजून पडताळणी बाकी आहेत. अचूकता न गमावता तुम्ही ही डेडलाईन कशी सांभाळाल?',
         'q_hi': 'आज शाम तक मासिक व्यय विवरण भेजना अनिवार्य है लेकिन दो बिल लंबित हैं। आप इसे कैसे संभालेंगे?',
         'keyPoints': [
@@ -319,6 +325,7 @@ QUESTIONS = [
             'Communicate with DPO before emailing Head Office'
         ],
         'modelAnswer': 'सर, अशा वेळी घाईगडबडीत न तपासलेले बिल खर्चात दाखवणे किंवा चुकीचा रिपोर्ट पाठवणे दोन्ही ऑडिटच्या दृष्टीने धोकादायक ठरेल.\nमाझी कृती:\n१. त्वरित समन्वय (Immediate Action): दुपारी २ वाजेपर्यंत मी संबंधित ट्रेनिंग कोऑर्डिनेटरशी संपर्क साधून त्या दोन बिलांची अपूर्ण कागदपत्रे तात्काळ पूर्ण करून घेण्याचा प्रयत्न करेन.\n२. जर कागदपत्रे ४ वाजेपर्यंत मिळाली नाहीत: तर शासकीय अकाउंटिंगच्या नियमांनुसार जे खर्च प्रत्यक्षात पूर्ण तपासले आहेत आणि ज्यांचे पेमेंट झाले आहे, तेवढाच प्रत्यक्ष खर्च (Actual Expenditure) स्टेटमेन्टमध्ये दाखवेन.\n३. फुटनोट / शेरा: स्टेटमेन्टच्या खाली स्पष्ट टीप (Footnote) लिहीन: "Note: Two trainer bills totaling ₹X are under scrutiny and will be included in the next period upon approval."\n४. वरिष्ठांची मान्यता: हा अहवाल जिल्हा प्रकल्प अधिकाऱ्यांना दाखवून त्यांच्या स्वाक्षरीने संध्याकाळी ५ च्या आत मुख्यालयाला पाठवून देईन. यामुळे डेडलाईनही पाळली जाईल आणि रिपोर्टही १००% खरा राहील.',
+        'modelAnswer_en': 'Sir, unverified expenses must never be booked in actual financial statements just to meet a deadline. First, I will make immediate efforts with the training coordinator to complete verification by 3:00 PM. If documentation remains incomplete, I will compile the statement based strictly on verified, booked expenditures to ensure 100% mathematical accuracy. Crucially, I will append an explicit footnote: "Two trainer bills totaling ₹X are currently under scrutiny and will be booked in the next monthly statement." I will obtain the DPO’s signature and submit it before 5:00 PM.',
         'commonMistakes': [
             'Booking unverified bills in accounts to show more expenditure',
             'Missing the deadline without informing anyone'
@@ -344,6 +351,7 @@ QUESTIONS = [
             'Next day: Systematic investigation; if genuinely untraceable, record according to official procedure under Cash Shortage'
         ],
         'modelAnswer': 'मॅडम, अकाउंट्समध्ये प्रामाणिकपणा सर्वात महत्त्वाचा असतो. मी माझ्या स्वतःच्या खिशातून ₹५०० टाकून तूट कधीही लपवणार नाही.\nआजची तात्काळ कृती:\n१. फेरपडताळणी: आजच्या सर्व रिसिट आणि पेमेंट व्हाउचर्सची बेरीज पुन्हा करेन. दिवसभरात चहा-नाश्ता किंवा कुरिअरचा काही किरकोळ खर्च झाला आहे का आणि त्याचे व्हाउचर लिहायचे राहिले आहे का ते पाहीन.\n२. अधिकाऱ्यांना माहिती: तूट कायम असल्यास लगेच जिल्हा प्रकल्प अधिकाऱ्यांना (DPO) प्रत्यक्ष परिस्थिती सांगेन.\n३. नोंद व स्वाक्षरी: कॅश रजिस्टरमध्ये "प्रत्यक्ष मोजलेली कॅश ₹४,२००, पुस्तकी शिल्लक ₹४,७००, तूट ₹५००" असा शेरा लिहून अधिकाऱ्यांची स्वाक्षरी घेईन आणि कॅश बॉक्स कुलूपबंद करेन.\nदुसऱ्या दिवसाची कृती:\nसकाळी आदल्या दिवसाच्या प्रत्येक व्यवहाराचा बँक आणि पावत्यांशी ताळेबंद घालेन. तरीही चूक न सापडल्यास अधिकाऱ्यांच्या अधिकृत आदेशानुसार पुढील योग्य प्रशासकीय नोंद करेन.',
+        'modelAnswer_en': 'Madam, under no circumstances should an accountant put personal cash from their purse into the cash box to conceal a shortage. That is an ethical and audit violation. First, I will re-check today’s addition and verify if any unbooked petty cash expense occurred. If the ₹500 variance persists, I will immediately report it to the DPO. I will record the actual physical count of ₹4,200 and the ₹500 deficit in the Daily Cash Register and obtain the DPO’s countersignature. The next morning, I will trace bank receipts and vouchers systematically to resolve the difference officially.',
         'commonMistakes': [
             'Putting personal money to cover the gap (grave ethical and audit offense)',
             'Tampering with cash book totals to match the physical cash'
@@ -368,6 +376,7 @@ QUESTIONS = [
             'Resolution: Prepare a formal request note for additional budget allocation / re-appropriation to Head Office'
         ],
         'modelAnswer': 'सर, आर्थिक शिस्तीनुसार बजेट संपलेले असताना नवीन खर्च परस्पर करणे किंवा दुसऱ्या हेडचा निधी (उदा. प्रवास खर्च) परस्पर इकडे वळवणे (Diversion of Funds) पूर्णपणे बेकायदेशीर आहे.\nमाझी कृती:\n१. बजेट तपासणे: मी बजेट रजिस्टर उघडून नेमकी किती रक्कम शिल्लक आहे (फक्त ५%) हे पाहीन.\n२. अधिकाऱ्यांना लेखी कल्पना: मी जिल्हा प्रकल्प अधिकाऱ्यांना (DPO) ताळेबंद दाखवून सांगेन की, "सर, या हेडखाली आता नवीन बॅचचा खर्च भागवणे शक्य नाही."\n३. प्रस्ताव तयार करणे: मुख्यालयाकडे (Head Office) तात्काळ अतिरिक्त निधी मिळण्यासाठी (Additional Grant / Re-appropriation) प्रस्ताव किंवा पत्र तयार करेन.\n४. जोपर्यंत मुख्यालयाकडून अतिरिक्त निधी मंजूर होत नाही, तोपर्यंत व्हेंडरला नवीन कमिटमेंट किंवा पेमेंटचे आश्वासन दिले जाणार नाही.',
+        'modelAnswer_en': 'Sir, public accounting principles strictly prohibit committing expenditures beyond sanctioned budget allocations or diverting funds from other heads without approval. I will first extract the exact unspent balance from the Budget Register. Second, I will inform the DPO in writing that the refreshment head cannot accommodate new batches. Third, I will draft an official proposal to the Head Office requesting re-appropriation or supplementary grant allocation. Until official sanction arrives, no financial commitment can be made.',
         'commonMistakes': [
             'Diverting money from another budget head without Head Office approval',
             'Processing the bill into negative budget'
@@ -392,6 +401,7 @@ QUESTIONS = [
             'Present the documents politely and properly before the audit team'
         ],
         'modelAnswer': 'मॅडम, शासकीय आणि स्वायत्त संस्थांमध्ये आर्थिक नोंदी आणि व्हाउचर्स किमान ८ ते १० वर्षे सुरक्षित ठेवणे बंधनकारक असते.\nमाझी कृती:\n१. शांत राहणे व शोध घेणे: घाबरून न जाता, मी त्या आर्थिक वर्षाचे (उदा. २०२३-२४) व्हाउचर्स इंडेक्स रजिस्टर पाहीन.\n२. गार्ड फाईल काढणे: रेकॉर्ड रूममधील संबंधित महिन्याची व्हाउचर गार्ड फाईल शोधून त्यातील मूळ टॅक्स इन्व्हॉईस, ३ कोटेशन्स आणि तुलनात्मक तक्ता (Comparative Statement) काढून घेईन.\n३. डेडस्टॉक रजिस्टर: सोबतच कार्यालयाचे डेडस्टॉक रजिस्टर (Deadstock / Fixed Asset Register) काढून, त्यावर त्या फर्निचरची झालेली नोंद आणि पेज नंबर दाखवेन.\n४. ऑडिट टीमसमोर सादरीकरण: सर्व कागदपत्रे नम्रतेने ऑडिट अधिकाऱ्यांसमोर सादर करेन. जर फाईल शोधायला थोडा वेळ लागत असेल, तर अधिकाऱ्यांना नम्रपणे विनंती करून थोडा वेळ मागेन, पण शोधून नक्की सादर करेन.',
+        'modelAnswer_en': 'Madam, financial records and voucher guard files must be preserved for at least 8 to 10 years under government retention rules. I will remain calm and reference the Voucher Index Register for that specific financial year. I will retrieve the corresponding voucher guard file from the record room containing the original tax invoice, comparative statement, and quotations. I will also cross-reference the Deadstock / Fixed Asset Register where the asset was recorded upon delivery, presenting the complete dossier respectfully to the audit team.',
         'commonMistakes': [
             'Saying "It was before my joining so I am not responsible"',
             'Arguing with the auditor that 3-year-old records are not needed'
@@ -416,6 +426,7 @@ QUESTIONS = [
             'Expedite the pending voucher with the officer'
         ],
         'modelAnswer': 'सर, अशा वेळी मी स्वतः शांत राहीन आणि त्यांचा राग समजून घेईन. जनतेशी आणि पाहुण्यांशी संवाद साधताना संयम अत्यंत आवश्यक असतो.\nमाझी कृती:\n१. आदरपूर्वक ऐकून घेणे: मी त्यांना बसायला सांगेन, पाणी देईन आणि त्यांची अडचण शांतपणे ऐकून घेईन. वाद घालणार नाही.\n२. स्टेटस तपासणे: त्यांचे नाव, बॅच नंबर आणि बँक खात्याचा तपशील घेऊन माझ्या पेमेंट ट्रॅकरमध्ये तपासेन की बिल कोणत्या टप्प्यावर अडकले आहे (उदा. बँक खाते क्रमांक चुकीचा होता का, की मुख्यालयाकडून त्या बॅचचा निधी जमा व्हायचा बाकी होता).\n३. वस्तुस्थिती सांगणे: त्यांना खोटे आश्वासन न देता खरी परिस्थिती नम्रपणे समजावून सांगेन.\n४. पाठपुरावा: जर कागदपत्रांची पूर्तता असेल, तर जिल्हा प्रकल्प अधिकाऱ्यांशी बोलून तात्काळ पुढील २-३ दिवसांत त्यांचे पेमेंट बँक ट्रान्सफरने होईल याची जबाबदारी घेऊन त्यांना तसे आश्वस्त करेन.',
+        'modelAnswer_en': 'Sir, in public service, maintaining empathy and calm under pressure is paramount. I will seat them respectfully, offer water, and listen without arguing or becoming defensive. I will check our payment tracker using their batch details to pinpoint the exact bottleneck—whether bank IFSC details failed or grant release was delayed. I will explain the factual position transparently without making false promises and coordinate with the DPO to expedite their digital payment within 2 to 3 working days.',
         'commonMistakes': [
             'Arguing back or shouting "I am busy, come later"',
             'Passing the blame vaguely without checking the records'
@@ -439,6 +450,7 @@ QUESTIONS = [
             'Solution: Offer to prepare an Advance Voucher if permitted under rules with officer’s written note sheet approval, OR urgently prepare voucher as soon as basic sanction is signed'
         ],
         'modelAnswer': 'मॅडम, हा अतिशय संवेदनशील प्रसंग आहे. मी उद्धट न होता वरिष्ठांचा आदर राखून अधिकृत नियम समजावून सांगेन.\nमाझी कृती:\n१. नम्रपणे समजावणे: मी साहेबांना एकांतात आदराने सांगेन, "सर, लेखा नियमांनुसार आणि बँक नियमांनुसार मंजूर व्हाउचर आणि सपोर्टिंगशिवाय थेट चेक लिहिल्यास ऑडिटमध्ये ही थेट अनियमितता (Severe Irregularity) ठरते आणि आपणा दोघांवरही जबाबदारी येऊ शकते."\n२. व्यावहारिक पर्याय: जर कार्यक्रम आजच आहे आणि खरोखर तातडी असेल, तर मी त्यांना सांगेन, "सर, आपण व्हेंडरला पेमेंट करण्याऐवजी आपल्या नावाने अधिकृत ॲडव्हान्स (Advance Note Sheet) मंजूर करून द्या; मी ॲडव्हान्स व्हाउचर बनवून देतो. नंतर उद्या बिल आल्यावर आपण ते ॲडजस्ट करू."\n३. लेखी आदेशाशिवाय किंवा अधिकृत व्हाउचरशिवाय मी कोरा किंवा कागदपत्रांशिवाय चेक काढणार नाही.',
+        'modelAnswer_en': 'Madam, this is a delicate situation that requires maintaining professional respect while firmly upholding financial rules. In private, I will politely explain: "Sir, issuing a cheque without a verified voucher and supporting bills is a direct financial irregularity that will invite severe audit paras on both of us." If the event is today and truly urgent, I will suggest an official solution: "Sir, please sign an Advance Note Sheet in your name; I will prepare an official Advance Voucher, and we will adjust it against the vendor bill tomorrow." I will not issue an unbacked cheque on verbal instructions alone.',
         'commonMistakes': [
             'Aggressively challenging the boss in front of everyone',
             'Blindly signing/issuing the cheque without any paper trail'
@@ -462,6 +474,7 @@ QUESTIONS = [
             'Send an official revised email with DPO approval clearly explaining the inadvertent formula error'
         ],
         'modelAnswer': 'सर, चूक लपवण्याचा प्रयत्न केल्यास भविष्यात ऑडिटमध्ये जास्त अडचण येते. स्वतःहून चूक वेळेवर सुधारणे हीच खरी व्यावसायिकता आहे.\nमाझी कृती:\n१. तातडीने चूक दुरुस्त करणे: मी लगेच मूळ एक्सेल फाईलमध्ये फॉर्म्युला दुरुस्त करून योग्य आकडा असलेला सुधारित अहवाल (Revised Statement) तयार करेन.\n२. अधिकाऱ्यांच्या निदर्शनास आणणे: मी स्वतः जिल्हा प्रकल्प अधिकाऱ्यांना सांगेन की, "सर, फॉर्म्युल्यातील तांत्रिक चुकीमुळे ₹१०,००० चा फरक राहिला होता, मी तो दुरुस्त केला आहे."\n३. मुख्यालयाला ईमेल: अधिकाऱ्यांच्या मंजुरीने मुख्यालयाच्या फायनान्स विभागाला तात्काळ एक सुधारित ईमेल पाठवेन, ज्याचा विषय असेल: "Corrigendum / Revised Quarterly Statement for District X".\n४. आत्मपरीक्षण: भविष्यात अहवाल पाठवण्यापूर्वी मी मॅन्युअल क्रॉस-टोटलिंग करून फॉर्म्युले दोनदा तपासेन.',
+        'modelAnswer_en': 'Sir, concealing an error causes greater complications during audits. Prompt self-disclosure demonstrates true integrity. I will immediately correct the formula in Excel and generate a revised statement highlighting the rectified row. I will brief the DPO transparently and, with their sanction, dispatch an official corrigendum email to the Head Office Finance Section with the revised attachment. Going forward, I will enforce double-checking through manual cross-totaling before dispatch.',
         'commonMistakes': [
             'Staying silent and hoping nobody notices',
             'Blaming Microsoft Excel instead of taking personal responsibility'
@@ -485,6 +498,7 @@ QUESTIONS = [
             'Let the senior officers decide the relative priority or offer a realistic schedule (e.g. Task 1 by 4:45 PM, Task 2 by 5:30 PM)'
         ],
         'modelAnswer': 'मॅडम, अशा वेळी गोंधळून न जाता मी अत्यंत नम्र आणि पारदर्शक संवाद ठेवेन:\n१. वेळेचा अंदाज घेणे: मी पाहीन की दोन्ही कामांसाठी नेमका किती वेळ लागेल.\n२. पारदर्शक संवाद: मी विभागीय अधिकाऱ्यांना (RO) आदरपूर्वक सांगेन की, "सर, मी आत्ताच जिल्हा प्रकल्प अधिकाऱ्यांच्या सूचनेनुसार आजच्या ऑडिट उत्तरावर काम करत आहे. मी हे काम ४:४० पर्यंत पूर्ण करून लगेच आपली बॅच शीट ५:१५ पर्यंत पूर्ण करून देऊ का?"\n३. अधिकाऱ्यांमध्ये समन्वय: गरज पडल्यास मी जिल्हा प्रकल्प अधिकाऱ्यांनाही सांगून ठेवेन की विभागीय साहेबांनीही हे काम दिले आहे. अधिकारी आपापसात ठरवून मला प्राधान्य सांगतील.\n४. जबाबदारी पूर्ण करणे: थोडे जास्तीचे थांबून दोन्ही कामे अचूकतेने पूर्ण करूनच कार्यालय सोडेन.',
+        'modelAnswer_en': 'Madam, I will stay composed and maintain transparent communication. I will evaluate the time required for both deliverables. I will politely brief the Regional Officer: "Sir, I am currently finalizing an urgent audit compliance response assigned by the DPO for today. May I deliver that by 4:40 PM and hand over your batch expenditure sheet by 5:15 PM?" If needed, I will brief the DPO so both officers can agree on relative priority. I will stay back as needed to deliver both accurately without compromise.',
         'commonMistakes': [
             'Saying "No, I will not do it" to either officer',
             'Accepting both silently and failing to deliver either on time'
@@ -508,6 +522,7 @@ QUESTIONS = [
             'Advise them to follow official procedure if information is officially required'
         ],
         'modelAnswer': 'सर, मी कोणत्याही दबावाला किंवा मैत्रीला बळी न पडता अतिशय स्पष्ट आणि नम्र शब्दात नकार देईन.\nमी त्यांना सांगेन: "मित्रा/सहकारी, टेंडरचे कोटेशन्स आणि आर्थिक दर हे टेंडर उघडेपर्यंत आणि अधिकृत मंजुरी मिळेपर्यंत अत्यंत गोपनीय (Strictly Confidential) असतात. ही माहिती अनधिकृतपणे कोणालाही दाखवणे शासकीय नियमांचा आणि माझ्या व्यावसायिक सचोटीचा (Integrity) गंभीर भंग ठरेल. त्यामुळे मी ही माहिती दाखवू शकत नाही."\nजर त्यांना काही अधिकृत काम असेल, तर त्यांनी जिल्हा प्रकल्प अधिकाऱ्यांची रीतसर लेखी परवानगी आणावी, त्यानंतरच अधिकृत प्रक्रिया केली जाईल.',
+        'modelAnswer_en': 'Sir, regardless of friendship or office camaraderie, financial quotations and commercial bids are strictly confidential until official tender opening and award. I will respond firmly and politely: "Vendor quotation rates are confidential under government procurement rules. Disclosing them informally violates official code of conduct and institutional integrity; therefore, I cannot share them." If they require information officially, they must obtain written authorization from the District Project Officer.',
         'commonMistakes': [
             'Sharing the data because the person is an office colleague',
             'Being unnecessarily rude and creating a personal fight'
@@ -532,6 +547,7 @@ QUESTIONS = [
             'Request the senior officer or senior assistant to review and guide before final submission'
         ],
         'modelAnswer': 'मॅडम, नवीन जबाबदारी स्वीकारताना घाबरून न जाता शिकण्याची वृत्ती ठेवणे महत्त्वाचे आहे.\nमाझी कृती:\n१. जुन्या फायलींचा अभ्यास: मी कार्यालयातील रेकॉर्ड रूममधून त्याच योजनेचे आधीचे मंजूर झालेले युटिलायझेशन सर्टिफिकेट (UC) आणि फायली काढून नमुना (Format) समजून घेईन.\n२. शासन निर्णय व मार्गदर्शक तत्त्वे: त्या योजनेचा मूळ शासन निर्णय (GR) किंवा मुख्यालयाची मार्गदर्शक तत्त्वे वाचीन, ज्यामध्ये खर्चाचे नियम दिलेले असतात.\n३. कच्चा मसुदा (Drafting): लेजर आणि व्हाउचरशी आकडे तपासून कच्चा ताळेबंद तयार करेन.\n४. वरिष्ठांचे मार्गदर्शन: मी स्वतः जिल्हा प्रकल्प अधिकाऱ्यांना किंवा सिनियर सहकाऱ्यांना मसुदा दाखवून विनंती करेन, "सर, मी नवीन असल्याने हा मसुदा तयार केला आहे, कृपया तपासून काही सुधारणा असल्यास मार्गदर्शन करावे."\n५. यामुळे काम अचूक होईल आणि मला नवीन शासकीय कार्यपद्धती शिकता येईल.',
+        'modelAnswer_en': 'Madam, embracing learning while maintaining accuracy is key when newly appointed. First, I will study previously approved files and format templates of the same scheme from the record room. Second, I will review the governing Government Resolution (GR) and scheme guidelines regarding admissible expenditure. Third, I will cross-verify ledger entries and draft the statement. Fourth, I will proactively consult the DPO or senior colleagues: "Sir, I have prepared this draft; please review it and guide me on any corrections." This ensures accuracy and helps me master official procedures quickly.',
         'commonMistakes': [
             'Pretending you know everything and submitting wrong UC',
             'Sitting idle and waiting for someone else to do your work'
@@ -557,6 +573,7 @@ QUESTIONS = [
             'Step 6: Show in BRS as "Amounts debited by Bank not entered in Cash Book" till resolved'
         ],
         'modelAnswer': 'सर, बँकेतून विनानोंद पैसे वजा होणे ही गंभीर बाब ठरू शकते. माझी कृती:\n१. नॅरेशन तपासणे: मी बँक स्टेटमेंटमधील त्या एंट्रीचे नॅरेशन, तारीख आणि ट्रान्झॅक्शन आयडी बारकाईने तपासेन (उदा. कोणताही ईसीएस, बँक चार्जेस किंवा ऑनलाइन व्यवहार आहे का).\n२. कार्यालयीन तपासणी: ऑफिसमध्ये कोणी ऑनलाइन पेमेंट किंवा अधिकृत चालान भरले आहे का आणि त्याची व्हाउचर एन्ट्री राहून गेली आहे का ते पाहीन.\n३. अधिकाऱ्यांच्या निदर्शनास आणणे: त्वरित जिल्हा प्रकल्प अधिकाऱ्यांना ही अज्ञात डेबिट नोंद दाखवेन.\n४. बँकेशी पत्रव्यवहार: DPO साहेबांच्या स्वाक्षरीचे अधिकृत पत्र घेऊन बँकेच्या शाखेत जाईन आणि तो व्यवहार कोणाच्या खात्यात आणि कोणत्या अधिकाराने झाला याचा बँक स्टेटमेंट लेजर उतारा मागेन.\n५. BRS मध्ये नोंद: जोपर्यंत तोडगा निघत नाही, तोपर्यंत BRS मध्ये "Amount debited by Bank not credited in Cash Book" या मथळ्याखाली हा फरक दाखवून ताळेबंद जुळवून ठेवेन.',
+        'modelAnswer_en': 'Sir, an unexplained bank debit requires immediate inquiry. First, I will scrutinize the statement narration, transaction code, and timestamp for recurring ECS debits or annual charges. Second, I will check whether an authorized online statutory payment was executed without passing the corresponding office voucher. Third, I will report the discrepancy to the DPO. Fourth, I will visit the bank branch with an official inquiry letter signed by the DPO to obtain the complete audit trail and beneficiary details. In the interim BRS, I will document it transparently as "Amount debited by bank not credited in Cash Book."',
         'commonMistakes': [
             'Ignoring the entry and forcing the cash book to match by false entry',
             'Waiting for 3 months to contact the bank'
@@ -584,6 +601,7 @@ QUESTIONS = [
             'Readiness to serve in public sector organisation like MCED'
         ],
         'modelAnswer': 'Good morning/afternoon, Sir and Madam. माझं नाव [नाव] आहे. मी [गाव/शहर] येथील रहिवासी आहे. मी माझे बी.कॉम [कॉलेजचे नाव] मधून [वर्ष] मध्ये पूर्ण केले आहे, ज्यामध्ये फायनान्शियल अकाउंटिंग आणि ऑडिटिंग हे माझे मुख्य विषय होते. मला एमएस एक्सेल आणि टॅलीचे प्रॅक्टिकल ज्ञान आहे.\nमला सुरुवातीपासूनच आकड्यांची अचूक मांडणी करणे, हिशेब जुळवणे आणि आर्थिक पारदर्शकता ठेवणे यामध्ये विशेष आवड आहे. लेखी परीक्षा उत्तीर्ण झाल्यानंतर, MCED सारख्या महाराष्ट्रातील अग्रगण्य संस्थेच्या जिल्हा कार्यालयात अकाउंट असिस्टंट म्हणून काम करण्याची संधी मिळणे ही माझ्या करिअरसाठी सन्मानाची बाब असेल. धन्यवाद.',
+        'modelAnswer_en': 'Good morning/afternoon, Sir and Madam. My name is [Name], and I belong to [Hometown]. I completed my Bachelor of Commerce from [College Name] in [Graduation Year], with Financial Accounting and Auditing as my core subjects. I have hands-on practical proficiency in MS Excel and accounting software. I have always had a strong affinity for numbers, reconciliation, and transparent financial discipline. Having cleared the written exam, I am eager to apply my accounting skills at MCED District Office to ensure meticulous documentation and accountability.',
         'commonMistakes': [
             'Speaking in a memorized, unnatural robot-like tone',
             'Talking too much about childhood or family history',
@@ -607,6 +625,7 @@ QUESTIONS = [
             'Stable, respectable and learning-oriented work environment'
         ],
         'modelAnswer': 'सर, खाजगी कंपनीत काम करणे हा मुख्यत्वे नफा मिळवण्यासाठीचा भाग असतो; परंतु MCED मध्ये काम करण्यामागे एक सामाजिक आणि विकासात्मक उद्दिष्ट (Social & Developmental Purpose) आहे. MCED मुळे ग्रामीण भागातील युवक, शेतकरी आणि महिला स्वतःचे उद्योग सुरू करतात आणि इतरांना रोजगार देतात. अशा संस्थेच्या जिल्हा स्तरावर आर्थिक कामकाज सांभाळताना आपल्याला प्रत्यक्ष समाजविकासात योगदान दिल्याचे समाधान मिळते. तसेच शासकीय नियमावली, बजेट व्यवस्थापन आणि ऑडिट यासारख्या बाबींचा सखोल अनुभव येथे मिळतो, जो माझ्या व्यावसायिक प्रगतीसाठी अत्यंत मोलाचा आहे.',
+        'modelAnswer_en': 'Sir, corporate firms focus primarily on commercial profits, whereas MCED serves a transformative developmental mission. MCED empowers rural youth, women, and budding entrepreneurs across Maharashtra to establish viable micro-enterprises and generate employment. Managing financial accounting at the district level gives me the satisfaction of contributing to state development while gaining deep exposure to public financial discipline, budgeting, and statutory audit procedures.',
         'commonMistakes': [
             'Saying "Private companies make people work too hard"',
             'Saying only "Government job offers pension or job safety"'
@@ -629,6 +648,7 @@ QUESTIONS = [
             'Avoid destructive weaknesses like "I get angry quickly" or fake answers like "I have no flaw"'
         ],
         'modelAnswer': 'मॅडम, माझी मुख्य ताकद म्हणजे "Attention to Detail" (सूक्ष्म तपासणी) आणि संयम. हिशेब तपासताना किंवा बिले पडताळताना मी घाई न करता प्रत्येक व्हाउचर, बिल नंबर आणि आकड्यांची क्रॉस-व्हेरीफिकेशन करते. माझे काम प्रामाणिकपणे आणि वेळेत पूर्ण करण्याची माझी सवय आहे.\nमाझी एक उणीव सांगायची तर, पूर्वी मला अनोळखी व्यक्तींसमोर किंवा वरिष्ठ अधिकाऱ्यांसमोर मोठ्या समूहात बोलताना थोडे दडपण यायचे. परंतु ही उणीव दूर करण्यासाठी मी इंग्रजी व मराठी संभाषण सराव, मॉक इंटरव्ह्यू आणि सादरीकरणाची नियमित प्रॅक्टिस सुरू केली आहे, ज्यामुळे आता माझा आत्मविश्वास खूप वाढला आहे.',
+        'modelAnswer_en': 'Madam, my primary strengths are high attention to detail, numerical patience, and personal integrity. When auditing bills or posting vouchers, I verify invoice numbers, attachments, and tax totals diligently without rushing. Regarding an area of improvement, I previously experienced hesitation when addressing senior panels or large gatherings. To overcome this, I have been actively participating in mock oral interviews and spoken communication practice, which has substantially improved my professional confidence.',
         'commonMistakes': [
             'Saying "I have no weakness"',
             'Saying a disqualifying weakness like "I am weak in math"'
@@ -652,6 +672,7 @@ QUESTIONS = [
             'Viewing constructive criticism as an opportunity to learn and grow'
         ],
         'modelAnswer': 'सर, मी वरिष्ठांच्या टीकेकडे वैयक्तिक हल्ला म्हणून न पाहता कामातील सुधारणेची संधी (Learning Opportunity) म्हणून सकारात्मकतेने घेते.\nमाझी प्रतिक्रिया:\n१. शांतपणे ऐकणे: साहेब काय चूक दाखवत आहेत ते मध्ये न बोलता शांतपणे समजून घेईन.\n२. लगेच दुरुस्ती: चूक मान्य करून, कोणतीही खोटी कारणे न देता ती चूक तात्काळ दुरुस्त करेन.\n३. शिकण्याची वृत्ती: "थँक्यू सर, तुम्ही ही चूक दाखवली; मी यापुढे अशी चूक होणार नाही याची काळजी घेईन" असे नम्रपणे सांगेन.\nअकाउंट्सच्या कामात वरिष्ठांनी चूक वेळेवर दाखवली तर भविष्यातील मोठा ऑडिट आक्षेप टळतो, त्यामुळे त्यांचे मार्गदर्शन माझ्यासाठी मार्गदर्शक ठरते.',
+        'modelAnswer_en': 'Sir, I welcome constructive criticism as a valuable learning opportunity rather than a personal reproach. First, I listen attentively without interrupting to understand the exact discrepancy identified by the officer. Second, I acknowledge the oversight transparently without making excuses and rectify it immediately. Third, I thank the officer for identifying the error, as catching mistakes internally prevents future statutory audit objections.',
         'commonMistakes': [
             'Arguing defensively or blaming colleagues/computer',
             'Getting upset, weeping or holding grudges'
@@ -675,6 +696,7 @@ QUESTIONS = [
             'Shows professional maturity under pressure'
         ],
         'modelAnswer': 'मॅडम, अशा वेळी खोटे बोलणे किंवा अंदाजे चुकीचे उत्तर देणे अत्यंत चुकीचे ठरेल, विशेषतः अकाउंट्स क्षेत्रात जिथे सत्यता सर्वात महत्त्वाची असते.\nमी पॅनेलसमोर अत्यंत नम्रपणे आणि आत्मविश्वासाने सांगेन:\n"सर/मॅडम, मला सध्या या विषयाबद्दल/नियमाबद्दल नेमकी खात्री नाही; मी चुकीचे सांगून आपला वेळ वाया घालवणार नाही. परंतु मुलाखतीनंतर मी हा नियम किंवा संदर्भ नक्की वाचीन आणि समजून घेईन."\nयामुळे पॅनेलला माझा प्रामाणिकपणा समजतो आणि मी दडपणाखाली खोटे बोलत नाही हे सिद्ध होते.',
+        'modelAnswer_en': 'Madam, in accounting, accuracy and honesty are non-negotiable; bluffing or guessing under pressure is dangerous. If faced with an unfamiliar question, I will politely state: "Sir/Madam, I do not have precise knowledge on this specific point right now, and I would not want to present incorrect information. However, I will make it a priority to study and understand this topic today." This conveys integrity, composure, and a sincere desire to learn.',
         'commonMistakes': [
             'Bluffing or giving random irrelevant answers',
             'Panicking, sweating and losing confidence for subsequent questions'
@@ -704,6 +726,7 @@ QUESTIONS = [
             'Signature of the vendor / authorized signatory'
         ],
         'modelAnswer': 'सर, जीएसटी कायद्यानुसार आणि लेखा नियमांनुसार टॅक्स इनव्हॉईसवर खालील बाबींची तपासणी केली जाते:\n१. इनव्हॉइसचे नाव: बिलावर स्पष्टपणे "Tax Invoice" लिहिलेले असावे.\n२. व्हेंडरचा तपशील: पुरवठादाराचे नाव, पत्ता आणि १५ अंकी वैध GSTIN क्रमांक.\n३. MCED चा तपशील: बिलावर खरेदीदार म्हणून MCED चे नाव आणि महाराष्ट्राचा GSTIN (२७ ने सुरू होणारा) बरोबर असावा.\n४. इनव्हॉइस नंबर व तारीख: सलग क्रमांक (Consecutive Serial Number) आणि चालू आर्थिक वर्षातील तारीख.\n५. माल/सेवेचा तपशील: वस्तूंचा HSN कोड किंवा सेवेचा SAC कोड, प्रमाण (Quantity) आणि दर.\n६. टॅक्सचे स्वतंत्र विभाजन: बेस रक्कम, CGST, SGST किंवा IGST चे स्वतंत्र रकाने आणि अंतिम बेरीज.\n७. स्वाक्षरी: व्हेंडरची अधिकृत स्वाक्षरी किंवा डिजिटल स्वाक्षरी असावी. या सर्व बाबी बरोबर असल्यावरच इनपुट टॅक्स क्रेडिट (ITC) सुरक्षित राहते.',
+        'modelAnswer_en': 'Sir, statutory verification of a vendor Tax Invoice requires seven checks: First, the document must be explicitly titled "Tax Invoice." Second, vendor name, address, and valid 15-digit GSTIN. Third, MCED as the recipient with Maharashtra State code 27. Fourth, consecutive invoice serial number and date. Fifth, proper HSN/SAC codes with quantity and rates. Sixth, clear separation of base amount and CGST/SGST or IGST taxes. Seventh, authorized vendor signature. This ensures eligibility for Input Tax Credit (ITC) and audit compliance.',
         'commonMistakes': [
             'Accepting an estimate or quotation as a tax invoice',
             'Not checking if MCED GSTIN is printed on the bill'
@@ -727,6 +750,7 @@ QUESTIONS = [
             'Remittance deadline: 7th of next month'
         ],
         'modelAnswer': 'मॅडम, TDS (Tax Deducted at Source) हा आयकर कायद्यानुसार बिलातून कापला जातो:\n१. Section 194C (कंत्राटदार - उदा. मंडप, केटरिंग, छपाई, जाहिरात):\n- जर व्हेंडर व्यक्ती/HUF असेल तर १% TDS; आणि जर कंपनी/पार्टनरशिप फर्म असेल तर २% TDS.\n- मर्यादा: एका बिलासाठी ₹३०,००० पेक्षा जास्त किंवा वर्षभरात ₹१,००,००० पेक्षा जास्त व्यवहार झाल्यास.\n२. Section 194J (व्यावसायिक व तांत्रिक फी - उदा. गेस्ट लेक्चरर्स, सीए फी, आयटी कन्सल्टंट):\n- प्रोफेशनल फीवर १०% किंवा तांत्रिक सेवेवर २% TDS.\n- मर्यादा: वर्षभरात ₹३०,००० पेक्षा जास्त रक्कम असल्यास.\nमहत्त्वाचा नियम: जर बिलावर GST स्वतंत्र दाखवला असेल, तर TDS फक्त मूळ बिलाच्या रकमेवर (Base Value) आकारला जातो, जीएसटीवर नाही.\nकापलेला TDS पुढील महिन्याच्या ७ तारखेच्या आत सरकारी खात्यात जमा करावा लागतो.',
+        'modelAnswer_en': 'Madam, TDS under the Income Tax Act is computed on base invoice value excluding separately shown GST. Under Section 194C for contractors (catering, printing, event setups), the rate is 1% for Individuals/HUF and 2% for corporate entities, triggered when a single bill exceeds ₹30,000 or aggregate exceeds ₹1,00,000 annually. Under Section 194J for professional and guest speaker fees, TDS is 10% (or 2% for technical fees) on annual payments exceeding ₹30,000. All deducted TDS must be remitted to government account by the 7th of the following month.',
         'commonMistakes': [
             'Calculating TDS on total amount including GST',
             'Not knowing the 7th of next month payment deadline'
@@ -751,6 +775,7 @@ QUESTIONS = [
             'Countersignature of Head of Office / District Officer daily'
         ],
         'modelAnswer': 'सर, कॅश बुक हे कार्यालयाचे हृदय असते. दैनंदिन आणि मासिक संतुलन खालीलप्रमाणे होते:\n१. दैनंदिन संतुलन (Daily Balancing):\n- दिवसभरात आलेल्या सर्व पावत्या डेबिट (रिसिट) बाजूला आणि झालेले खर्च क्रेडिट (पेमेंट) बाजूला नोंदवले जातात.\n- सायंकाळी दोन्ही बाजूंची बेरीज करून "Balance c/d" (क्लोजिंग बॅलन्स) काढला जातो.\n- कॅश रकान्यातील शिल्लक प्रत्यक्ष कॅश बॉक्समधील नोटा आणि नाणी मोजून तंतोतंत जुळवली जाते.\n- सुवर्ण नियम: कॅश रकान्याला कधीही क्रेडिट शिल्लक (उणे शिल्लक) असू शकत नाही, कारण जेवढी रोख आहे त्यापेक्षा जास्त खर्च करता येत नाही.\n- दररोज या नोंदीवर आणि प्रत्यक्ष शिलकेवर जिल्हा प्रकल्प अधिकाऱ्यांची स्वाक्षरी घेतली जाते.\n२. मासिक संतुलन (Monthly Balancing):\n- महिन्याच्या शेवटी बँक रकान्याची शिल्लक बँक पासबुक/स्टेटमेंटशी जुळवून बँक रिकन्सिलिएशन स्टेटमेंट (BRS) तयार केले जाते.',
+        'modelAnswer_en': 'Sir, the Cash Book is balanced on both a daily and monthly basis. Daily balancing requires totaling debit receipts and credit payments to calculate the closing Balance c/d. The physical cash in the safe is counted and verified against the book balance. Crucially, the cash column can never reflect a negative or credit balance because one cannot disburse more physical cash than available. The DPO countersigns the daily register. Monthly, the bank column closing balance is reconciled against the bank passbook by preparing the Bank Reconciliation Statement (BRS).',
         'commonMistakes': [
             'Saying Cash column can have a negative or credit balance',
             'Forgetting the daily physical cash verification'
@@ -778,6 +803,7 @@ QUESTIONS = [
             'Conditional Formatting / COUNTIF: Highlighting duplicate invoice numbers in red (=COUNTIF(F:F, F2)>1)'
         ],
         'modelAnswer': 'मॅडम, एक्सेलमध्ये मी खालील पद्धतीने अचूक आणि सुरक्षित एक्सपेन्स शीट तयार करेन:\n१. सुव्यवस्थित रकाने (Columns): अनुक्रमांक, तारीख, व्हाउचर नंबर, बजेट हेड, पार्टीचे नाव, इनव्हॉईस नंबर, एकूण रक्कम, टीडीएस, निव्वळ रक्कम (Net Amount) आणि UTR नंबर.\n२. हेडनिहाय बेरीज (SUMIF): कोणत्या हेडखाली किती खर्च झाला हे आपोआप काढण्यासाठी =SUMIF(Head_Range, "Stationery", Amount_Range) हे सूत्र वापरेन.\n३. ड्रॉपडाउन लिस्ट: Budget Head च्या कॉलममध्ये स्पेलिंगच्या चुका टाळण्यासाठी Data Validation द्वारे फिक्स ड्रॉपडाउन लिस्ट तयार करेन.\n४. डुप्लिकेट रोखणे: इनव्हॉईस नंबरच्या कॉलममध्ये Conditional Formatting लावून =COUNTIF($F:$F, F2)>1 हा फॉर्म्युला लावेन; जेणेकरून तोच बिल नंबर पुन्हा टाईप होताच सेल तात्काळ लाल रंगात हायलाइट होईल आणि चूक पकडली जाईल.',
+        'modelAnswer_en': 'Madam, I structure batch expense sheets in Excel with standard audit columns: Sl No, Date, Voucher No, Budget Head, Payee, Invoice No, Gross Amount, TDS, Net Amount, and UTR reference. I automate head-wise totals using =SUMIF(Head_Range, "Refreshment", Net_Range). To eliminate typos, I configure Data Validation drop-down lists for budget heads. To proactively catch duplicate bills, I apply Conditional Formatting with =COUNTIF(Invoice_Col, Current_Cell)>1, which immediately flags repeated invoice numbers in red.',
         'commonMistakes': [
             'Only mentioning basic SUM formula without mentioning Data Validation or duplicate prevention'
         ],
@@ -800,6 +826,7 @@ QUESTIONS = [
             'Password security: Keeping system locked when away from desk, never sharing financial login credentials'
         ],
         'modelAnswer': 'सर, डिजिटल रेकॉर्ड्सची सुरक्षा आणि शिस्त खालीलप्रमाणे पाळली जाईल:\n१. फाईलचे पद्धतशीर नामकरण (File Naming): फाईल सेव्ह करताना स्पष्ट नाव, महिना आणि व्हर्जन नंबर लिहिला जाईल, उदा. "MCED_Nashik_Exp_Statement_Oct2026_Final.xlsx". यामुळे जुनी आणि नवीन फाईल यात गोंधळ होत नाही.\n२. नियमित बॅकअप (Backup): कॉम्प्युटर खराब झाल्यास डेटा नष्ट होऊ नये म्हणून दर आठवड्याला सर्व लेजर्स आणि एक्सेल फाइल्सचा बॅकअप अधिकृत एक्सटर्नल ड्राईव्ह किंवा शासकीय क्लाउडवर ठेवला जाईल.\n३. ईमेल शिस्त: मुख्यालयाला मेल पाठवताना स्पष्ट विषय (Subject Line), वरिष्ठ अधिकाऱ्यांचे मार्क (Mark to DPO in CC), योग्य सही आणि फायली आधी PDF करून मगच जोडल्या जातील.\n४. सुरक्षितता: जागेवरून उठताना कॉम्प्युटर Win+L ने लॉक करणे आणि बँक पोर्टल्सचे पासवर्ड्स कोणाशीही शेअर न करणे.',
+        'modelAnswer_en': 'Sir, digital financial security requires four key habits: First, standardized file naming conventions specifying office, month, and version, such as "MCED_District_Exp_Oct2026_Final.xlsx", avoiding ambiguous names like Book1. Second, weekly encrypted backups on an external drive to guard against hardware failure. Third, professional email protocol with clear subject lines, DPO in CC, and password-protected PDF attachments for external transmission. Fourth, locking workstations with Win+L whenever stepping away and never sharing banking credentials.',
         'commonMistakes': [
             'Naming files as "Book1.xlsx" or "Final_Final2.xlsx"',
             'Not keeping any backup copy'
