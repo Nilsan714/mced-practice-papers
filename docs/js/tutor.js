@@ -54,6 +54,30 @@ V.tutor = async function (name) {
     h += '<div class="card"><div class="row sp"><div><div class="b" style="font-size:19px">' + esc(s.name) + '</div><div class="mu sm">शेवटचा Report: ' + ago(s.ts) + '</div></div>' + ring(pp) + '</div>'
         + (idle > 864e5 ? '<div class="tip">⚠️ ' + ago(s.ts) + ' शेवटची activity — आज संपर्क साधा.</div>' : '') + '<div class="grid3" style="margin-top:10px"><div class="c"><div class="b">' + daysLeft() + '</div><div class="mu sm">दिवस बाकी</div></div><div class="c"><div class="b">🔥' + s.streak + '</div><div class="mu sm">Streak</div></div><div class="c"><div class="b">⭐' + s.xp + '</div><div class="mu sm">XP</div></div></div>'
         + '<div class="mu sm" style="margin-top:8px">Lessons ' + s.lessons.length + '/11 · Flashcards ' + s.cards.known + '/' + s.cards.total + ' · उजळणीचे प्रश्न ' + s.wrong + ' · Attempts ' + s.attempts.length + '</div></div>';
+    
+    // Oral Interview Coach Section for Tutor
+    const coachData = window.COACH_STATE || {};
+    const profData = window.CANDIDATE_PROFILE || {};
+    const mockAtts = coachData.mockAttempts || [];
+    const latestMock = mockAtts.length ? mockAtts[mockAtts.length - 1] : null;
+    h += '<div class="card" style="border:2px solid var(--pr)">'
+        + '<div class="row sp"><div class="b" style="font-size:18px">🎙️ तोंडी मुलाखत सराव (Oral Interview - 20 Marks)</div>'
+        + '<span class="chip" style="font-size:12px">टार्गेट: 20/20</span></div>'
+        + '<div class="mu sm" style="margin:6px 0">उमेदवार: <b>' + esc(profData.name || s.name) + '</b> (' + esc(profData.qualification || 'B.Com') + ' · ' + esc(profData.hometown || 'महाराष्ट्र') + ')</div>'
+        + '<div class="grid3" style="margin:10px 0">'
+        + '<div class="c"><div class="b" style="color:var(--ok)">' + Object.keys(coachData.mastered || {}).length + '</div><div class="mu sm">पक्के प्रश्न</div></div>'
+        + '<div class="c"><div class="b" style="color:var(--wn)">' + Object.keys(coachData.revisionList || {}).length + '</div><div class="mu sm">उजळणी बाकी</div></div>'
+        + '<div class="c"><div class="b" style="color:var(--pr)">' + (latestMock ? (latestMock.totalScore + '/20') : '—') + '</div><div class="mu sm">शेवटचा मॉक</div></div>'
+        + '</div>'
+        + (latestMock ? (
+            '<div class="sm" style="margin-top:6px;padding:8px;background:color-mix(in srgb,var(--pr) 7%,var(--card));border-radius:10px">'
+            + '<b>शेवटचा मॉक निकाल (' + new Date(latestMock.timestamp).toLocaleDateString('mr-IN') + '): ' + latestMock.totalScore + ' / 20 Marks</b><br>'
+            + '• Accounting: ' + latestMock.categoryBreakdown.accounting + '/6 · Practical: ' + latestMock.categoryBreakdown.practical + '/5<br>'
+            + '• MCED: ' + latestMock.categoryBreakdown.mced + '/3 · Comm: ' + latestMock.categoryBreakdown.communication + '/3 · Conf: ' + latestMock.categoryBreakdown.confidence + '/3'
+            + '</div>'
+        ) : '<div class="mu sm">अजून 20-Mark मॉक दिलेला नाही. विद्यार्थ्याला मॉक देण्यास सांगा.</div>')
+        + '<div style="margin-top:10px"><a class="btn sm p" href="index.html#/coach">मुलाखत प्रशिक्षक उघडा →</a></div>'
+        + '</div>';
     const P = D.extras.personal, lastA = s.attempts.filter(a => a.m !== 'weak').slice(-1)[0], what = lastA ? 'Paper ' + lastA.p + ' ' + pct(lastA.t, lastA.o) + '%' : tt('सराव', 'practice'), V0 = { name: s.name };
     const wa = t => 'https://wa.me/?text=' + encodeURIComponent(fillT(t, Object.assign({ what }, V0)));
     h += '<div class="card"><b>💬 ' + tt(esc(s.name) + ' ला WhatsApp वर पाठवा', 'Send ' + esc(s.name) + ' a WhatsApp message') + '</b><div class="row g wrap" style="margin-top:8px"><a class="btn" target="_blank" href="' + wa(P.wa_praise) + '">💪 ' + tt('कौतुक', 'Praise') + '</a><a class="btn" target="_blank" href="' + wa(P.wa_nudge) + '">👋 ' + tt('आठवण', 'Nudge') + '</a>' + (wl.length ? '<a class="btn" target="_blank" href="' + wa(P.wa_weak.replace('{topic}', wl[0].p.subtopics[wl[0].i]).replace('{v}', wl[0].v)) + '">🎯 ' + tt('कमकुवत topic', 'Weak topic') + '</a>' : '') + '</div></div>';

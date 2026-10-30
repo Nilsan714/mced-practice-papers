@@ -88,15 +88,15 @@ function snapshot() {
 }
 function sync() { if (TUTOR_MODE) return; try { fetch('api/progress', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(snapshot()) }).catch(() => { }) } catch (e) { } }
 
-function setNav(n) { const map = { home: 'home', plan: 'plan', learn: 'learn', lesson: 'learn', check: 'learn', papers: 'papers', exam: 'papers', practice: 'papers', weak: 'papers', result: 'papers' }; const k = TUTOR_MODE ? 'tutor' : (map[n] || 'more'); $$('#nav a').forEach(a => a.classList.toggle('on', a.dataset.n === k)) }
+function setNav(n) { const map = { coach: 'coach', mock: 'mock', plan: 'plan', syllabus: 'syllabus', more: 'more', profile: 'more', home: 'coach', learn: 'syllabus', papers: 'syllabus' }; const k = TUTOR_MODE ? 'tutor' : (map[n] || 'coach'); $$('#nav a').forEach(a => a.classList.toggle('on', a.dataset.n === k)) }
 let curTimer = null;
 function route() {
     clearInterval(curTimer);
-    const h = location.hash.replace(/^#\/?/, '') || 'home', [n, ...a] = h.split('/');
+    const rawH = location.hash.replace(/^#\/?/, ''); const h = (!rawH || rawH === 'home') ? 'coach' : rawH; const [n, ...a] = h.split('/');
     if ('speechSynthesis' in window) speechSynthesis.cancel();
     setNav(n); window.scrollTo(0, 0);
     if (!TUTOR_MODE && ['lesson', 'check', 'practice', 'exam'].includes(n) && a[0] !== undefined && !paperAllowed(a[0])) { toast(tt('🔒 हा भाग अजून बंद आहे — आधी प्लॅनमधील आधीचा दिवस पूर्ण करा.', '🔒 This part is still locked — complete the earlier day in the plan first.'), 4200); location.hash = '#/plan'; return }
-    try { (V[n] || V.home)(...a) } catch (e) { render('<div class="card">काहीतरी चुकले: ' + esc(e.message) + '<br><a href="#/home">होमवर जा</a></div>'); console.error(e) }
+    try { (V[n] || V.coach || V.home)(...a) } catch (e) { render('<div class="card">काहीतरी चुकले: ' + esc(e.message) + '<br><a href="#/home">होमवर जा</a></div>'); console.error(e) }
 }
 document.addEventListener('click', e => {
     const el = e.target.closest('[data-a]'); if (!el) return;
@@ -120,7 +120,7 @@ V.welcome = function () {
         + '<div class="card"><b>तुमचे नाव</b><input type="text" id="nm" value="' + esc(S.name) + '" style="margin:8px 0"><button class="p w" data-a="start">सुरू करूया 🚀</button></div>'
         + '<div class="card sm mu">हा practice App आहे; official MCED paper नाही. तुमची प्रगती फक्त या फोनमध्ये सेव्ह होते. Tutor ला पाठवण्यासाठी "अधिक → Tutor ला Report" वापरा.</div>')
 };
-ACT.start = () => { const v = $('#nm').value.trim(); if (v) S.name = v; S.named = true; save(); touchStreak(); checkBadges(); sync(); location.hash = '#/home'; route() };
+ACT.start = () => { const v = $('#nm').value.trim(); if (v) S.name = v; S.named = true; save(); touchStreak(); checkBadges(); sync(); location.hash = '#/coach'; route() };
 
 async function loadEn() {
     const miss = [];
